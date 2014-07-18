@@ -3,13 +3,23 @@ using System.Collections;
 
 public class TimeSlowdown : MonoBehaviour {
 
-	public static void EnableSlowmo()
+	public void EnableSlowmo()
 	{
-		Time.timeScale = 0.1f;
+		Time.timeScale = 0.2f;
 	}
 	
-	public static void DisableSlowmo()
+	public void DisableSlowmo()
 	{
 		Time.timeScale = 1.0f;
+	}
+
+	void OnEnable()
+	{
+		
+	}
+	
+	void OnDisable()
+	{
+		
 	}
 }
