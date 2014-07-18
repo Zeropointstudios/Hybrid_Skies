@@ -7,14 +7,4 @@ public class Mover : MonoBehaviour {
 	void Start () {
 		rigidbody.velocity = transform.forward * speed;// * GameObject.Find("GameController").GetComponent<GameController>().timeMultiplier;
 	}
-
-	void OnEnable()
-	{
-
-	}
-
-	void OnDisable()
-	{
-
-	}
 }

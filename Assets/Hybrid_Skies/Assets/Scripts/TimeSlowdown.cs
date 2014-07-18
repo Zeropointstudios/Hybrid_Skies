@@ -15,11 +15,13 @@ public class TimeSlowdown : MonoBehaviour {
 
 	void OnEnable()
 	{
-		
+		InputManager.OnHoldingDown += EnableSlowmo;
+		InputManager.OnRelease += DisableSlowmo;
 	}
 	
 	void OnDisable()
 	{
-		
+		InputManager.OnHoldingDown -= EnableSlowmo;
+		InputManager.OnRelease -= DisableSlowmo;
 	}
 }
