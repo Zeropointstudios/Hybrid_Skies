@@ -20,6 +20,9 @@ public class DestroyForAbsorb : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		transform.position = Vector3.MoveTowards (transform.position, Input.mousePosition, 0.5f);
+		Vector3 target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y, Absorb.cameraDistance));
+		transform.position = Vector3.MoveTowards (transform.position, target, 0.5f);
+		print (Input.mousePosition);
+		print (transform.position + " absorbeR");
 	}
 }

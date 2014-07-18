@@ -4,7 +4,7 @@ using System.Collections;
 public class Absorb : MonoBehaviour {
 	
 	public GameObject absorbField;
-	private float cameraDistance;
+	public static float cameraDistance;
 	bool isAbsorbing;
 	void Start()
 	{
