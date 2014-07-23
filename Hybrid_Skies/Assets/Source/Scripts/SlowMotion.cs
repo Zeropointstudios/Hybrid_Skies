@@ -7,12 +7,12 @@ public class SlowMotion : MonoBehaviour {
 
 	public void EnableSlowmo()
 	{
-		Time.timeScale = timeMultiplier;
+		Time.timeScale = timeMultiplier; //slows down time when event HeldDown is called
 	}
 	
 	public void DisableSlowmo()
 	{
-		Time.timeScale = 1.0f;
+		Time.timeScale = 1.0f; //resumes normal time when event OnRelease is caleld
 	}
 
 	void OnEnable()

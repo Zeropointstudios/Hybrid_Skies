@@ -5,7 +5,7 @@ public class DestroyForAbsorb : MonoBehaviour {
 
 	void DestroyAbsorb ()
 	{
-		Destroy(gameObject);
+		Destroy(gameObject); //destroys absorb prefab when right click is released.
 	}
 
 	void OnEnable()

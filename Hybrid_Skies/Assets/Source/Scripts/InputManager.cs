@@ -16,16 +16,14 @@ public class InputManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0)) //event called on right-click down
 		{
 			OnHoldingDown();
-			print ("down");
 		}
 
-		if (Input.GetMouseButtonUp(0))
+		if (Input.GetMouseButtonUp(0)) //event called on right-click up
 		{
 			OnRelease();
-			print ("up");
 		}
 
 	}

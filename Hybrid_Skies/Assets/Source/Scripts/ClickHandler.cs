@@ -4,28 +4,29 @@ using System.Collections;
 public class ClickHandler : MonoBehaviour {
 
 	public delegate void IsHeldDown();
-	public static event IsHeldDown HeldDown;
+	public static event IsHeldDown HeldDown; //event for when the user holds right click down
 
 	public delegate void IsTapped();
-	public static event IsTapped Tapped;
+	public static event IsTapped Tapped; //event for when the user taps and does not hold
 	
-	bool triggerCounter = false;
-	float rightClickTime;
+	bool holdCounter = false;
+	float timeOfClick;
 	float holdTime;
 
 	public void EnableCounter()
 	{
-		rightClickTime = Time.time;
-		triggerCounter = true;
+		timeOfClick = Time.time;
+		holdCounter = true;
 	}
 
 	public void DisableCounter()
 	{
 		if (holdTime <= 0.3f)
 		{
-//			Tapped();
+			print ("tap");
+			//Tapped();
 		}
-		triggerCounter = false;
+		holdCounter = false;
 
 	}
 
@@ -43,12 +44,12 @@ public class ClickHandler : MonoBehaviour {
 
 	void Update()
 	{
-		if (triggerCounter)
+		if (holdCounter)
 		{
-			holdTime = Time.time - rightClickTime;
+			holdTime = Time.time - timeOfClick;
 			if (holdTime > 0.3f)
 			{
-				triggerCounter = false;
+				holdCounter = false;
 				HeldDown();
 			}
 		}
