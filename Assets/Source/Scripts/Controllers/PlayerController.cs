@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
 	void Start ()
 	{
-		InvokeRepeating("FirePrimary", 0.1F, 0.2F);
+		InvokeRepeating("FirePrimary", 0.1F, fireRate);
 	}
 
 	void FirePrimary ()

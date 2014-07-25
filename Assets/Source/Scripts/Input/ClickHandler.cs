@@ -8,7 +8,8 @@ public class ClickHandler : MonoBehaviour {
 
 	public delegate void IsTapped();
 	public static event IsTapped Tapped; //event for when the user taps and does not hold
-	
+
+	public float timeRequiredToTriggerHold;
 	bool holdCounter = false;
 	float timeOfClick;
 	float holdTime;
@@ -21,7 +22,7 @@ public class ClickHandler : MonoBehaviour {
 
 	public void DisableCounter()
 	{
-		if (holdTime <= 0.3f)
+		if (holdTime <= timeRequiredToTriggerHold)
 		{
 			print ("tap");
 			//Tapped();
@@ -47,7 +48,7 @@ public class ClickHandler : MonoBehaviour {
 		if (holdCounter)
 		{
 			holdTime = Time.time - timeOfClick;
-			if (holdTime > 0.3f)
+			if (holdTime > timeRequiredToTriggerHold)
 			{
 				holdCounter = false;
 				HeldDown();
