@@ -14,27 +14,32 @@ public class Absorb : MonoBehaviour {
 
 	public void EnableAbsorb() //instanciates the absorb prefab at the location of right-click
 	{
-		toggleIsAbsorbing ();
+		AbsorbIsOn ();
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition); 
 		Vector3 point = ray.origin + (ray.direction * cameraDistance / 2); //creates position from which absorb field spawns
 		Instantiate (absorbField, point, Quaternion.identity);
 	}
 
-	public static void toggleIsAbsorbing()
+	public void AbsorbIsOn()
 	{
-		isAbsorbing = !isAbsorbing;
+		isAbsorbing = true;
+	}
+
+	public void AbsorbIsOff()
+	{
+		isAbsorbing = false;
 	}
 	
 	void OnEnable()
 	{
 		ClickHandler.HeldDown += EnableAbsorb; //when event HeldDown is called, instanciate absorb
-		InputManager.OnRelease += toggleIsAbsorbing;
+		InputManager.OnRelease += AbsorbIsOff;
 	}
 	
 	void OnDisable()
 	{
 		ClickHandler.HeldDown -= EnableAbsorb;
-		InputManager.OnRelease -= toggleIsAbsorbing;
+		InputManager.OnRelease -= AbsorbIsOff;
 
 	}
 }

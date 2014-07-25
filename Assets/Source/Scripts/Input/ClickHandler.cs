@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ClickHandler : MonoBehaviour {
 
+	public static Vector3 PositionOfLastTap;
+
 	public delegate void IsHeldDown();
 	public static event IsHeldDown HeldDown; //event for when the user holds right click down
 
@@ -16,6 +18,7 @@ public class ClickHandler : MonoBehaviour {
 
 	public void EnableCounter()
 	{
+		PositionOfLastTap = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y, Absorb.cameraDistance));
 		timeOfClick = Time.time;
 		holdCounter = true;
 	}
@@ -25,7 +28,7 @@ public class ClickHandler : MonoBehaviour {
 		if (holdTime <= timeRequiredToTriggerHold)
 		{
 			print ("tap");
-			//Tapped();
+			Tapped();
 		}
 		holdCounter = false;
 
