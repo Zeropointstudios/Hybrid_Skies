@@ -3,7 +3,6 @@ using System.Collections;
 
 public class DestroyByContact : MonoBehaviour {
 
-
 	public int scoreValue;
 	private GameController gameController;
 

@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class SecondaryLaser : MonoBehaviour {
-
+	public Transform shotSpawn;
 	public GameObject SecondaryLaserProjectile;
 
 	public void FireSecondary()
 	{
-		Instantiate(SecondaryLaserProjectile, GameObject.FindWithTag("Player").GetComponent<PlayerController>().shotSpawn.position, Quaternion.identity);
+		Instantiate(SecondaryLaserProjectile, shotSpawn.position, Quaternion.identity);
 	}
 
 	void OnEnable()
