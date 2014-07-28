@@ -11,6 +11,9 @@ public class ClickHandler : MonoBehaviour {
 	public delegate void IsTapped();
 	public static event IsTapped Tapped; //event for when the user taps and does not hold
 
+	public delegate void IsReleaseHold();
+	public static event IsReleaseHold ReleaseHold; //event for when the user releases from slowmo/hold
+
 	public float timeRequiredToTriggerHold;
 	bool holdCounter = false;
 	float timeOfClick;
@@ -18,7 +21,7 @@ public class ClickHandler : MonoBehaviour {
 
 	public void EnableCounter()
 	{
-		PositionOfLastTap = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y, Absorb.cameraDistance));
+		PositionOfLastTap = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y, PlayerController.cameraDistance));
 		timeOfClick = Time.time;
 		holdCounter = true;
 	}
@@ -27,8 +30,12 @@ public class ClickHandler : MonoBehaviour {
 	{
 		if (holdTime <= timeRequiredToTriggerHold)
 		{
-			print ("tap");
 			Tapped();
+		}
+
+		else
+		{
+			ReleaseHold();
 		}
 		holdCounter = false;
 

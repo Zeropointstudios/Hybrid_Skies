@@ -14,19 +14,10 @@ public class PlayerController : MonoBehaviour
 	public Boundary boundary;
 	public float tilt;
 
-	public GameObject shot;
-	public Transform shotSpawn;
-	public float fireRate;
-	private float nextFire;
-
-	void Start ()
+	public static float cameraDistance;
+	void Start()
 	{
-		InvokeRepeating("FirePrimary", 0.1F, fireRate);
-	}
-
-	void FirePrimary ()
-	{
-		Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+		cameraDistance = Camera.main.transform.position.y; //distance from camera to plane
 	}
 
 	void FixedUpdate ()
