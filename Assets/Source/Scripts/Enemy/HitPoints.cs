@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HitPoints : MonoBehaviour {
-
+	public static HitPoints instance; //global class instance variable
 	public int hitPoints;
 
 	public void doDamage(int damage)
@@ -13,5 +13,10 @@ public class HitPoints : MonoBehaviour {
 		{
 			Destroy(gameObject);
 		}
+	}
+
+	void Start()
+	{
+		instance = this;
 	}
 }
