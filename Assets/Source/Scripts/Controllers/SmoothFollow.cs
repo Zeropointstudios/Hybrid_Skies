@@ -4,16 +4,20 @@ using System.Collections;
 public class SmoothFollow : MonoBehaviour 
 
 {
+	public float xRatio;
+	public GameObject player;
+	float y;
+	float z;
 
-	public float LockedX = 0;
-	public float LockedY = 0;
-	public float LockedZ = 0;
-	
-	public GameObject Player;
-	
+	void Start()
+	{
+		y = transform.position.y;
+		z = transform.position.z;
+	}
+
 	void Update()
 	{
-		transform.position = new Vector3(LockedX * Player.transform.position.x, LockedY, LockedZ);
+		transform.position = new Vector3(xRatio * player.transform.position.x, y, z);
 	}
 
 }

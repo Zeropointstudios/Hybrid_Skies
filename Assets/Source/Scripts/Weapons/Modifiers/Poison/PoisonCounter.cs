@@ -18,7 +18,6 @@ public class PoisonCounter : MonoBehaviour {
 	void DrainEnemyLife()
 	{
 		transform.parent.GetComponent<HitPoints> ().doDamage (damage);
-		print ("plow");
 	}
 	
 	IEnumerator DestroyCounter()

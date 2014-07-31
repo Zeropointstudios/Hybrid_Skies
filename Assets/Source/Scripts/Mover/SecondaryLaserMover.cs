@@ -5,6 +5,6 @@ public class SecondaryLaserMover : MonoBehaviour {
 	public float speed;
 	// Use this for initialization
 	void Start () {
-		rigidbody.velocity = (ClickHandler.PositionOfLastTap - transform.position) * speed;
+		rigidbody.velocity = (ClickHandler.PositionOfLastTap - transform.position).normalized * speed;
 	}
 }

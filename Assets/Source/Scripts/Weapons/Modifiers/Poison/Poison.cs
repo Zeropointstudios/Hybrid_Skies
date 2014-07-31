@@ -10,7 +10,7 @@ public class Poison : MonoBehaviour {
 	{
 		if (other.tag == "Enemy")
 		{
-			poisonCounterInstance = (GameObject)Instantiate(poisonCounter, new Vector3 (0.0f, (PlayerController.cameraDistance/2),0.0f) + transform.position, Quaternion.identity);
+			poisonCounterInstance = (GameObject)Instantiate(poisonCounter, transform.position, Quaternion.identity);
 			poisonCounterInstance.transform.parent = other.transform;
 		}
 

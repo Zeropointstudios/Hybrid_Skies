@@ -7,22 +7,12 @@ public class OnProjectileHit : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Boundary")
+		if (other.tag == "Enemy")
 		{
-			return;
+			other.gameObject.GetComponent<HitPoints> ().doDamage (projectileDamage); //could potentially be a slow function due to the GetComponent call and multiple references.
+			Destroy (gameObject);
 		}
 
-		if (other.tag == "Player")
-		{
-			return;
-		}
 
-		if (other.tag == "Projectile")
-		{
-			return;
-		}
-
-		other.gameObject.GetComponent<HitPoints> ().doDamage (projectileDamage); //could potentially be a slow function due to the GetComponent call and multiple references.
-		Destroy (gameObject);
 	}
 }
