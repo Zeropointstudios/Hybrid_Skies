@@ -557,7 +557,6 @@ GameObject:
   - 64: {fileID: 1003429945}
   - 114: {fileID: 1003429950}
   - 114: {fileID: 1003429951}
-  - 114: {fileID: 1003429952}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -668,20 +667,6 @@ MonoBehaviour:
   shotSpawn: {fileID: 183979753}
   SecondaryLaserProjectile: {fileID: 100002, guid: 56cffe6f5743e46f5a48b309ade6452e,
     type: 2}
---- !u!114 &1003429952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1003429944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc5121bf15786467c82d8ddcee8a6955, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shot: {fileID: 100002, guid: 0764fb8e2222a4a9fab4e3b237cc9adb, type: 2}
-  shotSpawn: {fileID: 183979753}
-  fireRate: .200000003
 --- !u!1 &1148525561
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,4 +37,13 @@ public class PlayerController : MonoBehaviour
 
 		rigidbody.rotation = Quaternion.Euler (0.0f, 0.0f, rigidbody.velocity.x * -tilt);
 	}
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "Enemy")
+		{
+			Destroy (gameObject);
+		}
+	}
+
 }
