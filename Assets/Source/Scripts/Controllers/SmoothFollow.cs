@@ -17,7 +17,10 @@ public class SmoothFollow : MonoBehaviour
 
 	void Update()
 	{
-		transform.position = new Vector3(xRatio * player.transform.position.x, y, z);
+		if ( player != null)
+		{
+			transform.position = new Vector3(xRatio * player.transform.position.x, y, z);
+		}
 	}
 
 }
