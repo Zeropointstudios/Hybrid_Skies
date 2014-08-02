@@ -665,7 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 183979753}
-  SecondaryLaserProjectile: {fileID: 100002, guid: 0764fb8e2222a4a9fab4e3b237cc9adb,
+  SecondaryLaserProjectile: {fileID: 100002, guid: 56cffe6f5743e46f5a48b309ade6452e,
     type: 2}
 --- !u!1 &1148525561
 GameObject:

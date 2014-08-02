@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
+  - 135: {fileID: 13500000}
   m_Layer: 0
   m_Name: VFX
   m_TagString: Projectile
@@ -138,7 +139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5fb8b716e3e4ed8ae21655371e2116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:Assets/Source/Prefabs/Projectiles/SecondaryProjectile1.prefab
   mitotePrefab1: {fileID: 100002, guid: 1a2b6a3ef69e446369d452e03946d792, type: 2}
 --- !u!135 &13500000
 SphereCollider:
@@ -152,9 +152,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
-=======
-  poisonCounter: {fileID: 100002, guid: 466039762467b47e6ad206e837e18bb4, type: 2}
->>>>>>> cd538b495dfe58502a99f29c815470ce5b3ed821:Assets/Source/Prefabs/VFX/PlayerWeapons/Player_Spore_Weapon_01.prefab
 --- !u!135 &13500002
 SphereCollider:
   m_ObjectHideFlags: 1
