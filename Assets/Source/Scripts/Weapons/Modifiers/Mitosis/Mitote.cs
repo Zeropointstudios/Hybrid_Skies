@@ -27,6 +27,7 @@ public class Mitote : MonoBehaviour {
 	IEnumerator Explode(Collider other)
 	{
 		yield return new WaitForSeconds (0.1f); //to avoid overpopulate
+
 		mitoteInstance1 = (GameObject)Instantiate(mitotePrefab1, transform.position, Quaternion.identity);
 		mitoteInstance1.GetComponent<DirectionalMover>().SetDirection(new Vector3(1, 0, 1).normalized);
 		mitoteInstance1.GetComponent<Mitote>().lastShipHit = other;
@@ -45,8 +46,7 @@ public class Mitote : MonoBehaviour {
 		
 		if (other)
 		{
-			other.gameObject.GetComponent<HitPoints> ().doDamage (mitoteDamage);
+			other.gameObject.GetComponent<HitPoints>().doDamage(mitoteDamage);
 		}
-
 	}
 }

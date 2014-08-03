@@ -1,23 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[System.Serializable]
-public class Boundary
-{
-	public float xMin, xMax, zMin, zMax; //embeds class with sub-properties that can be modified in inspector
-}
-
 public class PlayerController : MonoBehaviour
 {	
 	public float timeSpeed;
 	public float speed;
-	public Boundary boundary;
 	public float tilt;
+	public GameBoundary boundary;
 
 	public static float cameraDistance;
 	void Start()
 	{
 		cameraDistance = Camera.main.transform.position.y; //distance from camera to plane
+
+		boundary = GameObject.Find("Boundary").GetComponent<GameBoundary>();
 	}
 
 	void FixedUpdate ()
@@ -28,11 +24,11 @@ public class PlayerController : MonoBehaviour
 		Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 		rigidbody.velocity = movement * speed;
 
-		rigidbody.position = new Vector3
-		(
-			Mathf.Clamp(rigidbody.position.x, boundary.xMin, boundary.xMax), //stops player from exiting the side of screen
+		// Stops player from exiting the side of screen.
+		rigidbody.position = new Vector3(
+			Mathf.Clamp(rigidbody.position.x, -8, 8), 
 		    0.0f,
-			Mathf.Clamp(rigidbody.position.z, boundary.zMin, boundary.zMax)
+			Mathf.Clamp(rigidbody.position.z, -3, 14)
 		);
 
 		rigidbody.rotation = Quaternion.Euler (0.0f, 0.0f, rigidbody.velocity.x * -tilt);
