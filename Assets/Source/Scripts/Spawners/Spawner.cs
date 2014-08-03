@@ -5,13 +5,12 @@ using UnityEngine;
 using System.Collections;
 
 public class Spawner : MonoBehaviour {
-	public GameObject enemyToSpawn; // Spawn this enemy prefab once it gets on-screen.
-	public int numEnemiesToSpawn = 1;
+	public GameObject objectToSpawn; // Spawn this enemy prefab once it gets on-screen.
+	public int numObjectsToSpawn = 1;
 	public float timeBetweenSpawns = 1;
 
 	private const float DROP_SPEED = 4;
 	private new bool active = false;
-	private float timeTilNextSpawn = 0;
 
 	// Update is called once per frame
 	void Update () 
@@ -21,46 +20,26 @@ public class Spawner : MonoBehaviour {
 		{
 			this.transform.position -= new Vector3(0, 0, Time.deltaTime * DROP_SPEED);
 		}
-		else // Once on-screen, it should continue spawning a fixed number of dudes at a fixed interval 
-		{
-			if (numEnemiesToSpawn > 0)
-			{
-				timeTilNextSpawn -= Time.deltaTime;
-				if ( timeTilNextSpawn <= 0) 
-				{
-					SpawnObject();
-				}
-			}
-			else // No enemies left to spawn, it's no longer necessary to keep the Spawner around.
-			{
-				Destroy(this);
-			}
-		}
 	}
 
 	public void EnterBoundary()
 	{
 		// Once it's on-screen...
-		Debug.Log("Enter Boundary");
 
-		// Spawn the first object
-		SpawnObject();
-
-		// Activate the Spawner so it will start spawning guys
+		// Activate the Spawner so it will start spawning objects and stop moving.
 		active = true;
+
+		// Start spawning dudes.
+		StartCoroutine(SpawnObjects());
 	}
 
-	private void SpawnObject()
+	IEnumerator SpawnObjects()
 	{
-		Instantiate(enemyToSpawn, this.rigidbody.position, this.rigidbody.rotation);
-		numEnemiesToSpawn--;
-
-		if (numEnemiesToSpawn <= 0) 
+		for (int i = 0; i < numObjectsToSpawn; i++)
 		{
-			Destroy (this);
+			Instantiate(objectToSpawn, this.rigidbody.position, this.rigidbody.rotation);
+			yield return new WaitForSeconds (timeBetweenSpawns);
 		}
-
-		// Time between spawns minus the time we've already waited.
-		timeTilNextSpawn = timeBetweenSpawns - timeTilNextSpawn; 
+		Destroy (this);
 	}
 }

@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {	
-	public float timeSpeed;
 	public float speed;
 	public float tilt;
 	public GameBoundary boundary;
