@@ -9,7 +9,7 @@ public class PrimaryLaser : MonoBehaviour {
 	
 	void Start ()
 	{
-		InvokeRepeating("FirePrimary", 0.1F, fireRate);
+		InvokeRepeating("FirePrimary", 0.1f, fireRate);
 	}
 	
 	void FirePrimary ()

@@ -4,12 +4,13 @@ using System.Collections;
 public class DemolitionPrefab : MonoBehaviour {
 
 	public int explosionDamage;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine ("Destroy");
 	}
 
-	void OnTriggerEnter(GameObject other)
+	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Enemy")
 		{

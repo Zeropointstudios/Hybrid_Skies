@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class SmoothFollow : MonoBehaviour 
-
 {
 	public float xRatio;
 	public GameObject player;

@@ -4,10 +4,13 @@ using System.Collections;
 public class Demolition : MonoBehaviour {
 
 	public Collider splashCollider;
-	Collider splashInstance;
+
+	// Removed for now to remove warning.
+	//Collider splashInstance; 
 
 	void OnTriggerEnter()
 	{
-		splashInstance = (Collider)Instantiate (splashCollider, gameObject.transform.position, Quaternion.identity);
+		// Removed for now to remove warning.
+		//splashInstance = (Collider)Instantiate (splashCollider, gameObject.transform.position, Quaternion.identity);
 	}
 }
