@@ -4,7 +4,7 @@ using System.Collections;
 public class Demolition : MonoBehaviour {
 
 	public Collider splashCollider;
-	Collider splashInstance;
+	Collider splashInstance; //need this in order to access the explosion spawn for combinations.
 
 	void OnTriggerEnter()
 	{

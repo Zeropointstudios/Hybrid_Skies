@@ -3,13 +3,14 @@ using System.Collections;
 
 public class DemolitionPrefab : MonoBehaviour {
 
+	public float explosionDuration;
 	public int explosionDamage;
 	// Use this for initialization
 	void Start () {
 		StartCoroutine ("Destroy");
 	}
 
-	void OnTriggerEnter(GameObject other)
+	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Enemy")
 		{
@@ -19,7 +20,7 @@ public class DemolitionPrefab : MonoBehaviour {
 
 	IEnumerator Destroy()
 	{
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(explosionDuration);
 		Destroy (gameObject);
 	}
 }
