@@ -8,6 +8,7 @@ public class Demolition : MonoBehaviour {
 
 	void OnTriggerEnter()
 	{
-		splashInstance = (Collider)Instantiate (splashCollider, gameObject.transform.position, Quaternion.identity);
+		// Removed for now to remove warning.
+		//splashInstance = (Collider)Instantiate (splashCollider, gameObject.transform.position, Quaternion.identity);
 	}
 }

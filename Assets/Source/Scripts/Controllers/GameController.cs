@@ -10,9 +10,10 @@ public class GameController : MonoBehaviour {
 
 	void Start ()
 	{
-		StartCoroutine (SpawnWaves ());
+		// No longer necessary since we have a Spawner.
+		//StartCoroutine (SpawnWaves ()); // UNDO!!
 	}
-
+/*
 	IEnumerator SpawnWaves ()
 	{
 		yield return new WaitForSeconds (startWait);
@@ -23,4 +24,5 @@ public class GameController : MonoBehaviour {
 			yield return new WaitForSeconds (waveWait);
 		}
 	}
+*/	
 }

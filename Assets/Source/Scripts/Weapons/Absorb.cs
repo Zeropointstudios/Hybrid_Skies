@@ -4,8 +4,9 @@ using System.Collections;
 public class Absorb : MonoBehaviour {
 	GameObject absorbFieldClone;
 	public GameObject absorbField;
-	
-	public void EnableAbsorb() //instanciates the absorb prefab at the location of right-click
+
+	// Instanciates the absorb prefab at the location of right-click.
+	public void EnableAbsorb() 
 	{
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition); 
 		Vector3 point = ray.origin + (ray.direction * PlayerController.cameraDistance / 2); //creates position from which absorb field spawns
@@ -16,14 +17,11 @@ public class Absorb : MonoBehaviour {
 	{
 		Destroy (absorbFieldClone);
 	}
-
-
 	
 	void OnEnable()
 	{
-		ClickHandler.HeldDown += EnableAbsorb; //when event HeldDown is called, instanciate absorb
+		ClickHandler.HeldDown += EnableAbsorb; // When event HeldDown is called, instanciate absorb.
 		ClickHandler.ReleaseHold += DisableAbsorb;
-	
 	}
 	
 	void OnDisable()

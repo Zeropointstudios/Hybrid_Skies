@@ -21,7 +21,8 @@ public class ClickHandler : MonoBehaviour {
 
 	public void EnableCounter()
 	{
-		PositionOfLastTap = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,Input.mousePosition.y, PlayerController.cameraDistance));
+		PositionOfLastTap = Camera.main.ScreenToWorldPoint(
+			new Vector3(Input.mousePosition.x,Input.mousePosition.y, PlayerController.cameraDistance));
 		timeOfClick = Time.time;
 		holdCounter = true;
 	}
@@ -30,15 +31,19 @@ public class ClickHandler : MonoBehaviour {
 	{
 		if (holdTime <= timeRequiredToTriggerHold)
 		{
-			Tapped();
+			if ( Tapped != null )
+			{
+				Tapped();
+			}
 		}
-
 		else
 		{
-			ReleaseHold();
+			if ( ReleaseHold != null )
+			{
+				ReleaseHold();
+			}
 		}
 		holdCounter = false;
-
 	}
 
 	void OnEnable()
@@ -61,7 +66,10 @@ public class ClickHandler : MonoBehaviour {
 			if (holdTime > timeRequiredToTriggerHold)
 			{
 				holdCounter = false;
-				HeldDown();
+				if ( HeldDown != null ) 
+				{
+					HeldDown();
+				}
 			}
 		}
 	}

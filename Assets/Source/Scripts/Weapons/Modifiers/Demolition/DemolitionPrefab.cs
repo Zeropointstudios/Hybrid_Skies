@@ -5,6 +5,7 @@ public class DemolitionPrefab : MonoBehaviour {
 
 	public float explosionDuration;
 	public int explosionDamage;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine ("Destroy");
