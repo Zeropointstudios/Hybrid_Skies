@@ -4,11 +4,12 @@ using System.Collections;
 public class Demolition : MonoBehaviour {
 
 	public Collider splashCollider;
-//	Collider splashInstance; //need this in order to access the explosion spawn for combinations.
 
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider other)
 	{
-		// Removed for now to remove warning.
-		Instantiate (splashCollider, gameObject.transform.position, Quaternion.identity);
+		if (other.tag == "Enemy")
+		{
+			Instantiate (splashCollider, gameObject.transform.position, Quaternion.identity);
+		}
 	}
 }

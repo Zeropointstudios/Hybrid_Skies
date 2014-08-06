@@ -9,7 +9,7 @@ public class GameBoundary : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		Debug.Log("OnTriggerEnter: " + other.name);
+//		Debug.Log("OnTriggerEnter: " + other.name);
 		other.gameObject.SendMessage("EnterBoundary", SendMessageOptions.DontRequireReceiver);
 	}
 

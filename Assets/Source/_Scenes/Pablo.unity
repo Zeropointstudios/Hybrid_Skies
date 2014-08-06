@@ -269,7 +269,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d9808401c68af274a8edfbed3d1b53c7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: d9808401c68af274a8edfbed3d1b53c7, type: 3}
       propertyPath: m_TagString
@@ -490,6 +490,34 @@ MonoBehaviour:
   xMax: 0
   zMin: 0
   zMax: 0
+--- !u!1 &548416828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 548416829}
+  m_Layer: 0
+  m_Name: guitexts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &548416829
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 548416828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .899999976, y: .899999976, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1828115108}
+  - {fileID: 1909414487}
+  m_Father: {fileID: 0}
 --- !u!1 &630292636
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,13 +687,14 @@ GameObject:
   - 64: {fileID: 1003429945}
   - 114: {fileID: 1003429950}
   - 114: {fileID: 1003429951}
+  - 114: {fileID: 1003429952}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1003429945
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -764,6 +793,22 @@ MonoBehaviour:
   shotSpawn: {fileID: 183979753}
   SecondaryLaserProjectile: {fileID: 100002, guid: 56cffe6f5743e46f5a48b309ade6452e,
     type: 2}
+--- !u!114 &1003429952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1003429944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029df47f19d224b348b3ea3b553444ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rebound: {fileID: 100002, guid: 56cffe6f5743e46f5a48b309ade6452e, type: 2}
+  demo: {fileID: 100002, guid: 181a52b06c0994c98bf30a4de1192505, type: 2}
+  poison: {fileID: 100002, guid: 0920aa9e50d39437788d8066954e8de4, type: 2}
+  flower: {fileID: 100002, guid: 32d8a04808b03434286f53019f85edd8, type: 2}
+  currentWeapon: {fileID: 1909414486}
 --- !u!1 &1148525561
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1411648712
 Transform:
   m_ObjectHideFlags: 0
@@ -1028,61 +1073,106 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xRatio: .100000001
   player: {fileID: 1003429944}
---- !u!1 &1749558938
+--- !u!1 &1828115106
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1749558941}
-  - 135: {fileID: 1749558940}
-  - 114: {fileID: 1749558939}
+  - 4: {fileID: 1828115108}
+  - 132: {fileID: 1828115107}
   m_Layer: 0
-  m_Name: Radar
+  m_Name: WPN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1749558939
-MonoBehaviour:
+--- !u!132 &1828115107
+GUIText:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1749558938}
+  m_GameObject: {fileID: 1828115106}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91d92cba6b4654f4c97eb671818b728b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSize: 0
-  radarSize: 25
-  colliderExpansionTime: .5
-  enemiesOnScreen: []
---- !u!135 &1749558940
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1749558938}
+  serializedVersion: 3
+  m_Text: 'Press 1-4 to Select Weapon:'
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: -253.699997, y: 35}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1749558941
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &1828115108
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1749558938}
+  m_GameObject: {fileID: 1828115106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 548416829}
+--- !u!1 &1909414485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1909414487}
+  - 132: {fileID: 1909414486}
+  m_Layer: 0
+  m_Name: WPNX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!132 &1909414486
+GUIText:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909414485}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: Rebounder
+  m_Anchor: 0
+  m_Alignment: 0
+  m_PixelOffset: {x: -85.4000015, y: 35}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
+--- !u!4 &1909414487
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909414485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 548416829}
 --- !u!1 &1939452341
 GameObject:
   m_ObjectHideFlags: 0

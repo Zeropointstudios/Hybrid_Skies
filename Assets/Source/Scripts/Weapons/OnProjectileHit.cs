@@ -9,7 +9,7 @@ public class OnProjectileHit : MonoBehaviour {
 	{
 		if (other.tag == "Enemy")
 		{
-			other.gameObject.GetComponent<HitPoints> ().doDamage (projectileDamage); //could potentially be a slow function due to the GetComponent call and multiple references.
+			other.gameObject.GetComponent<HitPoints> ().doDamage (projectileDamage);
 			Destroy (gameObject);	
 		}
 	}
