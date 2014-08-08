@@ -1,11 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class DirectionalMover : MonoBehaviour {
+public class DirectionalMover : Mover {
 
 	public float speed;
 
-	// Use this for initialization
 	public void SetDirection(Vector3 vector)
 	{
 		rigidbody.velocity = vector * speed;

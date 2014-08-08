@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class FlightPathMover : MonoBehaviour {
+public class FlightPathMover : Mover {
 	public int pathTime;
 	public float lookAheadTime;
 	

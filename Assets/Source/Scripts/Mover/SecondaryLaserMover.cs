@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class SecondaryLaserMover : MonoBehaviour {
+public class SecondaryLaserMover : Mover {
 	public float speed;
-	// Use this for initialization
+
 	void Start () {
 		rigidbody.velocity = (ClickHandler.PositionOfLastTap - transform.position).normalized * speed;
 	}
