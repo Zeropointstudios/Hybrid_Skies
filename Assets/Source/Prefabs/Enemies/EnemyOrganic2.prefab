@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathName: EnemyOrg1
+  pathName: FlightPath
   pathColor: {r: 0, g: 1, b: 1, a: 1}
   nodes:
   - {x: 5.07386208, y: 0, z: 14.0151014}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e18413ecd61394cdb8c7eec08aab1b53, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d5a275137131c64aac4401e2f001bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pathTime: 40
