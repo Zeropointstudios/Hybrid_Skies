@@ -6,8 +6,6 @@ using System.Linq;
 public class ParasiteMod : MonoBehaviour {
 
 	public int targetLimit, parasiteDamage; //maximum amount of hits a parasite can attack
-	public GameObject radarPrefab; //the object prefab that spawns after the orignal explodes, does not explode on contact
-	GameObject radarColliderInstance;
 	public float pathTime;
 	bool hit = false;
 	
