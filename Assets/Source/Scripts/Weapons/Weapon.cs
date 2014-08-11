@@ -3,7 +3,7 @@ using System.Collections;
 
 
 public class Weapon : MonoBehaviour {
-	
+
 	public int damage;																	//how much damage the weapon does
 	public GameObject graphic, destructionVFX;											//the art assets attached to the weapon
 	public Transform shotSpawn;															//the location from which the weapon spawns

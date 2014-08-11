@@ -8,7 +8,7 @@ public class ParasiteMod : MonoBehaviour {
 	public int targetLimit, parasiteDamage; //maximum amount of hits a parasite can attack
 	public float pathTime;
 	bool hit = false;
-	
+
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Enemy" && hit == false)
