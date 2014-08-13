@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MitosisMod : MonoBehaviour {
+public class MitosisModifier : BehavioralModifier {
 
 	public GameObject mitotePrefab1;
 

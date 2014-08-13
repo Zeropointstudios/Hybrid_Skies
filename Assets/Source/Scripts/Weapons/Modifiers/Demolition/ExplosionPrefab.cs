@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DemolitionPrefab : MonoBehaviour {
+public class ExplosionPrefab : MonoBehaviour {
 
 	public float explosionDuration;
 	public int explosionDamage;

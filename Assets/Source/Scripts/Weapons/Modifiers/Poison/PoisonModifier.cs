@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Poison : MonoBehaviour {
+public class PoisonModifier : ElementalModifier {
 	
 	public GameObject poisonCounter;
 	GameObject poisonCounterInstance;

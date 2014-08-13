@@ -49,24 +49,25 @@ public class PlayerController : MonoBehaviour
 			// update the elemental modifier
 			switch(modifierType) {
 				case ModifierType.Poison : modifierCombo.elementalModifier = new PoisonModifier(); break;
-				
-
+//				case ModifierType.EMP : modifierCombo.elementalModifier = new PoisonModifier(); break;
+				case ModifierType.Explosion : modifierCombo.elementalModifier = new ExplosionModifier(); break;
+				}
 			}
-		} else { // BehavioralModifier
+		else { // BehavioralModifier
 			// update the behavioral modifier
 			switch(modifierType) {
-				case ModifierType.HeatSeeking : modifierCombo.behavioralModifier = new HeatSeekingModifier(); break;
-
+//				case ModifierType.HeatSeeking : modifierCombo.behavioralModifier = new HeatSeekingModifier(); break;
+			case ModifierType.Mitosis : modifierCombo.behavioralModifier = new MitosisModifier(); break;
 			}
 		}
-		Firing secondaryWeapon = GetComponent<SecondaryLaser>();
-		secondaryWeapon.SetModifierCombo(modifierCombo); 
+//		Firing secondaryWeapon = GetComponent<SecondaryLaser>();
+//		secondaryWeapon.SetModifierCombo(modifierCombo); 
 	}
 	
 	// <--- This gets called by your script that does the nemey
-	public void OnEnemyPowerSteal(GameObject enemy) {
-		SetSecondaryWeaponModifier(enemy.GetComponent<HitPoints>.secondaryWeaponModifier);
-	}
+//	public void OnEnemyPowerSteal(GameObject enemy) {
+//		SetSecondaryWeaponModifier(enemy.GetComponent<HitPoints>.secondaryWeaponModifier);
+//	}
 }
 
 

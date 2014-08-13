@@ -779,6 +779,10 @@ MonoBehaviour:
   speed: 12
   tilt: 2
   boundary: {fileID: 0}
+  shipMovementBoundaryX1: -8
+  shipMovementBoundaryX2: 8
+  shipMovementBoundaryY1: 14
+  shipMovementBoundaryY2: -3
 --- !u!114 &1003429951
 MonoBehaviour:
   m_ObjectHideFlags: 0

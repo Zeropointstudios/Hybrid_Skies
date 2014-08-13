@@ -15,7 +15,7 @@ public enum ModifierType {
 	None
 };
 
-public class Modifier {
+public class Modifier : MonoBehaviour {
 	public virtual void OnProjectileInit(Projectile projectile) {}
 	public virtual void OnProjectileDestroy(Projectile projectile) {}
 }
@@ -26,8 +26,8 @@ public class BehavioralModifier : Modifier {}
 
 // It's important for the two to stay together in a combination like this
 public class ModifierCombo {
-	ElementalModifier elementalModifier;
-	BehavioralModifier behavioralModifier;
+	public ElementalModifier elementalModifier;
+	public BehavioralModifier behavioralModifier;
 
 	// Copy constructor
 	public ModifierCombo(ModifierCombo modifierCombo) {
