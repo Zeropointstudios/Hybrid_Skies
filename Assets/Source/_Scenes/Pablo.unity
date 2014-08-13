@@ -504,7 +504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &548416829
 Transform:
   m_ObjectHideFlags: 0
@@ -785,13 +785,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1003429944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c031263385d514a30850b26363e4f982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 183979753}
-  SecondaryLaserProjectile: {fileID: 100002, guid: 56cffe6f5743e46f5a48b309ade6452e,
+  SecondaryLaserProjectile: {fileID: 100002, guid: 0920aa9e50d39437788d8066954e8de4,
     type: 2}
 --- !u!114 &1003429952
 MonoBehaviour:
@@ -799,12 +799,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1003429944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 029df47f19d224b348b3ea3b553444ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rebound: {fileID: 100002, guid: 56cffe6f5743e46f5a48b309ade6452e, type: 2}
+  rebound: {fileID: 0}
   demo: {fileID: 100002, guid: 181a52b06c0994c98bf30a4de1192505, type: 2}
   poison: {fileID: 100002, guid: 0920aa9e50d39437788d8066954e8de4, type: 2}
   flower: {fileID: 100002, guid: 32d8a04808b03434286f53019f85edd8, type: 2}
