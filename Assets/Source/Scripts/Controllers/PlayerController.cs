@@ -6,17 +6,16 @@ public class PlayerController : MonoBehaviour
 	public float speed;
 	public float tilt;
 	public GameBoundary boundary;
-
+	public int shipMovementBoundaryX1, shipMovementBoundaryX2, shipMovementBoundaryY1, shipMovementBoundaryY2;
 	public static float cameraDistance;
-	void Start()
-	{
-		cameraDistance = Camera.main.transform.position.y; //distance from camera to plane
+	public ModifierCombo modifierCombo;
 
+	void Start() {
+		cameraDistance = Camera.main.transform.position.y; //distance from camera to plane
 		boundary = GameObject.Find("Boundary").GetComponent<GameBoundary>();
 	}
 
-	void FixedUpdate ()
-	{
+	void FixedUpdate () {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
@@ -24,21 +23,50 @@ public class PlayerController : MonoBehaviour
 		rigidbody.velocity = movement * speed;
 
 		// Stops player from exiting the side of screen.
-		rigidbody.position = new Vector3(
-			Mathf.Clamp(rigidbody.position.x, -8, 8), 
+		rigidbody.position = new Vector3 (
+			Mathf.Clamp(rigidbody.position.x, shipMovementBoundaryX1, shipMovementBoundaryX2), 
 		    0.0f,
-			Mathf.Clamp(rigidbody.position.z, -3, 14)
+			Mathf.Clamp(rigidbody.position.z, shipMovementBoundaryY1, shipMovementBoundaryY2)
 		);
 
 		rigidbody.rotation = Quaternion.Euler (0.0f, 0.0f, rigidbody.velocity.x * -tilt);
 	}
 
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.tag == "Enemy")
-		{
+	void OnTriggerEnter(Collider other) {
+		if (other.tag == "Enemy") {
 			Destroy (gameObject);
 		}
 	}
 
+	void SetSecondaryWeaponModifier(ModifierType modifierType) {
+		if ( modifierType == ModifierType.None)
+			return;
+
+		// We use string 
+		modifierCombo = new ModifierCombo(modifierCombo); // copies the existing modifierCombo... new projectiles will use this, but old projectiles will use the old copy that they still have.  Getting the max bang for our buck out of reference counting :)
+
+		if ( modifierType < ModifierType.NUM_ELEMENTAL_MODIFIERS ) { // ElementalModifier
+			// update the elemental modifier
+			switch(modifierType) {
+				case ModifierType.Poison : modifierCombo.elementalModifier = new PoisonModifier(); break;
+				
+
+			}
+		} else { // BehavioralModifier
+			// update the behavioral modifier
+			switch(modifierType) {
+				case ModifierType.HeatSeeking : modifierCombo.behavioralModifier = new HeatSeekingModifier(); break;
+
+			}
+		}
+		Firing secondaryWeapon = GetComponent<SecondaryLaser>();
+		secondaryWeapon.SetModifierCombo(modifierCombo); 
+	}
+	
+	// <--- This gets called by your script that does the nemey
+	public void OnEnemyPowerSteal(GameObject enemy) {
+		SetSecondaryWeaponModifier(enemy.GetComponent<HitPoints>.secondaryWeaponModifier);
+	}
 }
+
+
