@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 	public GameBoundary boundary;
 	public int shipMovementBoundaryX1, shipMovementBoundaryX2, shipMovementBoundaryY1, shipMovementBoundaryY2;
 	public static float cameraDistance;
+	public ModifierCombo modifierCombo;
 
 	void Start() {
 		cameraDistance = Camera.main.transform.position.y; //distance from camera to plane
@@ -37,7 +38,35 @@ public class PlayerController : MonoBehaviour
 		}
 	}
 
-	void SetSecondaryWeaponModifier(string modifierType) {
+	void SetSecondaryWeaponModifier(ModifierType modifierType) {
+		if ( modifierType == ModifierType.None)
+			return;
 
+		// We use string 
+		modifierCombo = new ModifierCombo(modifierCombo); // copies the existing modifierCombo... new projectiles will use this, but old projectiles will use the old copy that they still have.  Getting the max bang for our buck out of reference counting :)
+
+		if ( modifierType < ModifierType.NUM_ELEMENTAL_MODIFIERS ) { // ElementalModifier
+			// update the elemental modifier
+			switch(modifierType) {
+				case ModifierType.Poison : modifierCombo.elementalModifier = new PoisonModifier(); break;
+				
+
+			}
+		} else { // BehavioralModifier
+			// update the behavioral modifier
+			switch(modifierType) {
+				case ModifierType.HeatSeeking : modifierCombo.behavioralModifier = new HeatSeekingModifier(); break;
+
+			}
+		}
+		Firing secondaryWeapon = GetComponent<SecondaryLaser>();
+		secondaryWeapon.SetModifierCombo(modifierCombo); 
+	}
+	
+	// <--- This gets called by your script that does the nemey
+	public void OnEnemyPowerSteal(GameObject enemy) {
+		SetSecondaryWeaponModifier(enemy.GetComponent<HitPoints>.secondaryWeaponModifier);
+	}
 }
+
 

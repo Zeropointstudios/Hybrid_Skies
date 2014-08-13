@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class HitPoints : MonoBehaviour {
+
 	public int hitPoints;
+	ModifierType modifierType = ModifierType.None;
 
 	public void doDamage(int damage)
 	{
