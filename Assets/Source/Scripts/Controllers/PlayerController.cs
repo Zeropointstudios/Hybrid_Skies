@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
 			// update the behavioral modifier
 			switch(modifierType) {
 //				case ModifierType.HeatSeeking : modifierCombo.behavioralModifier = new HeatSeekingModifier(); break;
-			case ModifierType.Mitosis : modifierCombo.behavioralModifier = new MitosisModifier(); break;
+				case ModifierType.Mitosis : modifierCombo.behavioralModifier = new MitosisModifier(); break;
 			}
 		}
 //		Firing secondaryWeapon = GetComponent<SecondaryLaser>();
@@ -68,6 +68,24 @@ public class PlayerController : MonoBehaviour
 //	public void OnEnemyPowerSteal(GameObject enemy) {
 //		SetSecondaryWeaponModifier(enemy.GetComponent<HitPoints>.secondaryWeaponModifier);
 //	}
+
+	void FireSecondary() {
+		
+	}
+
+
+	void OnEnable()
+	{
+		ClickHandler.Tapped += FireSecondary;
+	}
+	
+	void OnDisable()
+	{
+		ClickHandler.Tapped -= FireSecondary;
+	}
+
+
+
 }
 
 

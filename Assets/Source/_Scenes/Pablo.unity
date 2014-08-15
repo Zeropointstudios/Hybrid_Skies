@@ -486,10 +486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843464ab67b40194097d332cc9a90007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: 0
-  xMax: 0
-  zMin: 0
-  zMax: 0
 --- !u!1 &548416828
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +684,7 @@ GameObject:
   - 114: {fileID: 1003429950}
   - 114: {fileID: 1003429951}
   - 114: {fileID: 1003429952}
+  - 114: {fileID: 1003429953}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -779,10 +776,10 @@ MonoBehaviour:
   speed: 12
   tilt: 2
   boundary: {fileID: 0}
-  shipMovementBoundaryX1: -8
-  shipMovementBoundaryX2: 8
-  shipMovementBoundaryY1: 14
-  shipMovementBoundaryY2: -3
+  shipMovementBoundaryX1: -7
+  shipMovementBoundaryX2: 7
+  shipMovementBoundaryY1: -3
+  shipMovementBoundaryY2: 14
 --- !u!114 &1003429951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,6 +810,24 @@ MonoBehaviour:
   poison: {fileID: 100002, guid: 0920aa9e50d39437788d8066954e8de4, type: 2}
   flower: {fileID: 100002, guid: 32d8a04808b03434286f53019f85edd8, type: 2}
   currentWeapon: {fileID: 1909414486}
+--- !u!114 &1003429953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1003429944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3c11c1a3bce44ae915bb6fda918603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotSpawn: {fileID: 183979753}
+  period: .200000003
+  probability: .899999976
+  angleRandomness: 10
+  angle: 0
+  projectile: {fileID: 100002, guid: c4385bc32d25d43f38eeee1ba4e1084c, type: 2}
+  autoFire: 1
 --- !u!1 &1148525561
 GameObject:
   m_ObjectHideFlags: 0

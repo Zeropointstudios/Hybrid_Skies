@@ -16,23 +16,23 @@ public enum ModifierType {
 };
 
 public class Modifier : MonoBehaviour {
-	public virtual void OnProjectileInit(Projectile projectile) {}
+	public virtual void OnProjectileInit(Projectile projectile) {} //things that happen to projectile by modifier when it is initialized
 	public virtual void OnProjectileDestroy(Projectile projectile) {}
 }
 
-public class ElementalModifier : Modifier {}
+public class ElementalModifier : Modifier {}		 //two types of modifiers that are seperate for the sake of identification 
 
-public class BehavioralModifier : Modifier {}
+public class BehavioralModifier : Modifier {}		 //you can only have one of teach type at a time
 
 // It's important for the two to stay together in a combination like this
 public class ModifierCombo {
-	public ElementalModifier elementalModifier;
-	public BehavioralModifier behavioralModifier;
+	public ElementalModifier elementalModifier;		 //a modifier combo holds a field of each type of Modifier
+	public BehavioralModifier behavioralModifier;	 //these fields are used to modify the projectile 
 
 	// Copy constructor
 	public ModifierCombo(ModifierCombo modifierCombo) {
-		elementalModifier = modifierCombo.elementalModifier;
-		behavioralModifier = modifierCombo.behavioralModifier;
+		elementalModifier = modifierCombo.elementalModifier;		//when the copy constructor is called, copies the current state of
+		behavioralModifier = modifierCombo.behavioralModifier;		//each type of modifier onto a projectile's modifierCombo
 	}
 	
 	// Mutators
@@ -50,6 +50,6 @@ public class ModifierCombo {
 		if ( elementalModifier != null) 
 			elementalModifier.OnProjectileDestroy(projectile);
 		if ( behavioralModifier != null) 
-			behavioralModifier .OnProjectileDestroy(projectile);
+			behavioralModifier.OnProjectileDestroy(projectile);
 	}
 }

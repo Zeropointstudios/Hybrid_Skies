@@ -14,4 +14,11 @@ public class PoisonModifier : ElementalModifier {
 			poisonCounterInstance.transform.parent = other.transform;
 		}
 	}
+
+	public override void OnProjectileInit(Projectile projectile) {
+
+	}
+	public override void OnProjectileDestroy(Projectile projectile) {
+
+	}
 }
