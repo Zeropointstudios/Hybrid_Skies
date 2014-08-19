@@ -8,6 +8,7 @@ public class Firing : MonoBehaviour {
 	public float angleRandomness, angleOffset;
 	public GameObject projectile;
 	public bool autoFire = true;
+	public bool randomizeAim;
 	Vector3 projectileRotation;
 
 		// This is a coroutine that gets kicked off...
@@ -26,7 +27,7 @@ public class Firing : MonoBehaviour {
 	
 	public virtual void FireProjectile() {
 
-		if (angleRandomness != null) {
+		if (randomizeAim) {
 			angleOffset = Random.Range (-angleRandomness, angleRandomness);
 		}
 		projectileRotation.y += angleOffset;

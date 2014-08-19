@@ -4,16 +4,16 @@ using System.Collections.Generic;
 
 public class Projectile : Weapon {
 
-//	ModifierCombo modifierCombo; // He also references the mod combo.
-//	void Start() {
-//		modifierCombo = new ModifierCombo(modifierCombo);
+//	ModifierCombo modifierCombo = new ModifierCombo(modifierCombo); // He also references the mod combo.
+//	void OnProjectileInit() {
+//
 //		if (modifierCombo != null)
-//			modifierCombo.OnProjectileInit(gameObject);
+//			modifierCombo.OnProjectileInit(modifierCombo);
 //	}
 //
 //	void OnDestroy() { // somehow called before this Projectile gets destroyed...
 //		if (modifierCombo != null)
-//			modifierCombo.OnProjectileDestroy(gameObject);
+//			modifierCombo.OnProjectileDestroy(modifierCombo);
 //	}
 
 }
