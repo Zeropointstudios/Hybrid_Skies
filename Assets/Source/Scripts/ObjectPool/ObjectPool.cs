@@ -9,8 +9,8 @@ public class ObjectPool : MonoBehaviour {
 	
 	
 	// Use this for initialization
-	void Start () {
-		InstantiateProjectiles();
+	void Awake () {
+		InstantiateObjects();
 	}
 	
 	// Update is called once per frame
@@ -18,42 +18,31 @@ public class ObjectPool : MonoBehaviour {
 		
 	}
 	
-	private void InstantiateProjectiles() {
-		GameObject tempParent;
+	private void InstantiateObjects() {
+		GameObject temp;
 		pool = new List<GameObject>[pooledGameObjects.Length];
 		
-		for (int i = 0; i < pooledGameObjects.Length; i++) {
-			pool[i] = new List<GameObject>();
+		for (int count = 0; count < pooledGameObjects.Length; count++) {
+			pool[count] = new List<GameObject>();
 			
 			for (int j = 0; j < numberOfProjectilesToCreate.Length; j++){
-				tempParent = (GameObject)Instantiate(pooledGameObjects[j]);
-				tempParent.transform.parent = this.transform; //keeps hierarchy clean by putting pooled objs under component transform
-				pool[i].Add(tempParent);
+				temp = (GameObject)Instantiate(pooledGameObjects[count]);
+				temp.transform.parent = this.transform; //keeps hierarchy clean by putting pooled objs under component transform
+				pool[count].Add(temp);
 			}
 		}
 	}
 	
-	GameObject Activate(int id) {
-		for (int i = 0; i < pool.Length; i++) {
-			if(!pool[id][i].activeSelf){
-				pool[id][i].SetActive(true);
-				return pool[id][i];
-			}
-		}
-		pool[id].Add((GameObject)Instantiate(pooledGameObjects[id])); //incase pool runs out
-		pool[id][pool[id].Count-1].transform.parent = this.transform;
-		return null;
-	}
+	public GameObject Activate(int id, Vector3 position, Quaternion rotation) {
+		for (int count = 0; count < pool[id].Count; count++) {
+			if(!pool[id][count].activeSelf){
+				print ("this if is true");
+				pool[id][count].SetActive(true);
+				pool[id][count].transform.position = position;
+				pool[id][count].transform.rotation = rotation;
+				pool[id][count].transform.parent = this.transform;
 	
-	GameObject Activate(int id, Vector3 position, Quaternion rotation) {
-		for (int i = 0; i < pool.Length; i++) {
-			if(!pool[id][i].activeSelf){
-				pool[id][i].SetActive(true);
-				pool[id][i].transform.position = position;
-				pool[id][i].transform.rotation = rotation;
-				pool[id][i].SetActive(true);
-				
-				return pool[id][i];
+				return pool[id][count];
 			}
 		}
 		pool[id].Add((GameObject)Instantiate(pooledGameObjects[id])); //incase pool runs out

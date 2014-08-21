@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour {
 		{
 			other.GetComponent<HitPoints>().doDamage(damage);							//damage the enemy hit by weapon
 			Instantiate(destructionVFX);												//show the weapon exploding
-			Destroy(gameObject);														//destroy the weapon instance
+			gameObject.SetActive(false);														//destroy the weapon instance
 		}
 	}
 }

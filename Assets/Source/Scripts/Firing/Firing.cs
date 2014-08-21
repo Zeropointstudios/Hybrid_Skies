@@ -6,8 +6,9 @@ public class Firing : MonoBehaviour {
 	public float period;
 	public float probability;
 	public float angleRandomness, angleOffset;
-	public GameObject projectile;
+	public int projectileID;
 	public bool autoFire = true;
+	public ObjectPool objectPool;
 	public bool randomizeAim;
 	Vector3 projectileRotation;
 
@@ -22,7 +23,6 @@ public class Firing : MonoBehaviour {
 
 	void Start() {
 		StartCoroutine ("UpdateFiring");
-		projectileRotation = projectile.transform.rotation.eulerAngles; //takes prefabs initial rotation values
 	}
 	
 	public virtual void FireProjectile() {
@@ -31,7 +31,7 @@ public class Firing : MonoBehaviour {
 			angleOffset = Random.Range (-angleRandomness, angleRandomness);
 		}
 		projectileRotation.y += angleOffset;
-		Instantiate (projectile, shotSpawn.position, Quaternion.Euler(projectileRotation));
+		objectPool.Activate(projectileID, shotSpawn.position, Quaternion.Euler(projectileRotation));
 		projectileRotation.y -= angleOffset;
 	}
 }
