@@ -81,9 +81,4 @@ public class PlayerController : MonoBehaviour
 	{
 		ClickHandler.Tapped -= FireSecondary;
 	}
-
-
-
 }
-
-

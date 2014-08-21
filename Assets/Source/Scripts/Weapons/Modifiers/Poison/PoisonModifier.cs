@@ -19,6 +19,6 @@ public class PoisonModifier : ElementalModifier {
 
 	}
 	public override void OnProjectileDestroy(Projectile projectile) {
-
+		//Instanciate VFX
 	}
 }
