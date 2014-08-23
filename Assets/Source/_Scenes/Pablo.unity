@@ -253,11 +253,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9808401c68af274a8edfbed3d1b53c7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9808401c68af274a8edfbed3d1b53c7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9808401c68af274a8edfbed3d1b53c7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -682,9 +682,8 @@ GameObject:
   - 54: {fileID: 1003429946}
   - 64: {fileID: 1003429945}
   - 114: {fileID: 1003429950}
-  - 114: {fileID: 1003429951}
-  - 114: {fileID: 1003429952}
   - 114: {fileID: 1003429953}
+  - 114: {fileID: 1003429951}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -756,7 +755,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: d9808401c68af274a8edfbed3d1b53c7, type: 3}
   m_PrefabInternal: {fileID: 232879947}
   m_GameObject: {fileID: 1003429944}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .75, y: .75, z: .75}
   m_Children:
@@ -774,7 +773,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  boundary: {fileID: 0}
   shipMovementBoundaryX1: -7
   shipMovementBoundaryX2: 7
   shipMovementBoundaryY1: -3
@@ -785,37 +783,27 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1003429944}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c031263385d514a30850b26363e4f982, type: 3}
+  m_Script: {fileID: 11500000, guid: fa3cd3a3534e8424a80fa40442ea7f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 183979753}
-  SecondaryLaserProjectile: {fileID: 100002, guid: 0920aa9e50d39437788d8066954e8de4,
-    type: 2}
---- !u!114 &1003429952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1003429944}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029df47f19d224b348b3ea3b553444ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rebound: {fileID: 0}
-  demo: {fileID: 100002, guid: 181a52b06c0994c98bf30a4de1192505, type: 2}
-  poison: {fileID: 100002, guid: 0920aa9e50d39437788d8066954e8de4, type: 2}
-  flower: {fileID: 100002, guid: 32d8a04808b03434286f53019f85edd8, type: 2}
-  currentWeapon: {fileID: 1909414486}
+  period: 0
+  probability: 0
+  angleRandomness: 0
+  angleOffset: 0
+  projectileID: 1
+  autoFire: 0
+  objectPool: {fileID: 1308397990}
+  randomizeAim: 0
 --- !u!114 &1003429953
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1003429944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e3c11c1a3bce44ae915bb6fda918603, type: 3}
   m_Name: 
@@ -929,7 +917,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledGameObjects:
   - {fileID: 100002, guid: c4385bc32d25d43f38eeee1ba4e1084c, type: 2}
-  numberOfProjectilesToCreate: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  - {fileID: 100000, guid: 2f1141c0ee35244a6b7405212a13801f, type: 2}
+  numberOfProjectilesToCreate: 0a0000000a000000
 --- !u!4 &1308397991
 Transform:
   m_ObjectHideFlags: 0

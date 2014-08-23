@@ -4,14 +4,15 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {	
 	public float speed;
-	public GameBoundary boundary;
 	public int shipMovementBoundaryX1, shipMovementBoundaryX2, shipMovementBoundaryY1, shipMovementBoundaryY2;
 	public static float cameraDistance;
-	public ModifierCombo modifierCombo;
+	ModifierCombo modifierCombo;
+
+	//Getters
+	public ModifierCombo returnModCombo(){return modifierCombo;}
 
 	void Start() {
 		cameraDistance = Camera.main.transform.position.y; //distance from camera to plane
-		boundary = GameObject.Find("Boundary").GetComponent<GameBoundary>();
 	}
 
 	void Update () {
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
 			Mathf.Clamp(transform.position.z, shipMovementBoundaryY1, shipMovementBoundaryY2)
 		);
 	}
+
+
 
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Enemy") {
@@ -58,8 +61,6 @@ public class PlayerController : MonoBehaviour
 				case ModifierType.Mitosis : modifierCombo.behavioralModifier = new MitosisModifier(); break;
 			}
 		}
-//		Firing secondaryWeapon = GetComponent<SecondaryLaser>();
-//		secondaryWeapon.SetModifierCombo(modifierCombo); 
 	}
 	
 	// <--- This gets called by your script that does the nemey
@@ -67,18 +68,5 @@ public class PlayerController : MonoBehaviour
 //		SetSecondaryWeaponModifier(enemy.GetComponent<HitPoints>.secondaryWeaponModifier);
 //	}
 
-	void FireSecondary() {
-		
-	}
 
-
-	void OnEnable()
-	{
-		ClickHandler.Tapped += FireSecondary;
-	}
-	
-	void OnDisable()
-	{
-		ClickHandler.Tapped -= FireSecondary;
-	}
 }

@@ -2,7 +2,11 @@
 using System.Collections;
 
 public class PoisonModifier : ElementalModifier {
-	
+
+	void Awake(){
+		setName ("Poison");
+	}
+
 	public GameObject poisonCounter;
 	GameObject poisonCounterInstance;
 
@@ -15,10 +19,4 @@ public class PoisonModifier : ElementalModifier {
 		}
 	}
 
-	public override void OnProjectileInit(Projectile projectile) {
-
-	}
-	public override void OnProjectileDestroy(Projectile projectile) {
-		//Instanciate VFX
-	}
 }

@@ -10,7 +10,7 @@ public class Firing : MonoBehaviour {
 	public bool autoFire = true;
 	public ObjectPool objectPool;
 	public bool randomizeAim;
-	Vector3 projectileRotation;
+	protected Vector3 projectileRotation;
 
 		// This is a coroutine that gets kicked off...
 	IEnumerator UpdateFiring() {
@@ -22,7 +22,9 @@ public class Firing : MonoBehaviour {
 	}
 
 	void Start() {
-		StartCoroutine ("UpdateFiring");
+		projectileRotation.y += transform.rotation.y;
+		if (autoFire)
+			StartCoroutine ("UpdateFiring");
 	}
 	
 	public virtual void FireProjectile() {

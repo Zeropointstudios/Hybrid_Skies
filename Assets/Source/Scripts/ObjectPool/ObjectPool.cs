@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class ObjectPool : MonoBehaviour {
 	
-	public GameObject[] pooledGameObjects;
+	public GameObject[] pooledGameObjects; //note: these objects must be set to inactive in inspector or elsewhere in order for this to function properly
 	public int[] numberOfProjectilesToCreate;
 	public List<GameObject>[] pool;
 	
@@ -12,22 +12,17 @@ public class ObjectPool : MonoBehaviour {
 	void Awake () {
 		InstantiateObjects();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-	
+
 	private void InstantiateObjects() {
 		GameObject temp;
 		pool = new List<GameObject>[pooledGameObjects.Length];
-		
-		for (int count = 0; count < pooledGameObjects.Length; count++) {
-			pool[count] = new List<GameObject>();
+
+		for (int count = 0; count < pooledGameObjects.Length; count++) {			//however many gameobjects are getting pooled, make a list for each one
+			pool[count] = new List<GameObject>();									
 			
-			for (int j = 0; j < numberOfProjectilesToCreate.Length; j++){
-				temp = (GameObject)Instantiate(pooledGameObjects[count]);
-				temp.transform.parent = this.transform; //keeps hierarchy clean by putting pooled objs under component transform
+			for (int num = 0; num < numberOfProjectilesToCreate[count]; num++){ 	//for however many objects of each type
+				temp = (GameObject)Instantiate(pooledGameObjects[count]);			//
+				temp.transform.parent = this.transform; 							//keeps hierarchy clean by putting pooled objs under component transform
 				pool[count].Add(temp);
 			}
 		}
@@ -36,7 +31,6 @@ public class ObjectPool : MonoBehaviour {
 	public GameObject Activate(int id, Vector3 position, Quaternion rotation) {
 		for (int count = 0; count < pool[id].Count; count++) {
 			if(!pool[id][count].activeSelf){
-				print ("this if is true");
 				pool[id][count].SetActive(true);
 				pool[id][count].transform.position = position;
 				pool[id][count].transform.rotation = rotation;
