@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExplosionModifier : ElementalModifier {
+public class ExplosionModifier : MonoBehaviour {
 
 	public Collider splashCollider;
 

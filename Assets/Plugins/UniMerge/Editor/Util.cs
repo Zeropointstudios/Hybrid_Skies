@@ -222,9 +222,9 @@ namespace UniMerge {
 							yield return mine.quaternionValue.Equals(theirs.quaternionValue);
 							yield break;
 #elif !(UNITY_3_0 || UNITY_3_0_0 || UNITY_3_1 || UNITY_3_2 || UNITY_3_3 || UNITY_3_4 || UNITY_3_5)
-						case (SerializedPropertyType)16:
-							yield return mine.quaternionValue.Equals(theirs.quaternionValue);
-							yield break;
+//						case (SerializedPropertyType)16:
+//							yield return mine.quaternionValue.Equals(theirs.quaternionValue);
+//							yield break;
 #endif
 							default:
 							Debug.LogWarning("Unknown SeralizedPropertyType encountered: " + mine.propertyType);
@@ -331,9 +331,9 @@ namespace UniMerge {
 					to.quaternionValue = from.quaternionValue;
 					break;
 #elif !(UNITY_3_0 || UNITY_3_0_0 || UNITY_3_1 || UNITY_3_2 || UNITY_3_3 || UNITY_3_4 || UNITY_3_5)
-				case (SerializedPropertyType)16:			
-					to.quaternionValue = from.quaternionValue;
-					break;
+//				case (SerializedPropertyType)16:			
+//					to.quaternionValue = from.quaternionValue;
+//					break;
 #endif
 				default:
 					Debug.LogWarning("Unknown SeralizedPropertyType encountered: " + to.propertyType);

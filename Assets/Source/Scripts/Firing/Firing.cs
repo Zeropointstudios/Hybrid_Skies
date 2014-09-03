@@ -25,6 +25,7 @@ public class Firing : MonoBehaviour {
 		projectileRotation.y += transform.rotation.y;
 		if (autoFire)
 			StartCoroutine ("UpdateFiring");
+
 	}
 	
 	public virtual void FireProjectile() {

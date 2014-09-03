@@ -9,11 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 135: {fileID: 13500002}
-  - 114: {fileID: 11400004}
   - 54: {fileID: 5400000}
   - 23: {fileID: 2300000}
   - 33: {fileID: 3300000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Rebounder
   m_TagString: Projectile
@@ -32,6 +32,7 @@ Transform:
   m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!23 &2300000
 Renderer:
   m_ObjectHideFlags: 1
@@ -50,9 +51,8 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -91,7 +91,7 @@ MonoBehaviour:
   pathTime: .300000012
 --- !u!114 &11400004
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}

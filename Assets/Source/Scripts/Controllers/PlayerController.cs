@@ -7,12 +7,23 @@ public class PlayerController : MonoBehaviour
 	public int shipMovementBoundaryX1, shipMovementBoundaryX2, shipMovementBoundaryY1, shipMovementBoundaryY2;
 	public static float cameraDistance;
 	ModifierCombo modifierCombo;
+	ModifierDisplay modifierDisplay;
 
 	//Getters
 	public ModifierCombo returnModCombo(){return modifierCombo;}
 
-	void Start() {
+	void Awake() {
 		cameraDistance = Camera.main.transform.position.y; //distance from camera to plane
+		modifierCombo = new ModifierCombo ();
+		modifierDisplay = GetComponent<ModifierDisplay> ();
+	}
+
+	void OnEnable() {
+		Targeter.AbsorbModEvent += SetSecondaryWeaponModifier; //
+	}
+	
+	void OnDisable() {
+		Targeter.AbsorbModEvent -= SetSecondaryWeaponModifier;
 	}
 
 	void Update () {
@@ -43,30 +54,24 @@ public class PlayerController : MonoBehaviour
 		if ( modifierType == ModifierType.None)
 			return;
 
-		// We use string 
-		modifierCombo = new ModifierCombo(modifierCombo); // copies the existing modifierCombo... new projectiles will use this, but old projectiles will use the old copy that they still have.  Getting the max bang for our buck out of reference counting :)
-
 		if ( modifierType < ModifierType.NUM_ELEMENTAL_MODIFIERS ) { // ElementalModifier
 			// update the elemental modifier
 			switch(modifierType) {
-				case ModifierType.Poison : modifierCombo.elementalModifier = new PoisonModifier(); break;
+				case ModifierType.Poison : modifierCombo.setElemental("PoisonModifier"); modifierDisplay.setEMod("Poison"); break;
 //				case ModifierType.EMP : modifierCombo.elementalModifier = new PoisonModifier(); break;
-				case ModifierType.Explosion : modifierCombo.elementalModifier = new ExplosionModifier(); break;
+				case ModifierType.Explosion : modifierCombo.setElemental("ExplosionModifier"); modifierDisplay.setEMod("Explosion"); break;
 				}
 			}
 		else { // BehavioralModifier
 			// update the behavioral modifier
 			switch(modifierType) {
 //				case ModifierType.HeatSeeking : modifierCombo.behavioralModifier = new HeatSeekingModifier(); break;
-				case ModifierType.Mitosis : modifierCombo.behavioralModifier = new MitosisModifier(); break;
+				case ModifierType.Mitosis : modifierCombo.setBehavioral("MitosisModifier"); modifierDisplay.setBMod("Mitosis"); break;
 			}
 		}
 	}
 	
-	// <--- This gets called by your script that does the nemey
-//	public void OnEnemyPowerSteal(GameObject enemy) {
-//		SetSecondaryWeaponModifier(enemy.GetComponent<HitPoints>.secondaryWeaponModifier);
-//	}
+
 
 
 }

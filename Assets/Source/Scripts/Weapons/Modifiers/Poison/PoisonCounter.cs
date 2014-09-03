@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PoisonCounter : MonoBehaviour {
 
-	public GameObject poisonGraphic;
 	public int damage;
 	public float rate;
 	public float life;
@@ -23,6 +22,6 @@ public class PoisonCounter : MonoBehaviour {
 	IEnumerator DestroyCounter()
 	{
 		yield return new WaitForSeconds(life);
-		Destroy (gameObject);
+		gameObject.SetActive (false);
 	}
 }

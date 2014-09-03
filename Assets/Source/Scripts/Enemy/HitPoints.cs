@@ -15,4 +15,6 @@ public class HitPoints : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+
+	public ModifierType returnModifierType() {return modifierType;} 
 }

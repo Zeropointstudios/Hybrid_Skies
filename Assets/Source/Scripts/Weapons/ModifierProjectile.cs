@@ -9,19 +9,21 @@ public class ModifierProjectile : Weapon {
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
+	//when projectile is activated from object pool, it does the following
 	void OnEnable() {
 		combo = player.GetComponent<PlayerController>().returnModCombo ();
-		if (combo.elementalModifier != null) 
-			gameObject.AddComponent (combo.elementalModifier.returnName());
-		if (combo.behavioralModifier != null) 
-			gameObject.AddComponent(combo.behavioralModifier.returnName());
+		if (combo.returnElemental() != "") 
+			gameObject.AddComponent (combo.returnElemental());
+		if (combo.returnBehavioral() != "") 
+			gameObject.AddComponent(combo.returnBehavioral());
 	}
 
+	//when projectile is disabled or hits an enemy
 	void OnDisable() {
-		if (combo.elementalModifier != null) 
-			Destroy (combo.elementalModifier);
-		if (combo.behavioralModifier != null) 
-			Destroy(combo.behavioralModifier);
+		if (combo.returnElemental() != "") 
+			Destroy(GetComponent(combo.returnElemental()));
+		if (combo.returnBehavioral() != "") 
+			Destroy(GetComponent(combo.returnBehavioral()));
 	}
 }
 

@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Targeter : MonoBehaviour {
 
-	// This script must be attached to all Absorbable ships
+	// This script must be attached to all Absorbable enemy ships
 	public GameObject targetingGraphic; // Holds the prefab to be used.
 	GameObject currentTargetInstance;
 	bool isTargeted = false;
+
+	public delegate void AbsorbModDelegate(ModifierType mod);
+	public static event AbsorbModDelegate AbsorbModEvent;
 	
 	void OnMouseEnter()
 	{
@@ -16,7 +20,7 @@ public class Targeter : MonoBehaviour {
 				0.0f, 
 				(Camera.main.transform.position.y / 2), 
 				0.0f) 
-			+ transform.position; 
+				+ transform.position; 
 		currentTargetInstance = (GameObject)Instantiate (targetingGraphic, targetSpawn, Quaternion.identity);
 		currentTargetInstance.transform.parent = transform;
 		isTargeted = true;
@@ -24,10 +28,12 @@ public class Targeter : MonoBehaviour {
 
 	void AbsorbTarget()
 	{
-		if (isTargeted) // If enemy ship is absorbed, destroy it.
+		if (isTargeted) // If target is hovering above object
 		{
 			// Absorb this ship's powers.
-			Destroy(gameObject);
+			ModifierType modifierInEnemy = gameObject.GetComponent<HitPoints>().returnModifierType(); //accesses the enemies mod type
+			AbsorbModEvent(modifierInEnemy); //triggers an event that sends out the modifier data
+			Destroy(gameObject); //kills enemy which should actually deactivate it TODO
 		}
 	}
 
@@ -35,6 +41,7 @@ public class Targeter : MonoBehaviour {
 	{
 		Destroy (currentTargetInstance);
 		isTargeted = false;
+		print ("exit");
 	}
 
 	void OnEnable()
@@ -45,7 +52,6 @@ public class Targeter : MonoBehaviour {
 	void OnDisable()
 	{
 		ClickHandler.ReleaseHold -= AbsorbTarget;
-		
 	}
 
 }

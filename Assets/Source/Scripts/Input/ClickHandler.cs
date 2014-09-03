@@ -41,6 +41,7 @@ public class ClickHandler : MonoBehaviour {
 			if ( ReleaseHold != null )
 			{
 				ReleaseHold();
+				print("release hold");
 			}
 		}
 		holdCounter = false;
