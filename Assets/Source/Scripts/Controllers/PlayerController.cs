@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 	ModifierCombo modifierCombo;
 	ModifierDisplay modifierDisplay;
 
+
 	//Getters
 	public ModifierCombo returnModCombo(){return modifierCombo;}
 
@@ -41,9 +42,7 @@ public class PlayerController : MonoBehaviour
 			Mathf.Clamp(transform.position.z, shipMovementBoundaryY1, shipMovementBoundaryY2)
 		);
 	}
-
-
-
+	
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Enemy") {
 			Destroy (gameObject);
@@ -69,6 +68,8 @@ public class PlayerController : MonoBehaviour
 				case ModifierType.Mitosis : modifierCombo.setBehavioral("MitosisModifier"); modifierDisplay.setBMod("Mitosis"); break;
 			}
 		}
+
+		GetComponent<SecondaryFiring> ().setEnergyCost (modifierCombo);
 	}
 	
 

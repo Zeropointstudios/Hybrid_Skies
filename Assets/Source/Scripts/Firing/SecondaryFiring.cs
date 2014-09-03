@@ -1,26 +1,48 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SecondaryFiring : Firing {
 
-	public int energy;
+	public Text energyDisplay;
+	public int energy = 100; 
+	public int baseEnergyCost, modEnergyCost;
+	int currentEnergyCost;
 
 	void Awake() {
 		autoFire = false;
+		currentEnergyCost = baseEnergyCost;
 	}
 
-	void OnEnable()
-	{
+	public void setEnergyCost(ModifierCombo combo) {								//determines cost of firing secondary weapon
+		int totalCost = 0;
+		if (combo.returnBehavioral() != ""){totalCost+=modEnergyCost;}
+		if (combo.returnElemental() != ""){totalCost+=modEnergyCost;}
+		totalCost += baseEnergyCost;
+		currentEnergyCost = totalCost;
+	}
+
+	bool subtractEnergy() {
+		if ((energy - currentEnergyCost) >= 0) {										//checks to see if there is enough energy to fire
+			energy -= currentEnergyCost;
+			energyDisplay.text = energy.ToString();
+			return true;
+		}
+
+		else {return false;}
+	}
+
+	void OnEnable() {
 		ClickHandler.Tapped += FireProjectile;
 	}
 	
-	void OnDisable()
-	{
+	void OnDisable() {
 		ClickHandler.Tapped -= FireProjectile;
 	}
 
 	public override void FireProjectile() {
-		if (energy > 0) {
+		if (subtractEnergy()) {
+
 			float hypotenuse, opposite, shotAngle; 
 			Vector3 oppositePoint = new Vector3(shotSpawn.transform.position.x, 0, ClickHandler.PositionOfLastTap.z); //used to calculate opposite
 			hypotenuse = Vector3.Distance(ClickHandler.PositionOfLastTap, shotSpawn.transform.position);

@@ -5,12 +5,15 @@ public class Firing : MonoBehaviour {
 	public Transform shotSpawn;
 	public float period;
 	public float probability;
-	public float angleRandomness, angleOffset;
+	public float angleRandomness;
+	float angleOffset;
 	public int projectileID;
 	public bool autoFire = true;
 	public ObjectPool objectPool;
 	public bool randomizeAim;
 	protected Vector3 projectileRotation;
+	public enum Direction {Up, Down};
+	public Direction direction;
 
 		// This is a coroutine that gets kicked off...
 	IEnumerator UpdateFiring() {
@@ -22,7 +25,8 @@ public class Firing : MonoBehaviour {
 	}
 
 	void Start() {
-		projectileRotation.y += transform.rotation.y;
+		if (direction == Direction.Down)
+			projectileRotation.y += 180;
 		if (autoFire)
 			StartCoroutine ("UpdateFiring");
 
@@ -34,7 +38,8 @@ public class Firing : MonoBehaviour {
 			angleOffset = Random.Range (-angleRandomness, angleRandomness);
 		}
 		projectileRotation.y += angleOffset;
-		objectPool.Activate(projectileID, shotSpawn.position, Quaternion.Euler(projectileRotation));
+		print (projectileRotation.y);
+		objectPool.Activate(projectileID, shotSpawn.position, Quaternion.Euler(projectileRotation/2));
 		projectileRotation.y -= angleOffset;
 	}
 }

@@ -41,7 +41,6 @@ public class Targeter : MonoBehaviour {
 	{
 		Destroy (currentTargetInstance);
 		isTargeted = false;
-		print ("exit");
 	}
 
 	void OnEnable()
