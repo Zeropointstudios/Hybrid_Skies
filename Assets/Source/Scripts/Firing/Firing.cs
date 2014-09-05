@@ -38,7 +38,6 @@ public class Firing : MonoBehaviour {
 			angleOffset = Random.Range (-angleRandomness, angleRandomness);
 		}
 		projectileRotation.y += angleOffset;
-		print (projectileRotation.y);
 		objectPool.Activate(projectileID, shotSpawn.position, Quaternion.Euler(projectileRotation/2));
 		projectileRotation.y -= angleOffset;
 	}

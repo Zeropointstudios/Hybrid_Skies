@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db6cad1182d5243169f3b10a3871fe91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownSpeed: 1
+  cooldownSpeed: .100000001
   cooldownDisplay: {fileID: 332222898}
   absorbField: {fileID: 100002, guid: 526afa5c2219e42d0a7d8243268f599c, type: 2}
   timeMultiplier: .200000003
@@ -1015,12 +1015,13 @@ GameObject:
   - 33: {fileID: 1003429948}
   - 23: {fileID: 1003429947}
   - 54: {fileID: 1003429946}
-  - 64: {fileID: 1003429945}
   - 114: {fileID: 1003429950}
   - 114: {fileID: 1003429953}
   - 114: {fileID: 1003429951}
   - 114: {fileID: 1003429952}
   - 114: {fileID: 1003429954}
+  - 114: {fileID: 1003429955}
+  - 65: {fileID: 1003429945}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1028,19 +1029,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1003429945
-MeshCollider:
+--- !u!65 &1003429945
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1003429944}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300002, guid: 5282f20eba4d44213820e21af8481932, type: 3}
+  m_Size: {x: 1.34000003, y: .300000012, z: 2.1500001}
+  m_Center: {x: -1.1920929e-07, y: -.0410614163, z: -.572620511}
 --- !u!54 &1003429946
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1185,6 +1185,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 30
   modifierType: 6
+--- !u!114 &1003429955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1003429944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35884ab9d53a4b558bddb0463b82281, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1044157696
 GameObject:
   m_ObjectHideFlags: 0

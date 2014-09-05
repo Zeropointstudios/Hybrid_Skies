@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class InputManager : MonoBehaviour {
+	
 
 	// Events
 	public delegate void HoldingDownDelegate();
@@ -15,6 +16,7 @@ public class InputManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+#if UNITY_EDITOR
 		if (Input.GetMouseButtonDown(0) && OnHoldingDown != null) //event called on right-click down
 		{
 			OnHoldingDown();
@@ -24,5 +26,19 @@ public class InputManager : MonoBehaviour {
 		{
 			OnRelease();
 		}
+
+#elif UNITY_IPHONE
+
+		if (Input.GetTouch(1).phase == TouchPhase.Began && OnHoldingDown != null) //event called on second touch down
+		{
+			OnHoldingDown();
+		}
+		
+		if (Input.GetTouch(1).phase == TouchPhase.Ended && OnRelease != null) //event called on second touch down
+		{
+			OnRelease();
+		}
+#endif
+
 	}
 }
