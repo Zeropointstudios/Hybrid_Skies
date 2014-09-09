@@ -19,6 +19,21 @@ public class ClickHandler : MonoBehaviour {
 	float timeOfClick;
 	float holdTime;
 
+	void OnEnable()
+	{
+		InputManager.OnHoldingDown += EnableCounter;
+		InputManager.OnRelease += DisableCounter;
+	}
+	
+	void OnDisable()
+	{
+		InputManager.OnHoldingDown -= EnableCounter;
+		InputManager.OnRelease -= DisableCounter;
+	}
+
+
+#if UNITY_EDITOR
+
 	public void EnableCounter()
 	{
 		PositionOfLastTap = Camera.main.ScreenToWorldPoint(
@@ -45,19 +60,7 @@ public class ClickHandler : MonoBehaviour {
 		}
 		holdCounter = false;
 	}
-
-	void OnEnable()
-	{
-		InputManager.OnHoldingDown += EnableCounter;
-		InputManager.OnRelease += DisableCounter;
-	}
 	
-	void OnDisable()
-	{
-		InputManager.OnHoldingDown -= EnableCounter;
-		InputManager.OnRelease -= DisableCounter;
-	}
-
 	void Update()
 	{
 		if (holdCounter)
@@ -73,4 +76,56 @@ public class ClickHandler : MonoBehaviour {
 			}
 		}
 	}
+	
+#elif UNITY_IPHONE
+
+	public void EnableCounter()
+	{
+		PositionOfLastTap = Camera.main.ScreenToWorldPoint(
+			new Vector3(Input.touches[1].position.x, Input.touches[1].position.y, PlayerController.cameraDistance));
+		timeOfClick = Time.time;
+		holdCounter = true;
+	}
+	
+	public void DisableCounter()
+	{
+		if (holdTime <= timeRequiredToTriggerHold)
+		{
+			if ( Tapped != null )
+			{
+				Tapped();
+			}
+		}
+		else
+		{
+			if ( ReleaseHold != null )
+			{
+				ReleaseHold();
+			}
+		}
+		holdCounter = false;
+	}
+
+
+
+	void Update()
+	{
+
+		if (holdCounter)
+		{
+			holdTime = Time.time - timeOfClick;
+			if (holdTime > timeRequiredToTriggerHold)
+			{
+				holdCounter = false;
+				if ( HeldDown != null ) 
+				{
+					HeldDown();
+				}
+			}
+		}
+	}
+
+
+#endif
+
 }
