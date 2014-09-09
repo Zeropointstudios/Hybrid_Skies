@@ -1,3 +1,5 @@
+# Copyright Aaron Smith 2014
+
 import re
 import sys
 
@@ -23,8 +25,8 @@ def main(argv):
 		keys = [key for key in entities]
 		keys.sort()
 		for key in keys:
-			print (key)
-			print (entities[key], end="");
+			print key
+			print entities[key],
 
 if __name__ == "__main__":
     main(sys.argv)
