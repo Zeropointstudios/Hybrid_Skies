@@ -82,7 +82,7 @@ public class ClickHandler : MonoBehaviour {
 	public void EnableCounter()
 	{
 		PositionOfLastTap = Camera.main.ScreenToWorldPoint(
-			new Vector3(Input.touches[1].position.x, Input.touches[1].position.y, PlayerController.cameraDistance));
+			new Vector3(Input.GetTouch(1).position.x, Input.GetTouch(1).position.y, PlayerController.cameraDistance));
 		timeOfClick = Time.time;
 		holdCounter = true;
 	}

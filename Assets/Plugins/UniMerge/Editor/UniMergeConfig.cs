@@ -10,7 +10,7 @@
 // warranty and the author bears no responsibility for damages or losses caused by the software.  
 // This Agreement becomes effective from the day you have installed, copied, accessed, downloaded and/or otherwise used
 // the software.
-
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -112,3 +112,5 @@ public class UniMergeConfig : EditorWindow {
 		EditorGUILayout.EndScrollView();
 	}
 }
+
+#endif

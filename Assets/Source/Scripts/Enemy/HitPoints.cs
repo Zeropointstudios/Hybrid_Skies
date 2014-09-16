@@ -3,6 +3,8 @@ using System.Collections;
 
 public class HitPoints : MonoBehaviour {
 
+	//TODO make enemies have a pool also
+
 	public int hitPoints;
 	public ModifierType modifierType = ModifierType.None;
 
