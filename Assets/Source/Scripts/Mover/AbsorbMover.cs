@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class AbsorbMover : Mover {
+public class AbsorbMover : MonoBehaviour {
 
 	void Update()
 	

@@ -5,8 +5,18 @@ public class HitPoints : MonoBehaviour {
 
 	//TODO make enemies have a pool also
 	public GameObject deathVFX;
+	ObjectPool squibPool;
+	public int squibID;
 	public int hitPoints;
 	public ModifierType modifierType = ModifierType.None;
+
+	public ObjectPool returnSquibPool(){return squibPool;}
+	public int returnSquibID(){return squibID;}
+	public ModifierType returnModifierType() {return modifierType;} 
+
+	void Awake() {
+		squibPool = GameObject.Find ("SquibPool").GetComponent<ObjectPool>();
+	}
 
 	public void doDamage(int damage)
 	{
@@ -24,5 +34,4 @@ public class HitPoints : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 
-	public ModifierType returnModifierType() {return modifierType;} 
 }

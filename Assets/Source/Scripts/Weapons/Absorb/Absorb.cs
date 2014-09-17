@@ -7,8 +7,7 @@ public class Absorb : MonoBehaviour {
 	public static int cooldownCounter = 100;
 	public float cooldownSpeed;
 	public Text cooldownDisplay;
-	GameObject absorbFieldClone;
-	public GameObject absorbField;
+	public GameObject absorbField, absorbFieldTarget;
 	public float timeMultiplier;
 	bool wasAbsorbEnabled = false;
 
@@ -22,7 +21,9 @@ public class Absorb : MonoBehaviour {
 			Time.timeScale = timeMultiplier; //slows down time when event HeldDown is called
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition); 
 			Vector3 point = ray.origin + (ray.direction * PlayerController.cameraDistance); //creates position from which absorb field spawns
-			absorbFieldClone = (GameObject)Instantiate (absorbField, point, Quaternion.identity);
+			absorbField.transform.position = point;
+			absorbField.BroadcastMessage("Toggle");
+			absorbFieldTarget.BroadcastMessage("Toggle");
 			wasAbsorbEnabled = true;
 		}
 	}
@@ -34,7 +35,9 @@ public class Absorb : MonoBehaviour {
 			Time.timeScale = timeMultiplier; //slows down time when event HeldDown is called
 			Vector3 point = Camera.main.ScreenToWorldPoint (
 				new Vector3(Input.GetTouch(1).position.x, Input.GetTouch(1).position.y + 125.0f, PlayerController.cameraDistance / 2));
-			absorbFieldClone = (GameObject)Instantiate (absorbField, point, Quaternion.identity);
+			absorbField.transform.position = point;
+			absorbField.BroadcastMessage("Toggle");
+			absorbFieldTarget.BroadcastMessage("Toggle");
 			wasAbsorbEnabled = true;
 		}
 	}
@@ -45,7 +48,8 @@ public class Absorb : MonoBehaviour {
 	{
 		if (wasAbsorbEnabled) {
 			Time.timeScale = 1.0f; //resumes normal time when event OnRelease is caleld
-			Destroy (absorbFieldClone);
+			absorbField.BroadcastMessage("Toggle");
+			absorbFieldTarget.BroadcastMessage("Toggle");
 			resetCooldown();
 			wasAbsorbEnabled = false;
 		}
