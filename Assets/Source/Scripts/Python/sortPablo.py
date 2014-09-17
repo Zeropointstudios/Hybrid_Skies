@@ -7,7 +7,7 @@ if sys.platform == 'darwin':                                                  # 
 	UNITY_SCENES_DIR = UNITY_PROJECT_DIR + '/Assets/Source/_Scenes';       
 	UNITY_PYTHON_DIR = UNITY_PROJECT_DIR + '/Assets/Source/Scripts/Python'
 else:                                                                         # For the Windows verions...
-	UNITY_PROJECT_DIR = 'C:\dev\AncientAliens'                                #   EDIT the root of your AncientAliens project.
+	UNITY_PROJECT_DIR = 'C:\Project\Hybrid_Skies'                                #   EDIT the root of your AncientAliens project.
 	UNITY_SCENES_DIR = UNITY_PROJECT_DIR + '\Assets\Source\_Scenes';
 	UNITY_PYTHON_DIR = UNITY_PROJECT_DIR + '\Assets\Source\Scripts\Python'
 UNITY_FILE = 'Pablo.unity'	
