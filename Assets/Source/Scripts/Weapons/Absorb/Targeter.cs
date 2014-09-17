@@ -77,7 +77,7 @@ public class Targeter : MonoBehaviour {
 			// Absorb this ship's powers.
 			ModifierType modifierInEnemy = gameObject.GetComponent<HitPoints>().returnModifierType(); //accesses the enemies mod type
 			AbsorbModEvent(modifierInEnemy); //triggers an event that sends out the modifier data
-			gameObject.SetActive(false); //kills enemy which should actually deactivate it TODO
+			gameObject.GetComponent<HitPoints>().Kill(); //kills enemy which should actually deactivate it TODO
 		}
 	}
 	

@@ -5,12 +5,8 @@ public class PFX_Playall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		PlayAll ();
+		StartCoroutine ("Disappear");
 	}
 
 	public void PlayAll() {
@@ -25,5 +21,11 @@ public class PFX_Playall : MonoBehaviour {
 		{
 			child.particleSystem.Stop ();
 		}
+	}
+
+	IEnumerator Disappear()
+	{
+		yield return new WaitForSeconds (3);
+			Destroy (gameObject);
 	}
 }

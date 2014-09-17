@@ -4,7 +4,7 @@ using System.Collections;
 public class HitPoints : MonoBehaviour {
 
 	//TODO make enemies have a pool also
-
+	public GameObject deathVFX;
 	public int hitPoints;
 	public ModifierType modifierType = ModifierType.None;
 
@@ -14,8 +14,14 @@ public class HitPoints : MonoBehaviour {
 
 		if (hitPoints < 1)
 		{
-			gameObject.SetActive(false);
+			Kill ();
 		}
+	}
+
+	public void Kill()
+	{
+		Instantiate(deathVFX, transform.position, Quaternion.identity);
+		gameObject.SetActive(false);
 	}
 
 	public ModifierType returnModifierType() {return modifierType;} 

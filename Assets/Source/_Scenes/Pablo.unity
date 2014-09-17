@@ -1066,7 +1066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldownSpeed: .100000001
   cooldownDisplay: {fileID: 332222898}
-  absorbField: {fileID: 100002, guid: 526afa5c2219e42d0a7d8243268f599c, type: 2}
+  absorbField: {fileID: 100016, guid: da1b8e122c3e547d19fe937902c932b4, type: 2}
   timeMultiplier: .200000003
 --- !u!114 &962992208
 MonoBehaviour:
@@ -1282,6 +1282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da710ce0c465546fb93ad1eaf268362c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathVFX: {fileID: 0}
   hitPoints: 30
   modifierType: 6
 --- !u!114 &1003429955
@@ -1457,6 +1458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da710ce0c465546fb93ad1eaf268362c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   hitPoints: 30
   modifierType: 0
 --- !u!114 &1083000912
@@ -1875,6 +1877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da710ce0c465546fb93ad1eaf268362c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   hitPoints: 30
   modifierType: 0
 --- !u!114 &1498870920
