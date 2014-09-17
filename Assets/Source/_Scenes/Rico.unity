@@ -10224,7 +10224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5121bf15786467c82d8ddcee8a6955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shot: {fileID: 100002, guid: 0764fb8e2222a4a9fab4e3b237cc9adb, type: 2}
+  shot: {fileID: 100000, guid: c4385bc32d25d43f38eeee1ba4e1084c, type: 2}
   shotSpawn: {fileID: 183979753}
   fireRate: .200000003
 --- !u!114 &1003429953
