@@ -10,13 +10,14 @@
 // warranty and the author bears no responsibility for damages or losses caused by the software.  
 // This Agreement becomes effective from the day you have installed, copied, accessed, downloaded and/or otherwise used
 // the software.
-
+#if UNITY_EDITOR
 #define DEV			//Comment this out to not auto-populate scene merge
 
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
 
 public class SceneMerge : EditorWindow {
 	const string messagePath = "Assets/merges.txt";
@@ -606,3 +607,4 @@ public struct SceneData {
 		RenderSettings.skybox = skybox;
 	}
 }
+#endif

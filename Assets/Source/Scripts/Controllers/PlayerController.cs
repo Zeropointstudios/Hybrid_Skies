@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
 	//Getters
 	public ModifierCombo returnModCombo(){return modifierCombo;}
-
+	
 	void Awake() {
 		cameraDistance = Camera.main.transform.position.y; //distance from camera to plane
 		modifierCombo = new ModifierCombo ();

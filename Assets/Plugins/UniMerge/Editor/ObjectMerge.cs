@@ -18,11 +18,13 @@
 //see the tool.  Comment this line out if this behavior somehow interferes with your workflow.
 #define DEV
 
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+
 
 public class ObjectMerge : EditorWindow {
 	public const string mineDemoName = "Mine", theirsDemoName = "Theirs";
@@ -1460,3 +1462,4 @@ public class PropertyHelper {
 		GUILayout.EndVertical();
 	}
 }
+#endif

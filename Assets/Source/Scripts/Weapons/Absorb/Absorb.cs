@@ -12,17 +12,34 @@ public class Absorb : MonoBehaviour {
 	public float timeMultiplier;
 	bool wasAbsorbEnabled = false;
 
+
+
+#if UNITY_EDITOR
 	// Instanciates the absorb prefab at the location of right-click.
 	public void EnableAbsorb() 
 	{
 		if (cooldownCounter == 100) {
 			Time.timeScale = timeMultiplier; //slows down time when event HeldDown is called
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition); 
-			Vector3 point = ray.origin + (ray.direction * PlayerController.cameraDistance / 2); //creates position from which absorb field spawns
+			Vector3 point = ray.origin + (ray.direction * PlayerController.cameraDistance); //creates position from which absorb field spawns
 			absorbFieldClone = (GameObject)Instantiate (absorbField, point, Quaternion.identity);
 			wasAbsorbEnabled = true;
 		}
 	}
+
+#elif UNITY_IPHONE
+	public void EnableAbsorb() 
+	{
+		if (cooldownCounter == 100) {
+			Time.timeScale = timeMultiplier; //slows down time when event HeldDown is called
+			Vector3 point = Camera.main.ScreenToWorldPoint (
+				new Vector3(Input.GetTouch(1).position.x, Input.GetTouch(1).position.y + 125.0f, PlayerController.cameraDistance / 2));
+			absorbFieldClone = (GameObject)Instantiate (absorbField, point, Quaternion.identity);
+			wasAbsorbEnabled = true;
+		}
+	}
+
+#endif
 
 	public void DisableAbsorb()
 	{

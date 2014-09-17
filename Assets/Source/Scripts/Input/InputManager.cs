@@ -17,6 +17,7 @@ public class InputManager : MonoBehaviour {
 	void Update ()
 	{
 #if UNITY_EDITOR
+
 		if (Input.GetMouseButtonDown(0) && OnHoldingDown != null) //event called on right-click down
 		{
 			OnHoldingDown();
@@ -31,12 +32,19 @@ public class InputManager : MonoBehaviour {
 
 		if (Input.GetTouch(1).phase == TouchPhase.Began && OnHoldingDown != null) //event called on second touch down
 		{
-			OnHoldingDown();
+			if (Pauser.isPaused == false)
+			{
+				OnHoldingDown();
+			}
 		}
 		
-		if (Input.GetTouch(1).phase == TouchPhase.Ended && OnRelease != null) //event called on second touch down
+		if (Input.GetTouch(1).phase == TouchPhase.Ended && OnRelease != null
+		    || Input.GetTouch(0).phase == TouchPhase.Ended && OnRelease != null) //event called on second touch down
 		{
-			OnRelease();
+			if (Pauser.isPaused == false)
+			{
+				OnRelease();
+			}
 		}
 #endif
 
