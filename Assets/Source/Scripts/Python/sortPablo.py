@@ -3,7 +3,7 @@ import shutil
 import sys
 
 if sys.platform == 'darwin':                                                  # For the Mac OS version...
-	UNITY_PROJECT_DIR = os.path.join(os.environ['HOME'], 'dev/AncientAliens') #   EDIT the root of your AncientAliens project.
+	UNITY_PROJECT_DIR = os.path.join(os.environ['HOME'], 'Hybrid_Skies') #   EDIT the root of your AncientAliens project.
 	UNITY_SCENES_DIR = UNITY_PROJECT_DIR + '/Assets/Source/_Scenes';       
 	UNITY_PYTHON_DIR = UNITY_PROJECT_DIR + '/Assets/Source/Scripts/Python'
 else:                                                                         # For the Windows verions...
