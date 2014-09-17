@@ -14,7 +14,8 @@ public class PoisonModifier : MonoBehaviour {
 	{
 		if (other.tag == "Enemy")
 		{
-			poisonCounterInstance = pool.Activate(2, transform.position, Quaternion.identity);
+			print ("spawned a poison");
+			poisonCounterInstance = pool.Activate(2, transform.position, Quaternion.identity); //where 2 is ID for poison
 			poisonCounterInstance.transform.parent = other.transform;
 		}
 	}

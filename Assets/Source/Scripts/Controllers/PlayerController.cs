@@ -6,13 +6,13 @@ public class PlayerController : MonoBehaviour
 	public float speed;
 	public int shipMovementBoundaryX1, shipMovementBoundaryX2, shipMovementBoundaryY1, shipMovementBoundaryY2;
 	public static float cameraDistance;
+	public static GameObject playerController;
 	ModifierCombo modifierCombo;
 	ModifierDisplay modifierDisplay;
 
 
 	//Getters
 	public ModifierCombo returnModCombo(){return modifierCombo;}
-	
 	void Awake() {
 		cameraDistance = Camera.main.transform.position.y; //distance from camera to plane
 		modifierCombo = new ModifierCombo ();
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 	
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Enemy") {
-			Destroy (gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 
@@ -68,11 +68,6 @@ public class PlayerController : MonoBehaviour
 				case ModifierType.Mitosis : modifierCombo.setBehavioral("MitosisModifier"); modifierDisplay.setBMod("Mitosis"); break;
 			}
 		}
-
 		GetComponent<SecondaryFiring> ().setEnergyCost (modifierCombo);
 	}
-	
-
-
-
 }

@@ -14,7 +14,7 @@ public class HitPoints : MonoBehaviour {
 
 		if (hitPoints < 1)
 		{
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 

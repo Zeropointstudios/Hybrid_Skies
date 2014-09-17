@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Absorb : MonoBehaviour {
 
-	int cooldownCounter = 100;
+	public static int cooldownCounter = 100;
 	public float cooldownSpeed;
 	public Text cooldownDisplay;
 	GameObject absorbFieldClone;
@@ -12,7 +12,7 @@ public class Absorb : MonoBehaviour {
 	public float timeMultiplier;
 	bool wasAbsorbEnabled = false;
 
-
+	public int returnCoolDown(){return cooldownCounter;}
 
 #if UNITY_EDITOR
 	// Instanciates the absorb prefab at the location of right-click.
