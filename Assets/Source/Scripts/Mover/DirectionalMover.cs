@@ -10,6 +10,6 @@ public class DirectionalMover : Mover {
 	}
 
 	public override void Move() {
-		transform.Translate(directionVector * Time.deltaTime);
+		transform.Translate(directionVector * Time.deltaTime * speed);
 	}
 }

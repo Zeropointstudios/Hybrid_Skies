@@ -22,7 +22,7 @@ public class HitPoints : MonoBehaviour {
 	{
 		hitPoints -= damage;
 
-		if (hitPoints < 1)
+		if (hitPoints < 1 && gameObject.activeSelf == true)
 		{
 			Kill ();
 		}

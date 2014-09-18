@@ -8,7 +8,6 @@ public class Targeter : MonoBehaviour {
 	public GameObject targetingGraphic; // Holds the prefab to be used.
 	GameObject currentTargetInstance;
 	bool isTargeted = false;
-	bool isTargeterEnabled = false;
 
 	public delegate void AbsorbModDelegate(ModifierType mod);
 	public static event AbsorbModDelegate AbsorbModEvent;
