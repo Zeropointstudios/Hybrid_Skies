@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   rate: 1
-  life: 10
+  life: 3
   timeTilStart: 1
 --- !u!1001 &100100000
 Prefab:

@@ -20,4 +20,5 @@ public class PFX_Playall : MonoBehaviour {
 			child.particleSystem.Stop ();
 		}
 	}
+
 }
