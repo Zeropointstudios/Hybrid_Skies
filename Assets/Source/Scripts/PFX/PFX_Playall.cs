@@ -5,7 +5,6 @@ public class PFX_Playall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		PlayAll ();
 	}
 
 	public void PlayAll() {
@@ -21,5 +20,5 @@ public class PFX_Playall : MonoBehaviour {
 			child.particleSystem.Stop ();
 		}
 	}
-	
+
 }
