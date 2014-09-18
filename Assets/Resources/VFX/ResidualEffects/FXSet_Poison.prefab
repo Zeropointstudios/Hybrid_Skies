@@ -124,6 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tTarget: {fileID: 0}
+  fOffsetX: 0
+  fOffsetY: 0
+  fOffsetZ: 0
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
