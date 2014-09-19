@@ -5,9 +5,11 @@ public class HitPoints : MonoBehaviour {
 
 	//TODO make enemies have a pool also
 	public GameObject deathVFX;
+	public GameObject shieldVFX;
 	ObjectPool squibPool;
 	public int squibID;
 	public int hitPoints;
+	public int shield;    // damage done = damage - shield
 	public ModifierType modifierType = ModifierType.None;
 
 	public ObjectPool returnSquibPool(){return squibPool;}
@@ -15,12 +17,18 @@ public class HitPoints : MonoBehaviour {
 	public ModifierType returnModifierType() {return modifierType;} 
 
 	void Awake() {
-		squibPool = GameObject.Find ("SquibPool").GetComponent<ObjectPool>();
+		squibPool = GameObject.Find("SquibPool").GetComponent<ObjectPool>();
 	}
 
 	public void doDamage(int damage)
 	{
-		hitPoints -= damage;
+		int effectiveDamage = Mathf.Max(damage - shield, 0);
+
+		if ( shield > .5 * damage && shieldVFX != null) {
+			Instantiate(shieldVFX, transform.position, Quaternion.identity);
+		}
+
+		hitPoints -= effectiveDamage;
 
 		if (hitPoints < 1 && gameObject.activeSelf == true)
 		{
@@ -35,3 +43,4 @@ public class HitPoints : MonoBehaviour {
 	}
 
 }
+ 
