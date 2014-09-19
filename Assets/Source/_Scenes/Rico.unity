@@ -11032,6 +11032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  duration: -1
   pathTime: 40
   lookAheadTime: .949999988
 --- !u!65 &683508165
@@ -11060,8 +11061,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
+  shieldVFX: {fileID: 0}
   squibID: 0
   hitPoints: 20
+  shield: 0
   modifierType: 4
 --- !u!114 &683508168
 MonoBehaviour:
@@ -17005,7 +17008,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 1
+      scalar: .600000024
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -17020,7 +17023,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .25
+          value: .416666657
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -23775,6 +23778,18 @@ Prefab:
     - target: {fileID: 400004, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
+      propertyPath: InitialModule.startSize.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
+      propertyPath: InitialModule.startSize.minCurve.m_Curve.Array.data[0].value
+      value: .416666657
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
