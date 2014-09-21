@@ -2893,7 +2893,7 @@ ParticleSystem:
   looping: 0
   prewarm: 0
   playOnAwake: 1
-  moveWithTransform: 1
+  moveWithTransform: 0
   InitialModule:
     enabled: 1
     startLifetime:
@@ -8444,7 +8444,7 @@ ParticleSystem:
   looping: 0
   prewarm: 0
   playOnAwake: 1
-  moveWithTransform: 1
+  moveWithTransform: 0
   InitialModule:
     enabled: 1
     startLifetime:
@@ -30516,6 +30516,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2009678902}
   - 114: {fileID: 2009678903}
+  - 114: {fileID: 2009678904}
   m_Layer: 0
   m_Name: FXSet_Explode_Shields
   m_TagString: Untagged
@@ -30549,6 +30550,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17be97a6aad763449b7a186893abb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2009678904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2009678901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e750db58e1dbb1940a1a3201fe6bc97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tTarget: {fileID: 1003429949}
+  fOffsetX: 0
+  fOffsetY: 0
+  fOffsetZ: 0
 --- !u!1001 &2019494161
 Prefab:
   m_ObjectHideFlags: 0
