@@ -4100,6 +4100,7 @@ GameObject:
   - 114: {fileID: 1083000911}
   - 54: {fileID: 1083000913}
   - 114: {fileID: 1083000914}
+  - 114: {fileID: 1083000915}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Enemy
@@ -4232,6 +4233,21 @@ MonoBehaviour:
   objectPool: {fileID: 1308397990}
   randomizeAim: 1
   direction: 1
+--- !u!114 &1083000915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1083000906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f73d3222e898847b5fb3f07e4bae0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  duration: -1
+  period: 3
+  radius: 1
 --- !u!1 &1083922753
 GameObject:
   m_ObjectHideFlags: 0
