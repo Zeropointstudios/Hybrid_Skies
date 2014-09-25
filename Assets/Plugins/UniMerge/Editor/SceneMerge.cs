@@ -17,7 +17,6 @@ using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor;
 
 public class SceneMerge : EditorWindow {
 	const string messagePath = "Assets/merges.txt";

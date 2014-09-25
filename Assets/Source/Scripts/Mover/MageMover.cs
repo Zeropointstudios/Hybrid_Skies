@@ -18,6 +18,7 @@ public class MageMover : Mover {
 			//	period);
 			iTween.MoveBy(gameObject,iTween.Hash(
 				"x", Random.Range(-radius, radius),
+				"z", Random.Range(-radius, radius),
 				"time", period,
 				"easytype", iTween.EaseType.easeInOutSine
 				));
