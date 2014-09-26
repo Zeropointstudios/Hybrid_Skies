@@ -46,7 +46,7 @@ public class Mitote : MonoBehaviour {
 		
 		if (other)
 		{
-			other.gameObject.GetComponent<HitPoints>().doDamage(mitoteDamage);
+			other.gameObject.GetComponent<HitPoints>().doDamage(mitoteDamage, transform.position);
 		}
 	}
 }

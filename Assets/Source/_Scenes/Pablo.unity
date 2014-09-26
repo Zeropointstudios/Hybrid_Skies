@@ -229,7 +229,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledGameObjects:
   - {fileID: 100000, guid: 29f56a771463ade47938313e629f6c1e, type: 2}
-  numberOfProjectilesToCreate: 32000000
+  - {fileID: 100002, guid: 7b9387b0d4281d24b976b0bf3e9e1040, type: 2}
+  - {fileID: 100004, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
+  numberOfProjectilesToCreate: 320000003200000032000000
 --- !u!4 &129088303
 Transform:
   m_ObjectHideFlags: 0
@@ -952,11 +954,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
-  shieldVFX: {fileID: 0}
+  shieldExplodeVFX: {fileID: 0}
   squibID: 0
+  armorFXID: 0
+  shieldFXID: 0
   hitPoints: 20
-  shield: 10
+  defense: 0
+  maxShields: 0
+  shields: 0
   modifierType: 4
+  raceType: 0
+  defenseType: 1
+  hasShields: 0
 --- !u!65 &424714122
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3980,7 +3989,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1003429944}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e3c11c1a3bce44ae915bb6fda918603, type: 3}
   m_Name: 
@@ -4005,12 +4014,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da710ce0c465546fb93ad1eaf268362c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
-  shieldVFX: {fileID: 0}
-  squibID: 0
+  deathVFX: {fileID: 100008, guid: f9d0773faf3ccb44bb773586924c338c, type: 2}
+  shieldExplodeVFX: {fileID: 100000, guid: 299c0f9b03e7c2249a22bcdfbe26b33d, type: 2}
+  squibID: 2
+  armorFXID: 2
+  shieldFXID: 1
   hitPoints: 200
-  shield: 0
+  defense: 0
+  maxShields: 50
+  shields: 0
   modifierType: 6
+  raceType: 0
+  defenseType: 0
+  hasShields: 1
 --- !u!114 &1003429955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4274,11 +4290,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
-  shieldVFX: {fileID: 0}
+  shieldExplodeVFX: {fileID: 0}
   squibID: 0
+  armorFXID: 0
+  shieldFXID: 0
   hitPoints: 30
-  shield: 0
+  defense: 0
+  maxShields: 0
+  shields: 0
   modifierType: 0
+  raceType: 2
+  defenseType: 0
+  hasShields: 0
 --- !u!114 &1083000912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6148,11 +6171,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
-  shieldVFX: {fileID: 0}
+  shieldExplodeVFX: {fileID: 0}
   squibID: 0
+  armorFXID: 0
+  shieldFXID: 0
   hitPoints: 30
-  shield: 0
+  defense: 10
+  maxShields: 0
+  shields: 0
   modifierType: 1
+  raceType: 2
+  defenseType: 2
+  hasShields: 0
 --- !u!114 &1706792964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8797,11 +8827,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
-  shieldVFX: {fileID: 0}
+  shieldExplodeVFX: {fileID: 0}
   squibID: 0
+  armorFXID: 0
+  shieldFXID: 0
   hitPoints: 30
-  shield: 0
+  defense: 0
+  maxShields: 0
+  shields: 0
   modifierType: 0
+  raceType: 0
+  defenseType: 0
+  hasShields: 0
 --- !u!114 &2076959683
 MonoBehaviour:
   m_ObjectHideFlags: 0

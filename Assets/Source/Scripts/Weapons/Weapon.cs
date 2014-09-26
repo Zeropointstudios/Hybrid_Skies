@@ -14,11 +14,8 @@ public class Weapon : MonoBehaviour {
 		if ((owner == WeaponOwner.Player && other.tag == "Enemy") 
 		   || (owner == WeaponOwner.Enemy && other.tag == "Player"))
 		{
-			other.GetComponent<HitPoints>().doDamage(damage);							//damage the enemy hit by weapon
+			other.GetComponent<HitPoints>().doDamage(damage, transform.position);		//damage the enemy hit by weapon
 //			Instantiate(destructionVFX);												//show the weapon exploding
-			ObjectPool squibPool = other.GetComponent<HitPoints>().returnSquibPool();
-			int squibID = other.GetComponent<HitPoints>().returnSquibID();
-			squibPool.Activate(squibID, transform.position, Quaternion.identity);				//hit object bleeds
 			gameObject.SetActive(false);												//destroy the weapon instance
 		}
 	}

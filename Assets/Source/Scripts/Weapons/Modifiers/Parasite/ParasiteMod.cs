@@ -19,7 +19,7 @@ public class ParasiteMod : MonoBehaviour {
 
 		if (other.tag == "Enemy" && hit == true)
 		{
-			other.gameObject.GetComponent<HitPoints> ().doDamage (parasiteDamage);
+			other.gameObject.GetComponent<HitPoints> ().doDamage (parasiteDamage, transform.position);
 		}
 	}
 
