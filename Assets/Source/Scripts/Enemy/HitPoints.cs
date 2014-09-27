@@ -26,7 +26,7 @@ public class HitPoints : MonoBehaviour {
 	public int armorFXID;
 	public int shieldFXID;
 	public float hitPoints;
-	private float initialHitPoints;
+	public float initialHitPoints;
 	public float defense;   // damage done = damage - defense
 	public float maxShields;
 	public float shields;

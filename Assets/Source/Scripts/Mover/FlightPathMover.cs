@@ -8,26 +8,7 @@ public class FlightPathMover : Mover {
 	
 	void Start () {
 		transform.position = iTweenPath.GetPath("FlightPath")[0];
-
-		print ("FLIGHT PATH MOVER!!!");
-		print ("FLIGHT PATH MOVER!!!");
-		print ("FLIGHT PATH MOVER!!!");
-		print (gameObject + " setting initial position to " + transform.position);
-
-		if (gameObject.hideFlags == HideFlags.NotEditable || gameObject.hideFlags == HideFlags.HideAndDontSave) {
-			print ("  Wrong flags");
-		}
 		
-		if (PrefabUtility.GetPrefabType(gameObject) == PrefabType.Prefab) {
-			print ("  Ignore prefab");
-		}
-		
-		print ("Potential enemy: " + gameObject);
-		print ("  tag: " + gameObject.tag);
-		print ("  prefab type: " + PrefabUtility.GetPrefabType(gameObject));
-		print ("  location: " + gameObject.transform.position);
-		print ("  hit points: " + gameObject.GetComponent<HitPoints>().hitPoints);
-
 		iTween.MoveTo(
 			gameObject, 
 			iTween.Hash(

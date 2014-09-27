@@ -43,11 +43,6 @@ public class Spawner : MonoBehaviour {
 			GameObject go = Instantiate(objectToSpawn, this.rigidbody.position, this.rigidbody.rotation) as GameObject;
 			instantiatedGameObjects.Add(go);
 
-			print ("NEW INSTANTIATED GAME OBJECT:");
-			foreach (GameObject obj in instantiatedGameObjects) {
-				print ("   obj: " + obj);
-			}
-
 			yield return new WaitForSeconds (timeBetweenSpawns);
 		}
 		Destroy (this);

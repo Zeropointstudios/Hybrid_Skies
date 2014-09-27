@@ -19,20 +19,6 @@ public class Finder : MonoBehaviour {
 	public static GameObject GetPlayer() { return player; }
 
 	public static List<GameObject> GetEnemies() { 
-		List<GameObject> gameObjList = GameObject.FindGameObjectsWithTag ("Enemy").ToList(); 
-		//gameObjList.AddRange(Spawner.GetInstantiatedGameObjects());
-
-		print ("GET ENEMIES RESULT:");
-		foreach (GameObject obj in gameObjList) {
-			print ("   obj: " + obj);
-		}
-
-		return gameObjList;
-		//return GameObject.FindGameObjectsWithTag ("Enemy"); 
-		// Find all objects (including spawned objects) with the tag "Enemy".
-
-		//return Resources.FindObjectsOfTypeAll(typeof(GameObject)).Cast<GameObject>().Where(g => g.tag=="Enemy").ToList();
-
-		//return Resources.FindObjectsOfTypeAll(typeof(GameObject)).Cast<GameObject>().ToList(); 
+		return GameObject.FindGameObjectsWithTag ("Enemy").ToList(); 
 	}
 }
