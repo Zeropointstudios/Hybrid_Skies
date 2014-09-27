@@ -45,7 +45,10 @@ public class PlayerController : MonoBehaviour
 	
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Enemy") {
-			GetComponent<HitPoints>().Kill ();
+			// Upon collision, player and enemy ship each deal damage to each other equal to their own hit points.
+			float hitPoints = GetComponent<HitPoints>().hitPoints;
+			GetComponent<HitPoints>().DoDamage (other.GetComponent<HitPoints>().hitPoints, transform.position);
+			other.GetComponent<HitPoints>().DoDamage(hitPoints, other.transform.position);
 		}
 	}
 

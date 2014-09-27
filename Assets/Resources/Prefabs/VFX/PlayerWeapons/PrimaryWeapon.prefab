@@ -8,21 +8,19 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400006}
-  - 114: {fileID: 11400004}
-  - 65: {fileID: 6500000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
-  - 23: {fileID: 2300000}
-  - 33: {fileID: 3300000}
   - 54: {fileID: 5400000}
-  m_Layer: 0
-  m_Name: Fighter
-  m_TagString: Enemy
+  - 33: {fileID: 3300000}
+  - 65: {fileID: 6500000}
+  - 23: {fileID: 2300000}
+  - 114: {fileID: 11400002}
+  m_Layer: 2
+  m_Name: PrimaryWeapon
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -31,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .150000006, y: .150000006, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -47,7 +45,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 0b9a6dfbf8149bc43a168b5215888ea1, type: 2}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -61,7 +59,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!54 &5400000
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -84,11 +82,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.24000001, y: .409999996, z: 1.13999999}
-  m_Center: {x: 0, y: 0, z: .119999997}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,10 +95,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05d6974cb784144f5b4b04b36e97afd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 393c0622695d648ea8811f358725b1cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetingGraphic: {fileID: 100002, guid: 3cfd32c09ff2b47c1bb561ee3662b18a, type: 2}
+  speed: 30
+  duration: -1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,63 +108,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da710ce0c465546fb93ad1eaf268362c, type: 3}
+  m_Script: {fileID: 11500000, guid: bcd8cae20c77f432bbbc8c2ed5db6720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
-  shieldVFX: {fileID: 0}
-  squibID: 0
-  hitPoints: 20
-  shield: 10
-  modifierType: 4
-  enemyType: 1
-  defenseType: 1
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d5a275137131c64aac4401e2f001bb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  duration: -1
-  pathTime: 160
-  lookAheadTime: .949999988
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathName: FlightPath
-  pathColor: {r: 0, g: 1, b: 1, a: 1}
-  nodes:
-  - {x: 4.72934246, y: 0, z: 12.6721306}
-  - {x: -4.70328665, y: 0, z: 11.2715836}
-  - {x: 4.77988577, y: 0, z: 10.0960474}
-  - {x: -4.70993567, y: 0, z: 8.39394283}
-  - {x: 4.75656939, y: 0, z: 7.11153555}
-  - {x: -4.6866188, y: 0, z: 5.8524437}
-  - {x: 4.73325253, y: 0, z: 4.50008631}
-  - {x: -4.82651806, y: 0, z: 3.19436121}
-  - {x: 4.70993519, y: 0, z: 2.26170182}
-  - {x: -4.82651806, y: 0, z: 1.07255924}
-  - {x: 4.57003641, y: 0, z: -.0233168304}
-  - {x: -4.82651806, y: 0, z: -1.35235703}
-  - {x: 5.33948135, y: 0, z: -2.0518527}
-  nodeCount: 13
-  initialized: 1
-  initialName: New Path 3
-  pathVisible: 1
+  damage: 1
+  owner: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

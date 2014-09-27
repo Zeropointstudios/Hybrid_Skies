@@ -20,15 +20,20 @@ public enum DefenseType {
 public class HitPoints : MonoBehaviour {
 
 	//TODO make enemies have a pool also
-	public GameObject deathVFX;
-	public GameObject defenseVFX;
+	public GameObject deathVFX, shieldExplodeVFX;
 	ObjectPool squibPool;
 	public int squibID;
-	public int hitPoints;
-	public int defense;   // damage done = damage - defense
+	public int armorFXID;
+	public int shieldFXID;
+	public float hitPoints;
+	private float initialHitPoints;
+	public float defense;   // damage done = damage - defense
+	public float maxShields;
+	public float shields;
 	public ModifierType modifierType = ModifierType.None;
 	public RaceType raceType = RaceType.None;
-	public DefenseType defenseType = DefenseType.None;
+	public DefenseType defenseType = DefenseType.None; //pretty sure we decided that this does not matter and they can have both
+	public bool hasShields;
 
 	public ObjectPool returnSquibPool(){return squibPool;}
 	public int returnSquibID(){return squibID;}
@@ -36,22 +41,69 @@ public class HitPoints : MonoBehaviour {
 
 	void Awake() {
 		squibPool = GameObject.Find("SquibPool").GetComponent<ObjectPool>();
+		shields = maxShields;
+		initialHitPoints = hitPoints;
 	}
 
-	public void doDamage(int damage)
-	{
-		int effectiveDamage = Mathf.Max(damage - defense, 0);
+	IEnumerator ShieldRegeneration() {
+		while (hasShields)
+		{
+			yield return new WaitForSeconds(1);	//regenerates shields every second
+				if (shields < maxShields)
+					shields +=1;
+		}
+	}
 
-		if ( defenseVFX != null && defense > .5 * damage ) {
-			Instantiate(defenseVFX, transform.position, Quaternion.identity);
+	public void DoDamage(float damage, Vector3 projectilePosition)
+	{
+		//if there are shields take away from them first
+		if (hasShields) {
+
+			if (shields >= damage) {
+				shields -= damage;
+				squibPool.Activate(shieldFXID, transform.position, Quaternion.identity);
+				return;
+			}
+			else {
+				damage -= shields;
+				shields = 0;
+				hasShields = false;
+				Instantiate(shieldExplodeVFX, projectilePosition, Quaternion.identity);
+			}
 		}
 
-		hitPoints -= effectiveDamage;
+		if (defense > 0) {
+			float effectiveDamage = Mathf.Max(damage - defense, 0);
 
-		if (hitPoints < 1 && gameObject.activeSelf == true)
-		{
+			if (defense > .5 * damage ) {	//shows armor hits if the weapon is doing less than half its original damage
+				squibPool.Activate(armorFXID, projectilePosition, Quaternion.identity); //shows armor vfx hit
+				print("squib armor");
+			}
+
+			else {
+				squibPool.Activate(squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
+				print("squib normal");
+
+			}
+			hitPoints -= effectiveDamage;
+
+		}
+
+		else { //if there is no armor or shields, do what is left of damage (including reduction from shield)
+			squibPool.Activate(squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
+			hitPoints -= damage;
+			print ("squib normal");
+		}
+
+
+		if (hitPoints < 1 && gameObject.activeSelf == true) {
 			Kill ();
 		}
+	}
+	
+	public void Heal(float healing)
+	{
+		hitPoints = Mathf.Min(hitPoints + healing, initialHitPoints);
 	}
 
 	public void Kill()

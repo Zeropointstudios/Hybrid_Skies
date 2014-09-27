@@ -1,4 +1,4 @@
-﻿	using UnityEngine;
+	using UnityEngine;
 using System.Collections;
 
 public class Mitote : MonoBehaviour {
@@ -46,7 +46,7 @@ public class Mitote : MonoBehaviour {
 		
 		if (other)
 		{
-			other.gameObject.GetComponent<HitPoints>().doDamage(mitoteDamage);
+			other.gameObject.GetComponent<HitPoints>().DoDamage(mitoteDamage, transform.position);
 		}
 	}
 }

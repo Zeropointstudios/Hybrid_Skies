@@ -4,7 +4,7 @@ using System.Collections;
 public class FXBUNDLE_Poison : MonoBehaviour {
 	Transform tFXSet_Persist_Poison;
 	Transform tFXSet_Explode_PoisonOn;
-	bool bPoisonIsOn = false;
+	//bool bPoisonIsOn = false;  // UNUSED ATM
 	
 	// **** Public Functions to Call to Invoke Effects
 	
@@ -15,7 +15,7 @@ public class FXBUNDLE_Poison : MonoBehaviour {
 			print ("FXBUNDLE_Poison: PoisonOn()");
 			tFXSet_Persist_Poison.SendMessage ("PlayAll");
 			tFXSet_Explode_PoisonOn.SendMessage ("PlayAll");
-			bPoisonIsOn = true;
+			//bPoisonIsOn = true;
 		}
 		else {
 			print ("FXBUNDLE_Poison: tFX_Persist_Poison is undefined");
@@ -29,7 +29,7 @@ public class FXBUNDLE_Poison : MonoBehaviour {
 			print ("FXBUNDLE_Poison: PoisonOff()");
 			tFXSet_Persist_Poison.SendMessage ("StopAll");
 			tFXSet_Explode_PoisonOn.SendMessage ("PlayAll");
-			bPoisonIsOn = false;
+			//bPoisonIsOn = false;
 		}
 		else {
 			print ("FXBUNDLE_Poison: tFXSet_Persist_Poison is undefined");
@@ -47,3 +47,4 @@ public class FXBUNDLE_Poison : MonoBehaviour {
 		
 	}
 }
+ //

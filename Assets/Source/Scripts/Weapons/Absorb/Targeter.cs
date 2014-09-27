@@ -26,7 +26,6 @@ public class Targeter : MonoBehaviour {
 					+ transform.position; 
 			currentTargetInstance = (GameObject)Instantiate (targetingGraphic, targetSpawn, Quaternion.identity);
 			currentTargetInstance.transform.parent = transform;
-			print ("is true");
 			isTargeted = true;
 		}
 	}
