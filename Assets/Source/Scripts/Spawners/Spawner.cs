@@ -3,6 +3,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour {
 	public GameObject objectToSpawn; // Spawn this enemy prefab once it gets on-screen.
@@ -11,6 +12,8 @@ public class Spawner : MonoBehaviour {
 
 	private const float DROP_SPEED = 4;
 	private new bool active = false;
+
+	public static List<GameObject> instantiatedGameObjects = new List<GameObject>();
 
 	// Update is called once per frame
 	void Update () 
@@ -37,9 +40,18 @@ public class Spawner : MonoBehaviour {
 	{
 		for (int i = 0; i < numObjectsToSpawn; i++)
 		{
-			Instantiate(objectToSpawn, this.rigidbody.position, this.rigidbody.rotation);
+			GameObject go = Instantiate(objectToSpawn, this.rigidbody.position, this.rigidbody.rotation) as GameObject;
+			instantiatedGameObjects.Add(go);
+
+			print ("NEW INSTANTIATED GAME OBJECT:");
+			foreach (GameObject obj in instantiatedGameObjects) {
+				print ("   obj: " + obj);
+			}
+
 			yield return new WaitForSeconds (timeBetweenSpawns);
 		}
 		Destroy (this);
 	}
+
+	public static List<GameObject> GetInstantiatedGameObjects() { return instantiatedGameObjects; }
 }

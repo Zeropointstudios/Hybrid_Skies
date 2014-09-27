@@ -15,7 +15,7 @@ public class ExplosionPrefab : MonoBehaviour {
 	{
 		if (other.tag == "Enemy")
 		{
-			other.gameObject.GetComponent<HitPoints> ().doDamage (explosionDamage, transform.position);
+			other.gameObject.GetComponent<HitPoints> ().DoDamage (explosionDamage, transform.position);
 		}
 	}
 

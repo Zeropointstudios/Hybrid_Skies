@@ -12,17 +12,13 @@ public class MageMover : Mover {
 	// This is a coroutine that gets kicked off...
 	IEnumerator Movement() {
 		while (true) {
-			//iTween.MoveTo(
-			//	gameObject, 
-			//	transform.position + Random.insideUnitSphere * radius, 
-			//	period);
+			yield return new WaitForSeconds (period);				
 			iTween.MoveBy(gameObject,iTween.Hash(
 				"x", Random.Range(-radius, radius),
 				"z", Random.Range(-radius, radius),
 				"time", period,
 				"easytype", iTween.EaseType.easeInOutSine
 				));
-			yield return new WaitForSeconds (period);				
 		}
 	}
 }	
