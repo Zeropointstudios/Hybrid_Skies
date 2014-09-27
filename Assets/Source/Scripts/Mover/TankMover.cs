@@ -6,7 +6,6 @@ public class TankMover : Mover {
 
 	GameObject player;
 	void Awake() {
-		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
 	void Start() {
@@ -19,7 +18,7 @@ public class TankMover : Mover {
 			iTween.MoveTo(
 				gameObject, 
 				iTween.Hash(
-					"x", player.transform.position.x,
+					"x", Finder.GetPlayer().transform.position.x,
 					"time", period,
 					"easytype", iTween.EaseType.easeInOutSine
 				));
