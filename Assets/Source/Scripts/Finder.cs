@@ -15,4 +15,6 @@ public class Finder : MonoBehaviour {
 	}
 
 	public static GameObject GetPlayer() { return player; }
+
+	public static GameObject[] GetEnemies() { return GameObject.FindGameObjectsWithTag ("Enemy"); }
 }

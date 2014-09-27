@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +19,7 @@ public class ParasiteMod : MonoBehaviour {
 
 		if (other.tag == "Enemy" && hit == true)
 		{
-			other.gameObject.GetComponent<HitPoints> ().doDamage (parasiteDamage, transform.position);
+			other.gameObject.GetComponent<HitPoints> ().DoDamage (parasiteDamage, transform.position);
 		}
 	}
 

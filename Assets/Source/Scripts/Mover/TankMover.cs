@@ -15,13 +15,15 @@ public class TankMover : Mover {
 	// This is a coroutine that gets kicked off...
 	IEnumerator Movement() {
 		while (true) {
-			iTween.MoveTo(
-				gameObject, 
-				iTween.Hash(
-					"x", Finder.GetPlayer().transform.position.x,
-					"time", period,
-					"easytype", iTween.EaseType.easeInOutSine
-				));
+			if (Finder.GetPlayer() != null) {
+				iTween.MoveTo(
+					gameObject, 
+					iTween.Hash(
+						"x", Finder.GetPlayer().transform.position.x,
+						"time", period,
+						"easytype", iTween.EaseType.easeInOutSine
+					));
+			}
 			yield return new WaitForSeconds (period);				
 		}
 	}

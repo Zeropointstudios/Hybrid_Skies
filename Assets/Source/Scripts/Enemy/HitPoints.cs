@@ -25,10 +25,11 @@ public class HitPoints : MonoBehaviour {
 	public int squibID;
 	public int armorFXID;
 	public int shieldFXID;
-	public int hitPoints;
-	public int defense;   // damage done = damage - defense
-	public int maxShields;
-	public int shields;
+	public float hitPoints;
+	private float initialHitPoints;
+	public float defense;   // damage done = damage - defense
+	public float maxShields;
+	public float shields;
 	public ModifierType modifierType = ModifierType.None;
 	public RaceType raceType = RaceType.None;
 	public DefenseType defenseType = DefenseType.None; //pretty sure we decided that this does not matter and they can have both
@@ -41,7 +42,7 @@ public class HitPoints : MonoBehaviour {
 	void Awake() {
 		squibPool = GameObject.Find("SquibPool").GetComponent<ObjectPool>();
 		shields = maxShields;
-
+		initialHitPoints = hitPoints;
 	}
 
 	IEnumerator ShieldRegeneration() {
@@ -53,7 +54,7 @@ public class HitPoints : MonoBehaviour {
 		}
 	}
 
-	public void doDamage(int damage, Vector3 projectilePosition)
+	public void DoDamage(float damage, Vector3 projectilePosition)
 	{
 		//if there are shields take away from them first
 		if (hasShields) {
@@ -72,7 +73,7 @@ public class HitPoints : MonoBehaviour {
 		}
 
 		if (defense > 0) {
-			int effectiveDamage = Mathf.Max(damage - defense, 0);
+			float effectiveDamage = Mathf.Max(damage - defense, 0);
 
 			if (defense > .5 * damage ) {	//shows armor hits if the weapon is doing less than half its original damage
 				squibPool.Activate(armorFXID, projectilePosition, Quaternion.identity); //shows armor vfx hit
@@ -98,6 +99,11 @@ public class HitPoints : MonoBehaviour {
 		if (hitPoints < 1 && gameObject.activeSelf == true) {
 			Kill ();
 		}
+	}
+	
+	public void Heal(float healing)
+	{
+		hitPoints = Mathf.Min(hitPoints + healing, initialHitPoints);
 	}
 
 	public void Kill()

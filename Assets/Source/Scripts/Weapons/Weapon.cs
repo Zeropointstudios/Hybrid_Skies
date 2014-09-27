@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 
@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour {
 		if ((owner == WeaponOwner.Player && other.tag == "Enemy") 
 		   || (owner == WeaponOwner.Enemy && other.tag == "Player"))
 		{
-			other.GetComponent<HitPoints>().doDamage(damage, transform.position);		//damage the enemy hit by weapon
+			other.GetComponent<HitPoints>().DoDamage(damage, transform.position);		//damage the enemy hit by weapon
 //			Instantiate(destructionVFX);												//show the weapon exploding
 			gameObject.SetActive(false);												//destroy the weapon instance
 		}
