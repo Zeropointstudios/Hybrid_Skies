@@ -9,6 +9,9 @@ public class SecondaryFiring : Firing {
 	public int baseEnergyCost, modEnergyCost;
 	int currentEnergyCost;
 
+	//AudioSource mainGun01;
+	AudioSource secondWeapon01;
+
 	void Awake() {
 		autoFire = false;
 		currentEnergyCost = baseEnergyCost;
@@ -56,6 +59,10 @@ public class SecondaryFiring : Firing {
 
 			objectPool.Activate (projectileID, shotSpawn.transform.position, Quaternion.Euler(0, shotAngle/2, 0));
 			//substract from energy pool
+
+			AudioSource[] audios = GetComponents<AudioSource> ();
+			secondWeapon01 = audios [1];
+			secondWeapon01.Play();
 		}
 	}
 

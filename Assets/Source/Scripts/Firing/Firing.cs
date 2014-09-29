@@ -15,6 +15,9 @@ public class Firing : MonoBehaviour {
 	public enum Direction {Up, Down};
 	public Direction direction;
 
+	AudioSource mainGun01;
+	//AudioSource secondWeapon01;
+
 		// This is a coroutine that gets kicked off...
 	IEnumerator UpdateFiring() {
 		while (autoFire == true) {
@@ -40,5 +43,9 @@ public class Firing : MonoBehaviour {
 		projectileRotation.y += angleOffset;
 		objectPool.Activate(projectileID, shotSpawn.position, Quaternion.Euler(projectileRotation/2));
 		projectileRotation.y -= angleOffset;
+
+		AudioSource[] audios = GetComponents<AudioSource> ();
+		mainGun01 = audios [0];
+		mainGun01.Play();
 	}
 }
