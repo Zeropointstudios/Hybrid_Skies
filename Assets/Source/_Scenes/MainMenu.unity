@@ -101,6 +101,7 @@ GameObject:
   - 222: {fileID: 197431495}
   - 114: {fileID: 197431494}
   - 114: {fileID: 197431493}
+  - 114: {fileID: 197431496}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -164,7 +165,19 @@ MonoBehaviour:
   m_Interactable: 1
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 197431496}
+        m_MethodName: LoadMainGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_Enabled: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &197431494
@@ -194,6 +207,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 197431491}
+--- !u!114 &197431496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197431491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e42c6a539d04102be9401569bbc033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: Pablo
 --- !u!115 &312040057
 MonoScript:
   m_ObjectHideFlags: 0
@@ -624,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 173979126}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: -1
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:

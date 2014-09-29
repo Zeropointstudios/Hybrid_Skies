@@ -11,9 +11,7 @@ public class InputManager : MonoBehaviour {
 	public delegate void ReleaseDelegate();
 	public static event ReleaseDelegate OnRelease;
 
-	// TODO: Eventually need to add preprocessor constants to determine which platform we are using
 
-	// Update is called once per frame
 	void Update ()
 	{
 #if UNITY_EDITOR
