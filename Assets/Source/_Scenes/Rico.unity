@@ -13248,13 +13248,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
-  defenseVFX: {fileID: 0}
+  shieldExplodeVFX: {fileID: 0}
   squibID: 0
+  armorFXID: 0
+  shieldFXID: 0
   hitPoints: 20
+  initialHitPoints: 0
   defense: 0
+  maxShields: 0
+  shields: 0
   modifierType: 4
   raceType: 0
   defenseType: 1
+  hasShields: 0
 --- !u!114 &683508168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15622,6 +15628,10 @@ Prefab:
       propertyPath: ShapeModule.angle
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: eae154a94f25e3d41bff3c801b255680, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eae154a94f25e3d41bff3c801b255680, type: 2}
   m_RootGameObject: {fileID: 1238207023}
@@ -16979,6 +16989,10 @@ Prefab:
     - target: {fileID: 400004, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
       propertyPath: m_RootOrder
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
@@ -36230,6 +36244,10 @@ Prefab:
     - target: {fileID: 19800002, guid: 7b9387b0d4281d24b976b0bf3e9e1040, type: 2}
       propertyPath: ShapeModule.radius
       value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 7b9387b0d4281d24b976b0bf3e9e1040, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b9387b0d4281d24b976b0bf3e9e1040, type: 2}
