@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 			// update the elemental modifier
 			switch(modifierType) {
 				case ModifierType.Poison : modifierCombo.setElemental("PoisonModifier"); modifierDisplay.setEMod("Poison"); break;
-//				case ModifierType.EMP : modifierCombo.elementalModifier = new PoisonModifier(); break;
+				case ModifierType.EMP : modifierCombo.setElemental("EMPModifier"); modifierDisplay.setEMod("EMP"); break;
 				case ModifierType.Explosion : modifierCombo.setElemental("ExplosionModifier"); modifierDisplay.setEMod("Explosion"); break;
 				}
 			}
