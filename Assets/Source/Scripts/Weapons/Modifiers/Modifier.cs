@@ -8,7 +8,7 @@ public enum ModifierType {
 	Explosion,
 	NUM_ELEMENTAL_MODIFIERS,
 
-	HeatSeeking = NUM_ELEMENTAL_MODIFIERS, //divides the enum list into two types via this special constant trick
+	HeatSeek = NUM_ELEMENTAL_MODIFIERS, //divides the enum list into two types via this special constant trick
 	Spread,
 	Rebound,
 

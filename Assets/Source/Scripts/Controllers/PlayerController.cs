@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
 		else { // BehavioralModifier
 			// update the behavioral modifier
 			switch(modifierType) {
-//				case ModifierType.HeatSeeking : modifierCombo.behavioralModifier = new HeatSeekingModifier(); break;
+				case ModifierType.HeatSeek : modifierCombo.setBehavioral("HeatSeekModifier"); modifierDisplay.setBMod("HeatSeek"); break;
 				case ModifierType.Spread : modifierCombo.setBehavioral("SpreadModifier"); modifierDisplay.setBMod("Spread"); break;
 				case ModifierType.Rebound : modifierCombo.setBehavioral("RebounderModifier"); modifierDisplay.setBMod("Rebound"); break;
 			}
