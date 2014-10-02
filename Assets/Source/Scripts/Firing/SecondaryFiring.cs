@@ -60,6 +60,11 @@ public class SecondaryFiring : Firing {
 			objectPool.Activate (projectileID, shotSpawn.transform.position, Quaternion.Euler(0, shotAngle/2, 0));
 			//substract from energy pool
 
+			if (GameObject.FindWithTag("Player").GetComponent<PlayerController>().returnModCombo().returnBehavioral() == "SpreadModifier"){
+				objectPool.Activate (projectileID, shotSpawn.transform.position, Quaternion.Euler(0, shotAngle/2 + 9, 0));
+				objectPool.Activate (projectileID, shotSpawn.transform.position, Quaternion.Euler(0, shotAngle/2 - 9, 0));
+			}
+
 			AudioSource[] audios = GetComponents<AudioSource> ();
 			secondWeapon01 = audios [1];
 			secondWeapon01.Play();

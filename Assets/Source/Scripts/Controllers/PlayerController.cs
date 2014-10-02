@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 			// update the behavioral modifier
 			switch(modifierType) {
 //				case ModifierType.HeatSeeking : modifierCombo.behavioralModifier = new HeatSeekingModifier(); break;
-				case ModifierType.Mitosis : modifierCombo.setBehavioral("MitosisModifier"); modifierDisplay.setBMod("Mitosis"); break;
+				case ModifierType.Spread : modifierCombo.setBehavioral("SpreadModifier"); modifierDisplay.setBMod("Spread"); break;
 			}
 		}
 		GetComponent<SecondaryFiring> ().setEnergyCost (modifierCombo);
