@@ -4520,7 +4520,7 @@ MonoBehaviour:
   pooledGameObjects:
   - {fileID: 100000, guid: c4385bc32d25d43f38eeee1ba4e1084c, type: 2}
   - {fileID: 100000, guid: 2f1141c0ee35244a6b7405212a13801f, type: 2}
-  - {fileID: 100002, guid: 114114e2c4f9440c788acb5dfb55469f, type: 2}
+  - {fileID: 100002, guid: c6008b9637510cd46bf184de5f140ee0, type: 2}
   - {fileID: 100002, guid: 1a2b6a3ef69e446369d452e03946d792, type: 2}
   - {fileID: 100000, guid: 88d9e32b78b5b4b11aac19382864fd1c, type: 2}
   numberOfProjectilesToCreate: 0a0000000a0000000f0000003200000014000000
@@ -10192,7 +10192,7 @@ MonoBehaviour:
   shields: 2
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
-  modifierType: 5
+  modifierType: 0
   raceType: 2
   defenseType: 2
   hasShields: 0
