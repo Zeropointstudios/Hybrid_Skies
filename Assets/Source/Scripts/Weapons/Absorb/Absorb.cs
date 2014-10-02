@@ -64,6 +64,8 @@ public class Absorb : MonoBehaviour {
 		while (cooldownCounter < 100) {
 			cooldownCounter += 1;
 			cooldownDisplay.text = cooldownCounter.ToString();
+			if (cooldownCounter == 100)
+				cooldownDisplay.text = "Ready";
 			yield return new WaitForSeconds (cooldownSpeed);
 		}
 	}

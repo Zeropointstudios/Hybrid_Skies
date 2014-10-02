@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 [System.Serializable]
@@ -30,11 +31,12 @@ public class HitPoints : MonoBehaviour {
 	public float defense;   // damage done = damage - defense
 	public float maxShields;
 	public float shields;
+	public Text shieldDisplay, healthDisplay;
 	public ModifierType modifierType = ModifierType.None;
 	public RaceType raceType = RaceType.None;
 	public DefenseType defenseType = DefenseType.None; //pretty sure we decided that this does not matter and they can have both
 	public bool hasShields;
-
+	public bool isPlayer;
 	public ObjectPool returnSquibPool(){return squibPool;}
 	public int returnSquibID(){return squibID;}
 	public ModifierType returnModifierType() {return modifierType;} 
@@ -43,6 +45,10 @@ public class HitPoints : MonoBehaviour {
 		squibPool = GameObject.Find("SquibPool").GetComponent<ObjectPool>();
 		shields = maxShields;
 		initialHitPoints = hitPoints;
+		if (isPlayer){
+			shieldDisplay.text = shields.ToString ();
+			healthDisplay.text = hitPoints.ToString ();
+		}
 	}
 
 	IEnumerator ShieldRegeneration() {
@@ -62,11 +68,13 @@ public class HitPoints : MonoBehaviour {
 			if (shields >= damage) {
 				shields -= damage;
 				squibPool.Activate(shieldFXID, transform.position, Quaternion.identity);
+				shieldDisplay.text = shields.ToString ();
 				return;
 			}
 			else {
 				damage -= shields;
 				shields = 0;
+				shieldDisplay.text = shields.ToString ();
 				hasShields = false;
 				Instantiate(shieldExplodeVFX, projectilePosition, Quaternion.identity);
 			}
@@ -77,12 +85,10 @@ public class HitPoints : MonoBehaviour {
 
 			if (defense > .5 * damage ) {	//shows armor hits if the weapon is doing less than half its original damage
 				squibPool.Activate(armorFXID, projectilePosition, Quaternion.identity); //shows armor vfx hit
-				print("squib armor");
 			}
 
 			else {
 				squibPool.Activate(squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
-				print("squib normal");
 
 			}
 			hitPoints -= effectiveDamage;
@@ -92,12 +98,17 @@ public class HitPoints : MonoBehaviour {
 		else { //if there is no armor or shields, do what is left of damage (including reduction from shield)
 			squibPool.Activate(squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
 			hitPoints -= damage;
-			print ("squib normal");
 		}
 
 
 		if (hitPoints < 1 && gameObject.activeSelf == true) {
 			Kill ();
+		}
+
+
+		if (isPlayer) {
+			shieldDisplay.text = shields.ToString ();
+			healthDisplay.text = hitPoints.ToString ();
 		}
 	}
 	
