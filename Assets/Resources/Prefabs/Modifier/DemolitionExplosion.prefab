@@ -66,11 +66,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84b7985753ef34ca0a5d4953d1595877, type: 3}
+  m_Script: {fileID: 11500000, guid: 59190f587ce944e4f8128a06a7d48eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionDuration: .100000001
-  explosionDamage: 50
+  explosionDuration: 1
+  explosionDamage: 20
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -8892,7 +8892,7 @@ MonoBehaviour:
   shields: 0
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
-  modifierType: 3
+  modifierType: 2
   raceType: 0
   defenseType: 0
   hasShields: 0

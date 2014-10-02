@@ -3,7 +3,11 @@ using System.Collections;
 
 public class ExplosionModifier : MonoBehaviour {
 
-	public Collider splashCollider;
+	GameObject splashCollider;
+
+	void Awake() {
+		splashCollider = Resources.Load ("Prefabs/Modifier/DemolitionExplosion") as GameObject;
+	}
 
 	void OnTriggerEnter(Collider other)
 	{
