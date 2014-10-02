@@ -5,8 +5,9 @@ using System.Linq;
 
 public class RebounderModifier : MonoBehaviour {
 
-	public int targetLimit, parasiteDamage; //maximum amount of hits a parasite can attack
-	public float pathTime;
+	public int targetLimit = 3; //maximum amount of hits a parasite can attack
+	public int parasiteDamage = 5;
+	public float pathTime = 0.1f;
 	bool hit = false;
 
 	void OnTriggerEnter(Collider other)
