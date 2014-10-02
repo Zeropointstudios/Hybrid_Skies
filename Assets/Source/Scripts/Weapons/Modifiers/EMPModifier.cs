@@ -7,7 +7,8 @@ public class EMPModifier : MonoBehaviour {
 	{
 		if (other.tag == "Enemy")
 		{
-			other.GetComponent<Firing>().StopAllCoroutines();
+			if (other.GetComponent<Firing>()!=null)
+				other.GetComponent<Firing>().StopAllCoroutines();
 		}
 	}
 }
