@@ -23,5 +23,18 @@ public class ModifierProjectile : Weapon {
 		if (combo.returnBehavioral() != "") 
 			Destroy(GetComponent(combo.returnBehavioral()));
 	}
+
+	public void OnTriggerEnter(Collider other)									
+	{
+		if ((owner == WeaponOwner.Player && other.tag == "Enemy") 
+		    || (owner == WeaponOwner.Enemy && other.tag == "Player"))
+		{
+			other.GetComponent<HitPoints>().DoDamage(damage, transform.position);		//damage the enemy hit by weapon
+			//			Instantiate(destructionVFX);												//show the weapon exploding
+			if (combo.returnBehavioral() != "RebounderModifier") {
+				gameObject.SetActive(false);												//destroy the weapon instance
+			}
+		}
+	}
 }
 

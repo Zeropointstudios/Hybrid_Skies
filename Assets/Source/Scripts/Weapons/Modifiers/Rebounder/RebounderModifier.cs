@@ -7,13 +7,14 @@ public class RebounderModifier : MonoBehaviour {
 
 	public int targetLimit = 3; //maximum amount of hits a parasite can attack
 	public int parasiteDamage = 5;
-	public float pathTime = 0.1f;
+	public float pathTime = 0.4f;
 	bool hit = false;
 
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.tag == "Enemy" && hit == false)
 		{
+			print("collided");
 			RadarSweep();
 			hit = true;
 		}
@@ -33,13 +34,13 @@ public class RebounderModifier : MonoBehaviour {
 		FireParasite (transformArray);
 	}
 
-	void DestroyParasite()
-	{
-		Destroy (gameObject);
+	void DestroyParasite() {
+		gameObject.SetActive(false);
 	}
 
 	void FireParasite(Vector3[] enemiesOnRadar)
 	{
+		print ("fire");
 		if (enemiesOnRadar.Length > 1)
 		{
 			iTween.MoveTo (gameObject,
@@ -58,7 +59,7 @@ public class RebounderModifier : MonoBehaviour {
 		}
 		else
 		{
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 
