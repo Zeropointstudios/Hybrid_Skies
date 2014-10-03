@@ -19,6 +19,8 @@ public class ClericMover : Mover {
 	
 	// This is a coroutine that gets kicked off...
 	IEnumerator FindNewTarget() {
+		yield return null; // Wait a frame, so all Finder references are updated.
+
 		while (true) {
 			// Find the enemy with the fewest hit points (other than the current target and itself)
 			GameObject bestEnemy = null;

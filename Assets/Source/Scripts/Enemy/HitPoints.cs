@@ -18,6 +18,7 @@ public enum DefenseType {
 	Shield
 };
 
+// TODO: rename HitPoints to Ship, so it can hold properties about ships (like it basically does now).
 public class HitPoints : MonoBehaviour {
 
 	//TODO make enemies have a pool also
@@ -40,6 +41,7 @@ public class HitPoints : MonoBehaviour {
 	public ObjectPool returnSquibPool(){return squibPool;}
 	public int returnSquibID(){return squibID;}
 	public ModifierType returnModifierType() {return modifierType;} 
+	public bool transcendsBoundary = false;  // If it can cross the game boundary without dying.
 
 	void Awake() {
 		squibPool = GameObject.Find("SquibPool").GetComponent<ObjectPool>();

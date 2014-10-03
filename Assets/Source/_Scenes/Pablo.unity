@@ -229,8 +229,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 61747233}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 4.23089981, y: 0, z: 10.4799995}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 89200863}
@@ -243,7 +243,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 61747233}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &61747236
 Renderer:
   m_ObjectHideFlags: 0
@@ -277,11 +277,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a89997ead2038d42a6834bf6d677e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6
   duration: -1
-  findTargetPeriod: 0
+  huntPlayerPeriod: 3.5
+  huntRandomTargetPeriod: 2
   numJumpsBeforeTargetingPlayer: 3
-  numJumpsInBetweenTargetingPlayer: 1
+  numJumpsInBetweenTargetingPlayer: 3
+  angleUpdateClamp: 180
+  angularSpeed: 180
+  randomTargetX0: -5
+  randomTargetX1: 5
+  randomTargetY0: 6
+  randomTargetY1: 12
+  angle: -90
 --- !u!114 &61747238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,14 +297,14 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 61747233}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e3c11c1a3bce44ae915bb6fda918603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 89200863}
-  period: .0799999982
-  probability: .200000003
+  period: .5
+  probability: 1
   angleRandomness: 10
   projectileID: 4
   autoFire: 1
@@ -337,11 +345,11 @@ MonoBehaviour:
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
-  hitPoints: 10
+  hitPoints: 15
   initialHitPoints: 0
   defense: 0
   maxShields: 0
-  shields: 2
+  shields: 0
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
   modifierType: 3
@@ -349,6 +357,7 @@ MonoBehaviour:
   defenseType: 0
   hasShields: 0
   isPlayer: 0
+  transcendsBoundary: 1
 --- !u!114 &61747241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -781,6 +790,7 @@ Transform:
   - {fileID: 1706792957}
   - {fileID: 1418903546}
   - {fileID: 61747234}
+  - {fileID: 1489604966}
   m_Father: {fileID: 0}
   m_RootOrder: 12
 --- !u!1001 &232879947
@@ -1109,6 +1119,7 @@ MonoBehaviour:
   defenseType: 0
   hasShields: 0
   isPlayer: 0
+  transcendsBoundary: 0
 --- !u!114 &245307003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2413,8 +2424,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 530977328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 15, y: 1, z: 20}
+  m_LocalPosition: {x: 0, y: 0, z: 1.94770002}
+  m_LocalScale: {x: 21.9375, y: 1, z: 27.0213566}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2455,6 +2466,33 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2076959679}
+  m_RootOrder: 0
+--- !u!1 &554147895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 554147896}
+  m_Layer: 0
+  m_Name: shotSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &554147896
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 554147895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1489604966}
   m_RootOrder: 0
 --- !u!1 &555459906
 GameObject:
@@ -4139,9 +4177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  shipMovementBoundaryX1: -7
-  shipMovementBoundaryX2: 7
-  shipMovementBoundaryY1: -3
+  shipMovementBoundaryX1: -10
+  shipMovementBoundaryX2: 10
+  shipMovementBoundaryY1: -3.29999995
   shipMovementBoundaryY2: 14
 --- !u!114 &1003429951
 MonoBehaviour:
@@ -4230,6 +4268,7 @@ MonoBehaviour:
   defenseType: 0
   hasShields: 1
   isPlayer: 1
+  transcendsBoundary: 0
 --- !u!114 &1003429955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4957,6 +4996,7 @@ MonoBehaviour:
   defenseType: 2
   hasShields: 0
   isPlayer: 0
+  transcendsBoundary: 0
 --- !u!114 &1418903552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5115,6 +5155,190 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1442276016}
+--- !u!1 &1489604957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1489604966}
+  - 135: {fileID: 1489604965}
+  - 114: {fileID: 1489604964}
+  - 114: {fileID: 1489604963}
+  - 54: {fileID: 1489604962}
+  - 114: {fileID: 1489604961}
+  - 114: {fileID: 1489604960}
+  - 23: {fileID: 1489604959}
+  - 33: {fileID: 1489604958}
+  m_Layer: 0
+  m_Name: Barbarian
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!33 &1489604958
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489604957}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1489604959
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489604957}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 0d538ed12e62247448997e18b701d641, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!114 &1489604960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489604957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a89997ead2038d42a6834bf6d677e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  duration: -1
+  huntPlayerPeriod: 3.5
+  huntRandomTargetPeriod: 2.5
+  numJumpsBeforeTargetingPlayer: 3
+  numJumpsInBetweenTargetingPlayer: 3
+  angleUpdateClamp: 180
+  angularSpeed: 180
+  randomTargetX0: -5
+  randomTargetX1: 5
+  randomTargetY0: 6
+  randomTargetY1: 12
+  angle: -90
+--- !u!114 &1489604961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400004, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489604957}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3c11c1a3bce44ae915bb6fda918603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotSpawn: {fileID: 554147896}
+  period: .5
+  probability: 1
+  angleRandomness: 10
+  projectileID: 4
+  autoFire: 1
+  objectPool: {fileID: 1308397990}
+  randomizeAim: 1
+  direction: 1
+  mainWeapon: {fileID: 0}
+--- !u!54 &1489604962
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5400000, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489604957}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1489604963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489604957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da710ce0c465546fb93ad1eaf268362c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathVFX: {fileID: 100004, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
+  shieldExplodeVFX: {fileID: 0}
+  squibID: 0
+  armorFXID: 0
+  shieldFXID: 0
+  hitPoints: 15
+  initialHitPoints: 0
+  defense: 0
+  maxShields: 0
+  shields: 0
+  shieldDisplay: {fileID: 0}
+  healthDisplay: {fileID: 0}
+  modifierType: 3
+  raceType: 1
+  defenseType: 0
+  hasShields: 0
+  isPlayer: 0
+  transcendsBoundary: 1
+--- !u!114 &1489604964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489604957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d6974cb784144f5b4b04b36e97afd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetingGraphic: {fileID: 100002, guid: 3cfd32c09ff2b47c1bb561ee3662b18a, type: 2}
+--- !u!135 &1489604965
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13500000, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489604957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1489604966
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1489604957}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
+  m_LocalPosition: {x: -5.53809977, y: 0, z: 10.1689997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 554147896}
+  m_Father: {fileID: 209368321}
+  m_RootOrder: 6
 --- !u!1 &1617025766
 GameObject:
   m_ObjectHideFlags: 0
@@ -6409,6 +6633,7 @@ MonoBehaviour:
   defenseType: 2
   hasShields: 0
   isPlayer: 0
+  transcendsBoundary: 0
 --- !u!114 &1706792964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9314,6 +9539,7 @@ MonoBehaviour:
   defenseType: 0
   hasShields: 0
   isPlayer: 0
+  transcendsBoundary: 0
 --- !u!114 &2076959683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10614,6 +10840,7 @@ MonoBehaviour:
   defenseType: 2
   hasShields: 0
   isPlayer: 0
+  transcendsBoundary: 0
 --- !u!114 &2115654832
 MonoBehaviour:
   m_ObjectHideFlags: 0
