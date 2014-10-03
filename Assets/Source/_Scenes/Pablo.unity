@@ -577,6 +577,7 @@ Transform:
   - {fileID: 245306998}
   - {fileID: 2076959679}
   - {fileID: 1706792957}
+  - {fileID: 1418903546}
   m_Father: {fileID: 0}
   m_RootOrder: 12
 --- !u!1001 &232879947
@@ -4014,7 +4015,7 @@ MonoBehaviour:
   squibID: 2
   armorFXID: 2
   shieldFXID: 1
-  hitPoints: 200
+  hitPoints: 50
   initialHitPoints: 0
   defense: 0
   maxShields: 50
@@ -4536,6 +4537,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!1001 &1333085812
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 209368321}
+    m_Modifications:
+    - target: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -3.5079
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 10.5050001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: objectPool
+      value: 
+      objectReference: {fileID: 1308397990}
+    - target: {fileID: 100002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_Name
+      value: Cleric
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 0}
+  m_ParentPrefab: {fileID: 100100000, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+  m_RootGameObject: {fileID: 1418903545}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1411648711
 GameObject:
   m_ObjectHideFlags: 0
@@ -4566,6 +4628,158 @@ Transform:
   - {fileID: 1148525565}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &1418903545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+  m_PrefabInternal: {fileID: 1333085812}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1418903546}
+  - 135: {fileID: 1418903553}
+  - 114: {fileID: 1418903552}
+  - 114: {fileID: 1418903551}
+  - 54: {fileID: 1418903550}
+  - 114: {fileID: 1418903549}
+  - 23: {fileID: 1418903548}
+  - 33: {fileID: 1418903547}
+  m_Layer: 0
+  m_Name: Cleric
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1418903546
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: c90cabfbdfa459243a4a1c71c1369b07, type: 2}
+  m_PrefabInternal: {fileID: 1333085812}
+  m_GameObject: {fileID: 1418903545}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 5.80709982, y: 0, z: 8.82409954}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 209368321}
+  m_RootOrder: 4
+--- !u!33 &1418903547
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 1333085812}
+  m_GameObject: {fileID: 1418903545}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1418903548
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 1333085812}
+  m_GameObject: {fileID: 1418903545}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: a83ee51f2b7524e6f8f4a21c9522d707, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!114 &1418903549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 1333085812}
+  m_GameObject: {fileID: 1418903545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f65c4f1610c6f349bb5266708f35ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  duration: -1
+  findTargetPeriod: 3.79999995
+  orbitingRange: 1
+  influenceRange: 2
+  healingRate: 4
+--- !u!54 &1418903550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 5400000, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 1333085812}
+  m_GameObject: {fileID: 1418903545}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1418903551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 1333085812}
+  m_GameObject: {fileID: 1418903545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da710ce0c465546fb93ad1eaf268362c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathVFX: {fileID: 100004, guid: 9ddd30ef910ea994698f8457d4013fd5, type: 2}
+  shieldExplodeVFX: {fileID: 0}
+  squibID: 0
+  armorFXID: 0
+  shieldFXID: 0
+  hitPoints: 15
+  initialHitPoints: 0
+  defense: 0
+  maxShields: 0
+  shields: 1
+  shieldDisplay: {fileID: 0}
+  healthDisplay: {fileID: 0}
+  modifierType: 0
+  raceType: 2
+  defenseType: 2
+  hasShields: 0
+  isPlayer: 0
+--- !u!114 &1418903552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 1333085812}
+  m_GameObject: {fileID: 1418903545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d6974cb784144f5b4b04b36e97afd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetingGraphic: {fileID: 100002, guid: 3cfd32c09ff2b47c1bb561ee3662b18a, type: 2}
+--- !u!135 &1418903553
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 13500000, guid: c90cabfbdfa459243a4a1c71c1369b07,
+    type: 2}
+  m_PrefabInternal: {fileID: 1333085812}
+  m_GameObject: {fileID: 1418903545}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1430286403
 GameObject:
   m_ObjectHideFlags: 0
@@ -5980,9 +6194,9 @@ MonoBehaviour:
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
-  hitPoints: 30
+  hitPoints: 20
   initialHitPoints: 0
-  defense: 2
+  defense: 1
   maxShields: 0
   shields: 2
   shieldDisplay: {fileID: 0}
@@ -10151,7 +10365,7 @@ MonoBehaviour:
   findTargetPeriod: 2.5
   orbitingRange: 1
   influenceRange: 2
-  healingRate: 10
+  healingRate: 4
 --- !u!54 &2115654830
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10185,11 +10399,11 @@ MonoBehaviour:
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
-  hitPoints: 30
+  hitPoints: 15
   initialHitPoints: 0
   defense: 0
   maxShields: 0
-  shields: 2
+  shields: 1
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
   modifierType: 0
