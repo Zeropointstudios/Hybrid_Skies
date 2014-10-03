@@ -6529,7 +6529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 100000, guid: 5d2dfd205918b534989e94e37813f7c2, type: 2}
   numObjectsToSpawn: 5
-  timeBetweenSpawns: 10
+  timeBetweenSpawns: 8
 --- !u!1 &1706792956
 GameObject:
   m_ObjectHideFlags: 0
