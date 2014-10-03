@@ -24,7 +24,7 @@ public class ModifierProjectile : Weapon {
 			Destroy(GetComponent(combo.returnBehavioral()));
 	}
 
-	public void OnTriggerEnter(Collider other)									
+	public override void OnTriggerEnter(Collider other)									
 	{
 		if ((owner == WeaponOwner.Player && other.tag == "Enemy") 
 		    || (owner == WeaponOwner.Enemy && other.tag == "Player"))

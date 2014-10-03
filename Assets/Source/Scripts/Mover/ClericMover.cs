@@ -34,8 +34,6 @@ public class ClericMover : Mover {
 			if (bestEnemy != null)
 				targetEnemy = bestEnemy;
 
-			Debug.DebugBreak();
-
 			yield return new WaitForSeconds (findTargetPeriod);		
 
 		}
