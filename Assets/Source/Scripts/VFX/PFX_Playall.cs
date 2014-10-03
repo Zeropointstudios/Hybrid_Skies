@@ -21,4 +21,12 @@ public class PFX_Playall : MonoBehaviour {
 		}
 	}
 
+	public void ToggleAll() {
+		foreach (Transform child in transform)
+		{
+			child.BroadcastMessage ("Toggle");
+		}
+	}
+
+
 }
