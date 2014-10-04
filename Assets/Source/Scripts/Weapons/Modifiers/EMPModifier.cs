@@ -9,6 +9,7 @@ public class EMPModifier : MonoBehaviour {
 		{
 			if (other.GetComponent<Firing>()!=null)
 				other.GetComponent<Firing>().StopAllCoroutines();
+			Instantiate(Resources.Load ("Prefabs/VFX/EMP/FXSet_Explode_EMP"), transform.position, Quaternion.identity);
 		}
 	}
 }
