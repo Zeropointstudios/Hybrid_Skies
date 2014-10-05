@@ -10,7 +10,7 @@ public class SecondaryFiring : Firing {
 	int currentEnergyCost;
 
 	//AudioSource mainGun01;
-	AudioSource secondWeapon01;
+	public AudioSource secondWeapon01;
 
 	void Awake() {
 		autoFire = false;

@@ -43,6 +43,12 @@ public class HitPoints : MonoBehaviour {
 	public ModifierType returnModifierType() {return modifierType;} 
 	public bool transcendsBoundary = false;  // If it can cross the game boundary without dying.
 
+	//audio FX - quick implementation - todo: call from separate script / audio in object pool?
+	public AudioSource SFXshieldDamage;
+	public AudioSource SFXshieldDestroy;
+	//public AudioSource SFXunArmoredDamage; - if this is active, then spawned enemies don't have sound assigned (get an error) - EN
+	//public AudioSource SFXplayerDestroy;
+
 	void Awake() {
 		squibPool = GameObject.Find("SquibPool").GetComponent<ObjectPool>();
 		shields = maxShields;
@@ -71,6 +77,7 @@ public class HitPoints : MonoBehaviour {
 				shields -= damage;
 				squibPool.Activate(shieldFXID, transform.position, Quaternion.identity);
 				shieldDisplay.text = shields.ToString ();
+				SFXshieldDamage.Play(); //sound FX
 				return;
 			}
 			else {
@@ -79,6 +86,7 @@ public class HitPoints : MonoBehaviour {
 				shieldDisplay.text = shields.ToString ();
 				hasShields = false;
 				Instantiate(shieldExplodeVFX, projectilePosition, Quaternion.identity);
+				SFXshieldDestroy.Play(); //sound FX
 			}
 		}
 
@@ -87,11 +95,11 @@ public class HitPoints : MonoBehaviour {
 
 			if (defense > .5 * damage ) {	//shows armor hits if the weapon is doing less than half its original damage
 				squibPool.Activate(armorFXID, projectilePosition, Quaternion.identity); //shows armor vfx hit
+
 			}
 
 			else {
 				squibPool.Activate(squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
-
 			}
 			hitPoints -= effectiveDamage;
 
@@ -100,6 +108,7 @@ public class HitPoints : MonoBehaviour {
 		else { //if there is no armor or shields, do what is left of damage (including reduction from shield)
 			squibPool.Activate(squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
 			hitPoints -= damage;
+			//SFXunArmoredDamage.Play(); //Sound FX - see note in declaration above - EN
 		}
 
 
