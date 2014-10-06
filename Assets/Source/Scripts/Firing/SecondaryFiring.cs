@@ -2,10 +2,10 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class SecondaryFiring : Firing {
+public class SecondaryFiring : Firing { //handles player energy and secondary weapon math TODO put energy in separate class
 
 	public Text energyDisplay;
-	public int energy = 100; 
+	public static float energy = 100; 
 	public int baseEnergyCost, modEnergyCost;
 	int currentEnergyCost;
 
@@ -23,6 +23,11 @@ public class SecondaryFiring : Firing {
 		if (combo.returnElemental() != ""){totalCost+=modEnergyCost;}
 		totalCost += baseEnergyCost;
 		currentEnergyCost = totalCost;
+	}
+
+	public void subtractAbsorbEnergy (float enemyHP) {
+		energy -= enemyHP;
+		energyDisplay.text = energy.ToString();
 	}
 
 	bool subtractEnergy() {

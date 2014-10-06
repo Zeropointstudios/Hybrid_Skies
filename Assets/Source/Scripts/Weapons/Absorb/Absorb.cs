@@ -50,15 +50,10 @@ public class Absorb : MonoBehaviour {
 			Time.timeScale = 1.0f; //resumes normal time when event OnRelease is caleld
 			absorbField.BroadcastMessage("Toggle");
 			absorbFieldTarget.BroadcastMessage("Toggle");
-			resetCooldown();
 			wasAbsorbEnabled = false;
 		}
 	}
-
-	void resetCooldown() {
-		cooldownCounter = 0;
-		StartCoroutine(countUp());
-	}
+	
 
 	IEnumerator countUp() {
 		while (cooldownCounter < 100) {
