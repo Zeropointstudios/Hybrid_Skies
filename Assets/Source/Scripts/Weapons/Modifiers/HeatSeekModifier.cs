@@ -6,6 +6,7 @@ using System.Linq;
 public class HeatSeekModifier : MonoBehaviour {
 	
 	Vector3 target;
+	float counter = 0;
 
 	void Awake() {
 		Destroy (GetComponent<SecondaryFiring> ());
@@ -26,7 +27,12 @@ public class HeatSeekModifier : MonoBehaviour {
 	}
 
 	void Update() {
-		print (target);
 		gameObject.transform.LookAt(target);
+		counter += Time.deltaTime;
+		if (counter > 2) { //find new target
+			RadarSweep();
+			counter = 0;
+		}
+
 	}
 }
