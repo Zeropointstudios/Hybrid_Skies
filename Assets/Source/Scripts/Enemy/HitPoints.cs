@@ -49,8 +49,8 @@ public class HitPoints : MonoBehaviour {
 	//audio FX - quick implementation - todo: call from separate script / audio in object pool?
 	public AudioSource SFXshieldDamage;
 	public AudioSource SFXshieldDestroy;
-	//public AudioSource SFXunArmoredDamage; - if this is active, then spawned enemies don't have sound assigned (get an error) - EN
-	//public AudioSource SFXplayerDestroy;
+	public AudioSource SFXunArmoredDamage; //- if this is active, then spawned enemies don't have sound assigned (get an error) - EN
+	public AudioSource SFXplayerDestroy;
 
 	void Awake() {
 		squibPool = GameObject.Find("SquibPool").GetComponent<ObjectPool>();
@@ -133,8 +133,11 @@ public class HitPoints : MonoBehaviour {
 		else { //if there is no armor or shields, do what is left of damage (including reduction from shield)
 			squibPool.Activate(squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
 			hitPoints -= damage;
-			//SFXunArmoredDamage.Play(); //Sound FX - see note in declaration above - EN
+			if (SFXunArmoredDamage != null) {
+				SFXunArmoredDamage.Play(); //Sound FX
+			}
 		}
+
 
 
 		if (hitPoints < 1 && gameObject.activeSelf == true) {
@@ -157,6 +160,9 @@ public class HitPoints : MonoBehaviour {
 	{
 		Instantiate(deathVFX, transform.position, Quaternion.identity);
 		gameObject.SetActive(false);
+		if (SFXplayerDestroy != null) {
+			SFXplayerDestroy.Play(); //Sound FX
+		}
 	}
 
 }

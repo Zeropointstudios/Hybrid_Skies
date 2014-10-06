@@ -309,7 +309,6 @@ MonoBehaviour:
   angleRandomness: 10
   projectileID: 4
   autoFire: 1
-  objectPool: {fileID: 1308397990}
   randomizeAim: 1
   direction: 1
   mainWeapon: {fileID: 0}
@@ -359,9 +358,11 @@ MonoBehaviour:
   hasShields: 0
   isPlayer: 0
   transcendsBoundary: 1
+  onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 61747243}
+  SFXunArmoredDamage: {fileID: 0}
+  SFXplayerDestroy: {fileID: 0}
 --- !u!114 &61747241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,9 +526,12 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 144007854}
+  - 114: {fileID: 144007857}
   - 82: {fileID: 144007853}
+  - 82: {fileID: 144007856}
+  - 82: {fileID: 144007855}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -541,9 +545,9 @@ AudioSource:
   m_GameObject: {fileID: 144007852}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: a5ed0f97ad3944ce0b6938f26ae1c4fa, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 9a9e1e55446404930ba9e708cb20f2dd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .100000001
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -597,12 +601,140 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 144007852}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: .707106888, y: 0, z: 0, w: .707106769}
+  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalScale: {x: 22, y: 30, z: 1}
   m_Children: []
-  m_Father: {fileID: 1148525565}
+  m_Father: {fileID: 1411648712}
   m_RootOrder: 0
+--- !u!82 &144007855
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 144007852}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 770e43f9748b14ef290f9773cc4d5d96, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!82 &144007856
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 144007852}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: d390a055f914a49879f58556ff582266, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .100000001
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &144007857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 144007852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc04ce0530a0a4ae1a8c206f875b7c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MusicStream: {fileID: 144007853}
 --- !u!1 &145407225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,6 +1250,7 @@ MonoBehaviour:
   duration: -1
   period: 4
   radius: 2
+  initialZ: 11
 --- !u!114 &245307000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,7 +1268,6 @@ MonoBehaviour:
   angleRandomness: 20
   projectileID: 4
   autoFire: 1
-  objectPool: {fileID: 1308397990}
   randomizeAim: 1
   direction: 1
   mainWeapon: {fileID: 0}
@@ -1183,9 +1315,11 @@ MonoBehaviour:
   hasShields: 0
   isPlayer: 0
   transcendsBoundary: 0
+  onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 245307007}
+  SFXunArmoredDamage: {fileID: 0}
+  SFXplayerDestroy: {fileID: 0}
 --- !u!114 &245307003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4326,7 +4460,6 @@ MonoBehaviour:
   angleRandomness: 0
   projectileID: 1
   autoFire: 0
-  objectPool: {fileID: 1308397990}
   randomizeAim: 0
   direction: 0
   mainWeapon: {fileID: 0}
@@ -4365,7 +4498,6 @@ MonoBehaviour:
   angleRandomness: 1
   projectileID: 0
   autoFire: 1
-  objectPool: {fileID: 1308397990}
   randomizeAim: 1
   direction: 0
   mainWeapon: {fileID: 1003429957}
@@ -4398,9 +4530,11 @@ MonoBehaviour:
   hasShields: 1
   isPlayer: 1
   transcendsBoundary: 0
+  onScreen: 0
   SFXshieldDamage: {fileID: 1003429959}
   SFXshieldDestroy: {fileID: 1003429960}
   SFXunArmoredDamage: {fileID: 1003429962}
+  SFXplayerDestroy: {fileID: 1003429961}
 --- !u!114 &1003429955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5027,10 +5161,9 @@ Transform:
   m_LocalRotation: {x: .707106888, y: 0, z: 0, w: .707106769}
   m_LocalPosition: {x: 0, y: -10, z: 0}
   m_LocalScale: {x: 22, y: 30, z: 1}
-  m_Children:
-  - {fileID: 144007854}
+  m_Children: []
   m_Father: {fileID: 1411648712}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1301712180
 GameObject:
   m_ObjectHideFlags: 0
@@ -5229,6 +5362,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 144007854}
   - {fileID: 2132749235}
   - {fileID: 1939452345}
   - {fileID: 1148525565}
@@ -5362,9 +5496,11 @@ MonoBehaviour:
   hasShields: 0
   isPlayer: 0
   transcendsBoundary: 0
+  onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 1418903554}
+  SFXunArmoredDamage: {fileID: 0}
+  SFXplayerDestroy: {fileID: 0}
 --- !u!114 &1418903552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5677,7 +5813,6 @@ MonoBehaviour:
   angleRandomness: 10
   projectileID: 4
   autoFire: 1
-  objectPool: {fileID: 1308397990}
   randomizeAim: 1
   direction: 1
   mainWeapon: {fileID: 0}
@@ -5727,9 +5862,11 @@ MonoBehaviour:
   hasShields: 0
   isPlayer: 0
   transcendsBoundary: 1
+  onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 1489604967}
+  SFXunArmoredDamage: {fileID: 0}
+  SFXplayerDestroy: {fileID: 0}
 --- !u!114 &1489604964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7131,7 +7268,6 @@ MonoBehaviour:
   angleRandomness: 10
   projectileID: 4
   autoFire: 1
-  objectPool: {fileID: 1308397990}
   randomizeAim: 1
   direction: 1
   mainWeapon: {fileID: 0}
@@ -7181,9 +7317,11 @@ MonoBehaviour:
   hasShields: 0
   isPlayer: 0
   transcendsBoundary: 0
+  onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 1706792958}
+  SFXunArmoredDamage: {fileID: 0}
+  SFXplayerDestroy: {fileID: 0}
 --- !u!114 &1706792964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8799,7 +8937,7 @@ Transform:
   m_LocalScale: {x: 22, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 1411648712}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &2017914105
 GameObject:
   m_ObjectHideFlags: 0
@@ -10043,7 +10181,6 @@ MonoBehaviour:
   angleRandomness: 20
   projectileID: 4
   autoFire: 1
-  objectPool: {fileID: 1308397990}
   randomizeAim: 1
   direction: 1
   mainWeapon: {fileID: 0}
@@ -10091,9 +10228,11 @@ MonoBehaviour:
   hasShields: 0
   isPlayer: 0
   transcendsBoundary: 0
+  onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 2076959688}
+  SFXunArmoredDamage: {fileID: 0}
+  SFXplayerDestroy: {fileID: 0}
 --- !u!114 &2076959683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10160,6 +10299,7 @@ MonoBehaviour:
   duration: -1
   period: 4
   radius: 2
+  initialZ: 11
 --- !u!82 &2076959688
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11512,9 +11652,11 @@ MonoBehaviour:
   hasShields: 0
   isPlayer: 0
   transcendsBoundary: 0
+  onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 2115654829}
+  SFXunArmoredDamage: {fileID: 0}
+  SFXplayerDestroy: {fileID: 0}
 --- !u!114 &2115654832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11609,7 +11751,7 @@ Transform:
   m_LocalScale: {x: 22, y: 30, z: 1}
   m_Children: []
   m_Father: {fileID: 1411648712}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &2132749236
 MonoBehaviour:
   m_ObjectHideFlags: 0
