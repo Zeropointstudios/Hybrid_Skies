@@ -17,6 +17,14 @@ public class TankMover : Mover {
 	}
 	
 	IEnumerator Movement() {
+		while (!onScreen)
+			yield return null;
+
+		// Go Down
+		seeking = false;
+		vdir = -1.0f;
+		yield return new WaitForSeconds (elevatePeriod * 2.0f);	
+		
 		while (true) {
 			if (onScreen) {
 				// Seeking

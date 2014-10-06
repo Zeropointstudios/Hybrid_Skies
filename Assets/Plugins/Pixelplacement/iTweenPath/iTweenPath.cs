@@ -29,7 +29,7 @@ public class iTweenPath : MonoBehaviour
 	public Color pathColor = Color.cyan;
 	public List<Vector3> nodes = new List<Vector3>(){Vector3.zero, Vector3.zero};
 	public int nodeCount;
-	public static Dictionary<string, iTweenPath> paths = new Dictionary<string, iTweenPath>();
+	public Dictionary<string, iTweenPath> paths = new Dictionary<string, iTweenPath>();
 	public bool initialized = false;
 	public string initialName = "";
 	public bool pathVisible = true;
@@ -61,7 +61,7 @@ public class iTweenPath : MonoBehaviour
 	/// <returns>
 	/// A <see cref="Vector3[]"/>
 	/// </returns>
-	public static Vector3[] GetPath(string requestedName){
+	public Vector3[] GetPath(string requestedName){
 		requestedName = requestedName.ToLower();
 		if(paths.ContainsKey(requestedName)){
 			return paths[requestedName].nodes.ToArray();
@@ -80,7 +80,7 @@ public class iTweenPath : MonoBehaviour
 	/// <returns>
 	/// A <see cref="Vector3[]"/>
 	/// </returns>
-	public static Vector3[] GetPathReversed(string requestedName){
+	public Vector3[] GetPathReversed(string requestedName){
 		requestedName = requestedName.ToLower();
 		if(paths.ContainsKey(requestedName)){
 			List<Vector3>  revNodes = paths[requestedName].nodes.GetRange(0,paths[requestedName].nodes.Count);
