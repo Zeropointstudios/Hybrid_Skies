@@ -13,7 +13,7 @@ public class Spawner : MonoBehaviour {
 	private const float DROP_SPEED = 4;
 	private new bool active = false;
 
-	public static List<GameObject> instantiatedGameObjects = new List<GameObject>();
+	public static List<GameObject> instantiatedGameObjects = new List<GameObject>(); // TODO: do we need this variable?
 
 	// Update is called once per frame
 	void Update () 
