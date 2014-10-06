@@ -18,7 +18,6 @@ public class Firing : MonoBehaviour {
 	protected bool onScreen = true;  // It will get set to false via the "SetOnScreen" message if the ship has HitPoints
 	
 	public void SetOnScreen(bool _onScreen) {
-		print (gameObject + " SetOnScreen " + _onScreen);
 		onScreen = _onScreen;
 	}
 

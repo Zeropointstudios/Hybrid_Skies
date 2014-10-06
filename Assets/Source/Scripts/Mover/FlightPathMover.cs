@@ -18,8 +18,6 @@ public class FlightPathMover : Mover {
 
 		iTweenPath path = gameObject.GetComponent<iTweenPath>();
 
-		print ("path = " + path);
-
 		transform.position = path.GetPath(pathName)[0];
 		
 		iTween.MoveTo(

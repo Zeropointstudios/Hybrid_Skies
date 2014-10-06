@@ -44,7 +44,7 @@ public class HitPoints : MonoBehaviour {
 	public bool transcendsBoundary = false;  // If it can cross the game boundary without dying.
 
 	public bool onScreen = false;  // Indicates that the enemy is to be awakened now that it is on-screen.
-	private const float DROP_SPEED = 4;
+	private const float DROP_SPEED = 2;
 
 	//audio FX - quick implementation - todo: call from separate script / audio in object pool?
 	public AudioSource SFXshieldDamage;

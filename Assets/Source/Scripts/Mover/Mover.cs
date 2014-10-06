@@ -12,7 +12,6 @@ public class Mover : MonoBehaviour {
 	                                 // (so Weapons can start onScreen without having 
 
 	public void SetOnScreen(bool _onScreen) {
-		print (gameObject + " SetOnScreen " + _onScreen);
 		onScreen = _onScreen;
 	}
 
