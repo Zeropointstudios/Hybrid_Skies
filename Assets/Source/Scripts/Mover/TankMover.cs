@@ -18,25 +18,28 @@ public class TankMover : Mover {
 	
 	IEnumerator Movement() {
 		while (true) {
-			// Seeking
-			seeking = true;
-			vdir = 0.0f;
-			yield return new WaitForSeconds (seekingPeriod);				
+			if (onScreen) {
+				// Seeking
+				seeking = true;
+				vdir = 0.0f;
+				yield return new WaitForSeconds (seekingPeriod);				
 
-			// Go Down
-			seeking = false;
-			vdir = -1.0f;
-			yield return new WaitForSeconds (elevatePeriod);				
+				// Go Down
+				seeking = false;
+				vdir = -1.0f;
+				yield return new WaitForSeconds (elevatePeriod);				
 
-			// Seeking
-			seeking = true;
-			vdir = 0.0f;
-			yield return new WaitForSeconds (seekingPeriod);				
+				// Seeking
+				seeking = true;
+				vdir = 0.0f;
+				yield return new WaitForSeconds (seekingPeriod);				
 
-			// Go Up
-			seeking = false;
-			vdir = 1.0f;
-			yield return new WaitForSeconds (elevatePeriod);				
+				// Go Up
+				seeking = false;
+				vdir = 1.0f;
+				yield return new WaitForSeconds (elevatePeriod);		
+			} else
+				yield return null;
 		}
 	}
 

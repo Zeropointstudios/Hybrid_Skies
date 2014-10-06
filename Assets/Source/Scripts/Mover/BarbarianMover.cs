@@ -37,27 +37,30 @@ public class BarbarianMover : Mover {
 		yield return null; // Wait a frame, so all Finder references are updated.
 
 		while (true) {
-			if (numJumpsBeforeTargetingPlayer > 0) {
-				targetPlayer = false;
-				numJumpsBeforeTargetingPlayer--;
-			} else if (numJumpsAfterTargetingPlayer > 0) {
-				targetPlayer = false;
-				numJumpsAfterTargetingPlayer--;
-			} else {
-				targetPlayer = true;
-				numJumpsAfterTargetingPlayer = numJumpsInBetweenTargetingPlayer;
-			}
+			if (onScreen) {
+				if (numJumpsBeforeTargetingPlayer > 0) {
+					targetPlayer = false;
+					numJumpsBeforeTargetingPlayer--;
+				} else if (numJumpsAfterTargetingPlayer > 0) {
+					targetPlayer = false;
+					numJumpsAfterTargetingPlayer--;
+				} else {
+					targetPlayer = true;
+					numJumpsAfterTargetingPlayer = numJumpsInBetweenTargetingPlayer;
+				}
 
-			if (targetPlayer) {
-				yield return new WaitForSeconds (huntPlayerPeriod);	
-			}
-			else { 
-				float x = Random.Range(randomTargetX0, randomTargetX1);
-				float y = Random.Range(randomTargetY0, randomTargetY1);
-				target = new Vector3(x, 0, y);
+				if (targetPlayer) {
+					yield return new WaitForSeconds (huntPlayerPeriod);	
+				}
+				else { 
+					float x = Random.Range(randomTargetX0, randomTargetX1);
+					float y = Random.Range(randomTargetY0, randomTargetY1);
+					target = new Vector3(x, 0, y);
 
-				yield return new WaitForSeconds (huntRandomTargetPeriod);	
-			}
+					yield return new WaitForSeconds (huntRandomTargetPeriod);	
+				}
+			} else
+				yield return null;
 		}
 	}
 	

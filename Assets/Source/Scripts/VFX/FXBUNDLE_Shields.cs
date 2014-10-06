@@ -4,7 +4,7 @@ using System.Collections;
 public class FXBUNDLE_Shields : MonoBehaviour {
 	Transform tFXSet_Shields;
 	Transform tFXSet_Explode_Shields;
-	bool bShieldIsOn = false;
+	//bool bShieldIsOn = false;
 
 	// **** Public Functions to Call to Invoke Effects
 
@@ -14,7 +14,7 @@ public class FXBUNDLE_Shields : MonoBehaviour {
 		if (tFXSet_Shields) {
 			print ("FXBUNDLE_Shields: ShieldsOn()");
 			tFXSet_Shields.SendMessage ("PlayAll");
-			bShieldIsOn = true;
+			//bShieldIsOn = true;
 		}
 		else {
 			print ("FXBUNDLE_Shields: tFX_Shields is undefined");
@@ -27,7 +27,7 @@ public class FXBUNDLE_Shields : MonoBehaviour {
 		if (tFXSet_Shields) {
 				print ("FXBUNDLE_Shields: ShieldsOff()");
 				tFXSet_Shields.SendMessage ("StopAll");
-				bShieldIsOn = false;
+				//bShieldIsOn = false;
 		}
 		else {
 			print ("tFX_Shields is undefined");
@@ -40,7 +40,7 @@ public class FXBUNDLE_Shields : MonoBehaviour {
 		if (tFXSet_Explode_Shields) {
 			tFXSet_Explode_Shields.SendMessage ("PlayAll");
 			ShieldsOff ();
-			bShieldIsOn = false;
+			//bShieldIsOn = false;
 		}
 		else {
 			print ("tFX_Shields is undefined");

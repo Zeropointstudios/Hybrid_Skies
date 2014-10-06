@@ -22,22 +22,24 @@ public class ClericMover : Mover {
 		yield return null; // Wait a frame, so all Finder references are updated.
 
 		while (true) {
-			// Find the enemy with the fewest hit points (other than the current target and itself)
-			GameObject bestEnemy = null;
-			float bestUtility = Mathf.NegativeInfinity;
-			foreach (GameObject enemy in Finder.GetEnemies()) {
-				// Lowest ratio of health gets healed.
-				float utility = -(enemy.GetComponent<HitPoints>().hitPoints / enemy.GetComponent<HitPoints>().initialHitPoints); 
-				if (utility > bestUtility && enemy != targetEnemy && enemy != gameObject) {
-					bestUtility = utility;
-					bestEnemy = enemy;
+			if (onScreen) {
+				// Find the enemy with the fewest hit points (other than the current target and itself)
+				GameObject bestEnemy = null;
+				float bestUtility = Mathf.NegativeInfinity;
+				foreach (GameObject enemy in Finder.GetEnemies()) {
+					// Lowest ratio of health gets healed.
+					float utility = -(enemy.GetComponent<HitPoints>().hitPoints / enemy.GetComponent<HitPoints>().initialHitPoints); 
+					if (utility > bestUtility && enemy != targetEnemy && enemy != gameObject) {
+						bestUtility = utility;
+						bestEnemy = enemy;
+					}
 				}
-			}
-			if (bestEnemy != null)
-				targetEnemy = bestEnemy;
+				if (bestEnemy != null)
+					targetEnemy = bestEnemy;
 
-			yield return new WaitForSeconds (findTargetPeriod);		
-
+				yield return new WaitForSeconds (findTargetPeriod);		
+			} else
+				yield return null;
 		}
 	}
 

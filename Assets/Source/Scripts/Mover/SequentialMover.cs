@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// WIP: this class is not yet complete.  Not ready for use.
 public class SequentialMover : Mover {
 	// Keeps sequentially alternating between which mover in the list gets applied...
 	public Mover[] moverList; // List of Movers.

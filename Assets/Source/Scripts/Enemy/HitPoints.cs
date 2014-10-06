@@ -18,7 +18,7 @@ public enum DefenseType {
 	Shield
 };
 
-// TODO: rename HitPoints to Ship, so it can hold properties about ships (like it basically does now).
+// This is basically a Ship class (we're holding off from renaming since that is inconvenient for now).
 public class HitPoints : MonoBehaviour {
 
 	//TODO make enemies have a pool also
@@ -35,13 +35,16 @@ public class HitPoints : MonoBehaviour {
 	public Text shieldDisplay, healthDisplay;
 	public ModifierType modifierType = ModifierType.None;
 	public RaceType raceType = RaceType.None;
-	public DefenseType defenseType = DefenseType.None; //pretty sure we decided that this does not matter and they can have both
+	public DefenseType defenseType = DefenseType.None;  // Pretty sure we decided that this does not matter and they can have both.
 	public bool hasShields;
 	public bool isPlayer;
 	public ObjectPool returnSquibPool(){return squibPool;}
 	public int returnSquibID(){return squibID;}
 	public ModifierType returnModifierType() {return modifierType;} 
 	public bool transcendsBoundary = false;  // If it can cross the game boundary without dying.
+
+	public bool onScreen = false;  // Indicates that the enemy is to be awakened now that it is on-screen.
+	private const float DROP_SPEED = 4;
 
 	//audio FX - quick implementation - todo: call from separate script / audio in object pool?
 	public AudioSource SFXshieldDamage;
@@ -56,6 +59,27 @@ public class HitPoints : MonoBehaviour {
 		if (isPlayer){
 			shieldDisplay.text = shields.ToString ();
 			healthDisplay.text = hitPoints.ToString ();
+		}
+
+		// Set to initially off-screen.
+		onScreen = false;
+		gameObject.SendMessage ("SetOnScreen", false, SendMessageOptions.DontRequireReceiver);
+	}
+
+	// Once an enemy comes on-screen, it becomes on-screen (i.e. active).
+	public void EnterBoundary()
+	{
+		// Once it's on-screen...
+		onScreen = true;
+		gameObject.SendMessage ("SetOnScreen", true, SendMessageOptions.DontRequireReceiver);
+	}
+
+	public void Update () 
+	{
+		// Move the enemy ship down a little bit from offscreen (above the screen) toward the screen, until it is on-screen.
+		if (!onScreen)
+		{
+			this.transform.position -= new Vector3(0, 0, Time.deltaTime * DROP_SPEED);
 		}
 	}
 
@@ -77,7 +101,8 @@ public class HitPoints : MonoBehaviour {
 				shields -= damage;
 				squibPool.Activate(shieldFXID, transform.position, Quaternion.identity);
 				shieldDisplay.text = shields.ToString ();
-				SFXshieldDamage.Play(); //sound FX
+				if (SFXshieldDamage != null)
+					SFXshieldDamage.Play(); //sound FX
 				return;
 			}
 			else {
