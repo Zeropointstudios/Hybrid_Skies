@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 400000}
-  period: .100000001
+  period: .0500000007
   probability: .5
   angleRandomness: 180
   projectileID: 4
@@ -169,7 +169,7 @@ MonoBehaviour:
   defenseType: 0
   hasShields: 0
   isPlayer: 0
-  transcendsBoundary: 1
+  transcendsBoundary: 0
   onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
