@@ -26,8 +26,7 @@ public class HeatSeekModifier : MonoBehaviour {
 	}
 
 	void Update() {
-		if (target != null) {
-			gameObject.transform.LookAt(target);
-		}
+		print (target);
+		gameObject.transform.LookAt(target);
 	}
 }

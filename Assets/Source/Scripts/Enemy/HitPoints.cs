@@ -159,10 +159,10 @@ public class HitPoints : MonoBehaviour {
 	public void Kill()
 	{
 		Instantiate(deathVFX, transform.position, Quaternion.identity);
-		gameObject.SetActive(false);
-		if (SFXplayerDestroy != null) {
+		if (isPlayer)
 			SFXplayerDestroy.Play(); //Sound FX
-		}
+	
+		gameObject.SetActive(false);
 	}
 
 }
