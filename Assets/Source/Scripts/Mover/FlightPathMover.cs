@@ -3,10 +3,12 @@ using UnityEditor;
 using System.Collections;
 
 public class FlightPathMover : Mover {
+	public string pathName = "flightPath";
 	public int pathTime;
 	public float lookAheadTime;
 	
 	void Start () {
+		EditorUtility.SetDirty( gameObject );
 		StartCoroutine("ExecuteFlightPath");
 	}
 
@@ -14,16 +16,18 @@ public class FlightPathMover : Mover {
 		while(!onScreen)
 			yield return null;
 
-		iTweenPath path = GetComponent<iTweenPath>();
+		iTweenPath path = gameObject.GetComponent<iTweenPath>();
 
-		transform.position = path.GetPath("FlightPath")[0];
+		print ("path = " + path);
+
+		transform.position = path.GetPath(pathName)[0];
 		
 		iTween.MoveTo(
 			gameObject, 
 			iTween.Hash(
 				//"position", transform.position + new Vector3(10.0f, 0.0f, 0.0f), 
 				//"islocal", true, 
-				"path", path.GetPath("FlightPath"), 
+				"path", path.GetPath(pathName), 
 				"time", pathTime, 
 				"orienttopath", true, 
 				"easytype", iTween.EaseType.easeInOutSine, 
