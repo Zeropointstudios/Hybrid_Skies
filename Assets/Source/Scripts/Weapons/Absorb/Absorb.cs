@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Absorb : MonoBehaviour {
 
 	public static int cooldownCounter = 100;
-	public float cooldownSpeed;
+	public float drainEnergySpeed;
 	public Text cooldownDisplay;
 	public GameObject absorbField, absorbFieldTarget;
 	public float timeMultiplier;
@@ -17,7 +17,7 @@ public class Absorb : MonoBehaviour {
 	// Instanciates the absorb prefab at the location of right-click.
 	public void EnableAbsorb() 
 	{
-		if (cooldownCounter == 100) {
+		if (SecondaryFiring.energy>0) {
 			Time.timeScale = timeMultiplier; //slows down time when event HeldDown is called
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition); 
 			Vector3 point = ray.origin + (ray.direction * PlayerController.cameraDistance); //creates position from which absorb field spawns
@@ -25,13 +25,14 @@ public class Absorb : MonoBehaviour {
 			absorbField.BroadcastMessage("Toggle");
 			absorbFieldTarget.BroadcastMessage("Toggle");
 			wasAbsorbEnabled = true;
+			StartCoroutine(drainEnergy());
 		}
 	}
 
 #elif UNITY_IPHONE
 	public void EnableAbsorb() 
 	{
-		if (cooldownCounter == 100) {
+		if (SecondaryFiring.energy>0) {
 			Time.timeScale = timeMultiplier; //slows down time when event HeldDown is called
 			Vector3 point = Camera.main.ScreenToWorldPoint (
 				new Vector3(Input.GetTouch(1).position.x, Input.GetTouch(1).position.y + 125.0f, PlayerController.cameraDistance / 2));
@@ -39,6 +40,8 @@ public class Absorb : MonoBehaviour {
 			absorbField.BroadcastMessage("Toggle");
 			absorbFieldTarget.BroadcastMessage("Toggle");
 			wasAbsorbEnabled = true;
+			StartCoroutine(drainEnergy);
+
 		}
 	}
 
@@ -55,13 +58,15 @@ public class Absorb : MonoBehaviour {
 	}
 	
 
-	IEnumerator countUp() {
-		while (cooldownCounter < 100) {
-			cooldownCounter += 1;
-			cooldownDisplay.text = cooldownCounter.ToString();
-			if (cooldownCounter == 100)
-				cooldownDisplay.text = "Ready";
-			yield return new WaitForSeconds (cooldownSpeed);
+	IEnumerator drainEnergy() {
+		while (wasAbsorbEnabled) {
+			if (SecondaryFiring.energy>0){
+				GameObject.FindGameObjectWithTag("Player").GetComponent<SecondaryFiring>().subtractAbsorbEnergy(1);
+				yield return new WaitForSeconds (drainEnergySpeed);
+
+			}
+			else
+				DisableAbsorb();
 		}
 	}
 
