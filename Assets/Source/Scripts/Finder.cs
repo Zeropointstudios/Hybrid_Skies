@@ -6,7 +6,7 @@ public class Finder : MonoBehaviour {
 	static GameObject player;
 	static PlayerController playerController;
 	static GameController gameController;
-	static ObjectPool objectPool;
+	static ObjectPool objectPool, enemyWeaponPool;
 
 	// Use this for initialization
 	public void Awake () {
@@ -14,6 +14,7 @@ public class Finder : MonoBehaviour {
 		playerController = player.GetComponent<PlayerController>();
 		gameController = GameObject.Find("GameController").GetComponent<GameController>();
 		objectPool = GameObject.Find("Pool").GetComponent<ObjectPool>();
+
 	}
 	
 	// Update is called once per frame
