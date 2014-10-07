@@ -44,7 +44,7 @@ public class HitPoints : MonoBehaviour {
 	public bool transcendsBoundary = false;  // If it can cross the game boundary without dying.
 
 	public bool onScreen = false;  // Indicates that the enemy is to be awakened now that it is on-screen.
-	private const float DROP_SPEED = 2;
+
 
 	//audio FX - quick implementation - todo: call from separate script / audio in object pool?
 	public AudioSource SFXshieldDamage;
@@ -59,6 +59,10 @@ public class HitPoints : MonoBehaviour {
 		if (isPlayer){
 			shieldDisplay.text = shields.ToString ();
 			healthDisplay.text = hitPoints.ToString ();
+		}
+
+		if (hasShields) {
+			StartCoroutine("ShieldRegeneration");
 		}
 
 		// Set to initially off-screen.
@@ -79,7 +83,7 @@ public class HitPoints : MonoBehaviour {
 		// Move the enemy ship down a little bit from offscreen (above the screen) toward the screen, until it is on-screen.
 		if (!onScreen)
 		{
-			this.transform.position -= new Vector3(0, 0, Time.deltaTime * DROP_SPEED);
+			this.transform.position -= new Vector3(0, 0, GameController.GetScreenDrop());
 		}
 	}
 

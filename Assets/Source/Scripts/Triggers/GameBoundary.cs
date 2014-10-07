@@ -10,10 +10,11 @@ public class GameBoundary : MonoBehaviour {
 
 	void OnTriggerExit(Collider other)
 	{
-		if (other.tag != "Player") {
+		if (other.tag != "Player" && other.tag != "Trigger") {
 			HitPoints hitPoints = other.gameObject.GetComponent<HitPoints>();
-			if (!(hitPoints != null && hitPoints.transcendsBoundary))
+			if (!(hitPoints != null && hitPoints.transcendsBoundary)) {
 				other.gameObject.SetActive(false);
+			}
 		}
 	}
 }

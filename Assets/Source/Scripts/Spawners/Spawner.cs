@@ -10,7 +10,6 @@ public class Spawner : MonoBehaviour {
 	public int numObjectsToSpawn = 1;
 	public float timeBetweenSpawns = 1;
 
-	private const float DROP_SPEED = 4;
 	private new bool active = false;
 
 	public static List<GameObject> instantiatedGameObjects = new List<GameObject>(); // TODO: do we need this variable?
@@ -21,7 +20,7 @@ public class Spawner : MonoBehaviour {
 		// Move the spawner down a little bit from offscreen (above the screen) toward the screen, until it is on-screen.
 		if (!active)
 		{
-			this.transform.position -= new Vector3(0, 0, Time.deltaTime * DROP_SPEED);
+			this.transform.position -= new Vector3(0, 0, GameController.GetScreenDrop());
 		}
 	}
 
