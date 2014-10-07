@@ -50,7 +50,7 @@ public class HitPoints : MonoBehaviour {
 	public AudioSource SFXshieldDamage;
 	public AudioSource SFXshieldDestroy;
 	public AudioSource SFXunArmoredDamage; //- if this is active, then spawned enemies don't have sound assigned (get an error) - EN
-	public AudioSource SFXplayerDestroy;
+	public AudioSource SFXDestroy;
 
 	void Awake() {
 		squibPool = GameObject.Find("SquibPool").GetComponent<ObjectPool>();
@@ -163,8 +163,8 @@ public class HitPoints : MonoBehaviour {
 	public void Kill()
 	{
 		Instantiate(deathVFX, transform.position, Quaternion.identity);
-		if (isPlayer)
-			SFXplayerDestroy.Play(); //Sound FX
+		if (SFXDestroy != null)
+			SFXDestroy.Play(); //Sound FX
 	
 		gameObject.SetActive(false);
 	}
