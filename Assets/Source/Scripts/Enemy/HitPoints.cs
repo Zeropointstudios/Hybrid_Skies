@@ -96,6 +96,10 @@ public class HitPoints : MonoBehaviour {
 		}
 	}
 
+	public void DrainLife(float amount) {
+		hitPoints -= amount;
+	}
+
 	public void DoDamage(float damage, Vector3 projectilePosition)
 	{
 		//if there are shields take away from them first

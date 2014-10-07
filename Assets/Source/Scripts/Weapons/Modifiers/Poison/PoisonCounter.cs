@@ -17,7 +17,7 @@ public class PoisonCounter : MonoBehaviour {
 	void DrainEnemyLife()
 	{
 		print ("doin poison damage");
-//		transform.parent.GetComponent<HitPoints> ().doDamage (damage, null);
+		transform.parent.GetComponent<HitPoints> ().DrainLife (damage);
 	}
 
 	void OnDisable() {
