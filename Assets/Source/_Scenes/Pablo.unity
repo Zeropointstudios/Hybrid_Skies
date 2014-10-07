@@ -5700,6 +5700,8 @@ GameObject:
   - 54: {fileID: 391406060}
   - 33: {fileID: 391406061}
   - 114: {fileID: 391406066}
+  - 114: {fileID: 391406069}
+  - 114: {fileID: 391406067}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -5794,7 +5796,7 @@ MonoBehaviour:
   defenseType: 1
   hasShields: 0
   isPlayer: 0
-  transcendsBoundary: 0
+  transcendsBoundary: 1
   onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
@@ -5827,6 +5829,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   duration: -1
+--- !u!114 &391406067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 391406059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5a275137131c64aac4401e2f001bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  duration: 8
+  pathName: path0
+  pathTime: 8
+  lookAheadTime: 1
 --- !u!4 &391406068
 Transform:
   m_ObjectHideFlags: 0
@@ -5834,11 +5852,35 @@ Transform:
   m_PrefabInternal: {fileID: 2033015942}
   m_GameObject: {fileID: 391406059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.81923002, y: 0, z: 26.8519993}
+  m_LocalPosition: {x: -.705420017, y: 0, z: 22.7539997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 209368321}
   m_RootOrder: 5
+--- !u!114 &391406069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 391406059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bffa8aa898b437183cd5617f7b5303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathName: path0
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  nodes:
+  - {x: 5.23686934, y: 0, z: 17.5321255}
+  - {x: 6.26147461, y: 0, z: 5.57840347}
+  - {x: 1.25229502, y: 0, z: -.455379844}
+  - {x: -2.16305494, y: 0, z: 4.78148842}
+  - {x: 3.98457456, y: 0, z: 5.69224787}
+  - {x: 5.35071516, y: 0, z: -9.67682266}
+  nodeCount: 6
+  initialized: 1
+  initialName: New Path 1
+  pathVisible: 1
 --- !u!1 &401918290
 GameObject:
   m_ObjectHideFlags: 0
@@ -16622,7 +16664,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -.81923002
+      value: -.705420017
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
       propertyPath: m_LocalPosition.y
@@ -16630,7 +16672,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 26.8519993
+      value: 22.7539997
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -16651,6 +16693,10 @@ Prefab:
     - target: {fileID: 400000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
+      propertyPath: transcendsBoundary
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

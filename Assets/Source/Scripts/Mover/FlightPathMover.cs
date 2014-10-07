@@ -32,6 +32,9 @@ public class FlightPathMover : Mover {
 				"looktime", lookAheadTime
 			)
 		);
-		yield return null;
+
+		yield return new WaitForSeconds(pathTime);
+		gameObject.SetActive(false);
+
 	}
 }
