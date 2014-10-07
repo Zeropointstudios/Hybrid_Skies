@@ -29,7 +29,7 @@ public class Absorb : MonoBehaviour {
 			absorbFieldTarget.BroadcastMessage("Toggle");
 			wasAbsorbEnabled = true;
 			absorbEnableSound.Play();
-			StartCoroutine(drainEnergy());
+			StartCoroutine(DrainEnergy());
 		}
 	}
 
@@ -45,7 +45,7 @@ public class Absorb : MonoBehaviour {
 			absorbFieldTarget.BroadcastMessage("Toggle");
 			wasAbsorbEnabled = true;
 			absorbEnableSound.Play();
-			StartCoroutine(drainEnergy);
+			StartCoroutine(DrainEnergy);
 
 		}
 	}
@@ -65,10 +65,10 @@ public class Absorb : MonoBehaviour {
 	}
 	
 
-	IEnumerator drainEnergy() {
+	IEnumerator DrainEnergy() {
 		while (wasAbsorbEnabled) {
 			if (SecondaryFiring.energy>0){
-				GameObject.FindGameObjectWithTag("Player").GetComponent<SecondaryFiring>().subtractAbsorbEnergy(1);
+				GameObject.FindGameObjectWithTag("Player").GetComponent<SecondaryFiring>().SubtractAbsorbEnergy(1);
 				yield return new WaitForSeconds (drainEnergySpeed);
 
 			}

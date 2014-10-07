@@ -72,6 +72,6 @@ public class PlayerController : MonoBehaviour
 				case ModifierType.Rebound : modifierCombo.setBehavioral("RebounderModifier"); modifierDisplay.setBMod("Rebound"); break;
 			}
 		}
-		GetComponent<SecondaryFiring> ().setEnergyCost (modifierCombo);
+		GetComponent<SecondaryFiring> ().SetEnergyCost (modifierCombo);
 	}
 }

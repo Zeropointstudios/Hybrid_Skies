@@ -76,7 +76,7 @@ public class Targeter : MonoBehaviour {
 			if (gameObject.GetComponent<HitPoints>().hitPoints <= SecondaryFiring.energy) {
 				ModifierType modifierInEnemy = gameObject.GetComponent<HitPoints>().returnModifierType(); //accesses the enemies mod type
 				AbsorbModEvent(modifierInEnemy); //triggers an event that sends out the modifier data
-				GameObject.FindGameObjectWithTag("Player").GetComponent<SecondaryFiring>().subtractAbsorbEnergy(gameObject.GetComponent<HitPoints>().hitPoints);//subtracts energy
+				GameObject.FindGameObjectWithTag("Player").GetComponent<SecondaryFiring>().SubtractAbsorbEnergy(gameObject.GetComponent<HitPoints>().hitPoints);//subtracts energy
 				gameObject.GetComponent<HitPoints>().Kill(); //kills enemy which should actually deactivate it TODO
 			}
 

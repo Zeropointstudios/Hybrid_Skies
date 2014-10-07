@@ -17,7 +17,7 @@ public class SecondaryFiring : Firing { //handles player energy and secondary we
 		currentEnergyCost = baseEnergyCost;
 	}
 
-	public void setEnergyCost(ModifierCombo combo) {								//determines cost of firing secondary weapon
+	public void SetEnergyCost(ModifierCombo combo) {								//determines cost of firing secondary weapon
 		int totalCost = 0;
 		if (combo.returnBehavioral() != ""){totalCost+=modEnergyCost;}
 		if (combo.returnElemental() != ""){totalCost+=modEnergyCost;}
@@ -25,12 +25,17 @@ public class SecondaryFiring : Firing { //handles player energy and secondary we
 		currentEnergyCost = totalCost;
 	}
 
-	public void subtractAbsorbEnergy (float enemyHP) {
+	public void AddEnergy (float energyx) {
+		energy += energyx;
+		energyDisplay.text = energy.ToString();
+	}
+
+	public void SubtractAbsorbEnergy (float enemyHP) {
 		energy -= enemyHP;
 		energyDisplay.text = energy.ToString();
 	}
 
-	bool subtractEnergy() {
+	bool SubtractEnergy() {
 		if ((energy - currentEnergyCost) >= 0) {										//checks to see if there is enough energy to fire
 			energy -= currentEnergyCost;
 			energyDisplay.text = energy.ToString();
@@ -49,7 +54,7 @@ public class SecondaryFiring : Firing { //handles player energy and secondary we
 	}
 
 	public override void FireProjectile() {
-		if (subtractEnergy()) {
+		if (SubtractEnergy()) {
 
 			float hypotenuse, opposite, shotAngle; 
 			Vector3 oppositePoint = new Vector3(shotSpawn.transform.position.x, 0, ClickHandler.PositionOfLastTap.z); //used to calculate opposite

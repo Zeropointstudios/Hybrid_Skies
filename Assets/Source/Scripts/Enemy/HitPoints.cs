@@ -24,6 +24,7 @@ public class HitPoints : MonoBehaviour {
 	//TODO make enemies have a pool also
 	public GameObject deathVFX, shieldExplodeVFX, energyPowerUp;
 	ObjectPool squibPool;
+	public int energyBonusID; //5 if big unit, 6 if medium unit, 7 is small unit
 	public int squibID;
 	public int armorFXID;
 	public int shieldFXID;
@@ -169,8 +170,8 @@ public class HitPoints : MonoBehaviour {
 		Instantiate(deathVFX, transform.position, Quaternion.identity);
 
 		if (!isPlayer)
-			Instantiate(energyPowerUp, transform.position, Quaternion.identity);
-
+			Finder.GetObjectPool().Activate(energyBonusID, transform.position, Quaternion.identity);
+			
 		if (SFXDestroy != null)
 			SFXDestroy.Play(); //Sound FX
 	

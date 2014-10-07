@@ -234,6 +234,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
+  energyBonusID: 6
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
