@@ -22,7 +22,7 @@ public enum DefenseType {
 public class HitPoints : MonoBehaviour {
 
 	//TODO make enemies have a pool also
-	public GameObject deathVFX, shieldExplodeVFX;
+	public GameObject deathVFX, shieldExplodeVFX, energyPowerUp;
 	ObjectPool squibPool;
 	public int squibID;
 	public int armorFXID;
@@ -167,6 +167,10 @@ public class HitPoints : MonoBehaviour {
 	public void Kill()
 	{
 		Instantiate(deathVFX, transform.position, Quaternion.identity);
+
+		if (!isPlayer)
+			Instantiate(energyPowerUp, transform.position, Quaternion.identity);
+
 		if (SFXDestroy != null)
 			SFXDestroy.Play(); //Sound FX
 	

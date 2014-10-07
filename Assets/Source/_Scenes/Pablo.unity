@@ -529,6 +529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
@@ -753,6 +754,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!1001 &131466495
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.51906872
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .293103129
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 83.8504791
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+      propertyPath: m_Name
+      value: Energy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+  m_RootGameObject: {fileID: 182270631}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &136555172
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +937,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb2d5b3a15fba245a87e0f91abacca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &182270631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+  m_PrefabInternal: {fileID: 131466495}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 182270632}
+  m_Layer: 0
+  m_Name: Energy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &182270632
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 31a2d88975bef47ca88011f956891095, type: 2}
+  m_PrefabInternal: {fileID: 131466495}
+  m_GameObject: {fileID: 182270631}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.51906872, y: .293103129, z: 83.8504791}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
 --- !u!1 &183979752
 GameObject:
   m_ObjectHideFlags: 0
@@ -7719,6 +7795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
@@ -8058,6 +8135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
@@ -9741,6 +9819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100008, guid: f9d0773faf3ccb44bb773586924c338c, type: 2}
   shieldExplodeVFX: {fileID: 100000, guid: 299c0f9b03e7c2249a22bcdfbe26b33d, type: 2}
+  energyPowerUp: {fileID: 0}
   squibID: 2
   armorFXID: 2
   shieldFXID: 1
@@ -10814,6 +10893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
@@ -11265,6 +11345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
@@ -11879,6 +11960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
@@ -13462,6 +13544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
@@ -13772,6 +13855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
@@ -15807,6 +15891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
@@ -17170,6 +17255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
   shieldExplodeVFX: {fileID: 0}
+  energyPowerUp: {fileID: 0}
   squibID: 0
   armorFXID: 0
   shieldFXID: 0
