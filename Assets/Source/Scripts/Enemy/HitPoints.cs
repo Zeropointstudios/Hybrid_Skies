@@ -10,13 +10,6 @@ public enum RaceType {
 	Tech
 };
 
-[System.Serializable]
-public enum DefenseType {
-	None,
-	
-	Armor,
-	Shield
-};
 
 // This is basically a Ship class (we're holding off from renaming since that is inconvenient for now).
 public class HitPoints : MonoBehaviour {
@@ -36,7 +29,6 @@ public class HitPoints : MonoBehaviour {
 	public Text shieldDisplay, healthDisplay;
 	public ModifierType modifierType = ModifierType.None;
 	public RaceType raceType = RaceType.None;
-	public DefenseType defenseType = DefenseType.None;  // Pretty sure we decided that this does not matter and they can have both.
 	public bool hasShields;
 	public bool isPlayer;
 	public ObjectPool returnSquibPool(){return squibPool;}

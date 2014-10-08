@@ -3,7 +3,11 @@ using System.Collections;
 
 public class TargetFiring : Firing { //this class is for enemies firing at the player
 
-	public GameObject target;
+	GameObject target;
+
+	void Awake() {
+		target = GameObject.FindGameObjectWithTag ("Player");
+	}
 
 
 	public override void FireProjectile() {

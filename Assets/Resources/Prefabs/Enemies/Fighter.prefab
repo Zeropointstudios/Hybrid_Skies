@@ -241,7 +241,7 @@ MonoBehaviour:
   period: .280000001
   probability: .100000001
   angleRandomness: 10
-  projectileID: 4
+  projectileID: 8
   autoFire: 1
   randomizeAim: 1
   direction: 1
