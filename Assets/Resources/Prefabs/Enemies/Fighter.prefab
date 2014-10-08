@@ -49,7 +49,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: -1.62920685e-07}
   m_LocalPosition: {x: 2.28439999, y: 0, z: 55.7210007}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
@@ -216,7 +216,7 @@ MonoBehaviour:
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
   modifierType: 4
-  raceType: 0
+  raceType: 1
   defenseType: 1
   hasShields: 0
   isPlayer: 0
@@ -238,8 +238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 400002}
-  period: .0799999982
-  probability: .200000003
+  period: .280000001
+  probability: .100000001
   angleRandomness: 10
   projectileID: 4
   autoFire: 1

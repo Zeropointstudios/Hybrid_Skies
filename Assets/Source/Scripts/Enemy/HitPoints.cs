@@ -93,7 +93,7 @@ public class HitPoints : MonoBehaviour {
 		{
 			yield return new WaitForSeconds(1);	//regenerates shields every second
 				if (shields < maxShields)
-					shields +=1;
+					shields +=2;
 		}
 	}
 
