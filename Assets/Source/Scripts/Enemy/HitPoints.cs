@@ -109,7 +109,8 @@ public class HitPoints : MonoBehaviour {
 			if (shields >= damage) {
 				shields -= damage;
 				squibPool.Activate(shieldFXID, transform.position, Quaternion.identity);
-				shieldDisplay.text = shields.ToString ();
+				if (isPlayer)
+					shieldDisplay.text = shields.ToString ();
 				if (SFXshieldDamage != null)
 					SFXshieldDamage.Play(); //sound FX
 				return;
@@ -117,7 +118,8 @@ public class HitPoints : MonoBehaviour {
 			else {
 				damage -= shields;
 				shields = 0;
-				shieldDisplay.text = shields.ToString ();
+				if (isPlayer)
+					shieldDisplay.text = shields.ToString ();
 				hasShields = false;
 				Instantiate(shieldExplodeVFX, projectilePosition, Quaternion.identity);
 				SFXshieldDestroy.Play(); //sound FX

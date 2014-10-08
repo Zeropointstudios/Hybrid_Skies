@@ -1151,7 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -2910,7 +2910,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -12542,7 +12542,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -15422,7 +15422,7 @@ MonoBehaviour:
   m_Script: {fileID: 951160979}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: .39199999}
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
@@ -15483,7 +15483,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -16426,7 +16426,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -18081,7 +18081,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -18509,6 +18509,18 @@ Prefab:
       propertyPath: m_Size.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
+      propertyPath: SFXshieldDestroy
+      value: 
+      objectReference: {fileID: 839665495}
+    - target: {fileID: 11400002, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
+      propertyPath: shieldExplodeVFX
+      value: 
+      objectReference: {fileID: 100000, guid: 299c0f9b03e7c2249a22bcdfbe26b33d, type: 2}
+    - target: {fileID: 11400002, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
+      propertyPath: SFXshieldDamage
+      value: 
+      objectReference: {fileID: 2104973334}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
   m_RootGameObject: {fileID: 2129850484}
@@ -18868,7 +18880,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -18982,7 +18994,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -23909,7 +23921,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -24143,7 +24155,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -26410,8 +26422,8 @@ MonoBehaviour:
   onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 0}
-  SFXDestroy: {fileID: 0}
+  SFXunArmoredDamage: {fileID: 1523701482}
+  SFXDestroy: {fileID: 816487188}
 --- !u!114 &2018201842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27114,7 +27126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathVFX: {fileID: 100000, guid: b8465ff3e8ccc439a8a1d259e28dbd8e, type: 2}
-  shieldExplodeVFX: {fileID: 0}
+  shieldExplodeVFX: {fileID: 100000, guid: 299c0f9b03e7c2249a22bcdfbe26b33d, type: 2}
   energyPowerUp: {fileID: 0}
   energyBonusID: 7
   squibID: 0
@@ -27134,8 +27146,8 @@ MonoBehaviour:
   isPlayer: 0
   transcendsBoundary: 1
   onScreen: 0
-  SFXshieldDamage: {fileID: 0}
-  SFXshieldDestroy: {fileID: 0}
+  SFXshieldDamage: {fileID: 2104973334}
+  SFXshieldDestroy: {fileID: 839665495}
   SFXunArmoredDamage: {fileID: 1523701482}
   SFXDestroy: {fileID: 816487188}
 --- !u!65 &2129850496
