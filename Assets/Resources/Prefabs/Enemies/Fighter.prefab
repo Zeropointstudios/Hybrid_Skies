@@ -17,8 +17,8 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400010}
-  - 114: {fileID: 11400004}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -217,7 +217,6 @@ MonoBehaviour:
   healthDisplay: {fileID: 0}
   modifierType: 4
   raceType: 1
-  defenseType: 1
   hasShields: 0
   isPlayer: 0
   transcendsBoundary: 1
@@ -238,12 +237,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 400002}
-  period: .280000001
-  probability: .100000001
-  angleRandomness: 10
+  period: 1
+  probability: 1
+  angleRandomness: 0
   projectileID: 8
   autoFire: 1
-  randomizeAim: 1
+  randomizeAim: 0
   direction: 1
   mainWeapon: {fileID: 8200000}
 --- !u!114 &11400006

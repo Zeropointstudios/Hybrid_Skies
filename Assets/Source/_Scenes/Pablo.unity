@@ -74,64 +74,6 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
---- !u!1 &19068386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-  m_PrefabInternal: {fileID: 1432128543}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 19068389}
-  - 33: {fileID: 19068388}
-  - 23: {fileID: 19068387}
-  m_Layer: 0
-  m_Name: Quad
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &19068387
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: 09e6b60e77a404681b29181255b95455,
-    type: 2}
-  m_PrefabInternal: {fileID: 1432128543}
-  m_GameObject: {fileID: 19068386}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 82456eeef744b4daa9e2384dbf2a7ef1, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &19068388
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: 09e6b60e77a404681b29181255b95455,
-    type: 2}
-  m_PrefabInternal: {fileID: 1432128543}
-  m_GameObject: {fileID: 19068386}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &19068389
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-  m_PrefabInternal: {fileID: 1432128543}
-  m_GameObject: {fileID: 19068386}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1068622917}
-  m_RootOrder: 0
 --- !u!1 &24441422
 GameObject:
   m_ObjectHideFlags: 0
@@ -9162,8 +9104,8 @@ GameObject:
   - 114: {fileID: 426303038}
   - 114: {fileID: 426303037}
   - 114: {fileID: 426303036}
-  - 114: {fileID: 426303035}
   - 82: {fileID: 426303034}
+  - 114: {fileID: 426303035}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -9256,12 +9198,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 469147442}
-  period: .280000001
-  probability: .100000001
-  angleRandomness: 10
+  period: 1
+  probability: 1
+  angleRandomness: 0
   projectileID: 8
   autoFire: 1
-  randomizeAim: 1
+  randomizeAim: 0
   direction: 1
   mainWeapon: {fileID: 426303034}
 --- !u!114 &426303036
@@ -10414,6 +10356,92 @@ Transform:
   m_Children: []
   m_Father: {fileID: 426303033}
   m_RootOrder: 0
+--- !u!1 &515305193
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 515305194}
+  - 82: {fileID: 515305195}
+  m_Layer: 0
+  m_Name: Missile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &515305194
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 515305193}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 574437807}
+  m_RootOrder: 10
+--- !u!82 &515305195
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 515305193}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 7586b91de7fb948cea723c8f03568f7e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .837000012
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &530977328
 GameObject:
   m_ObjectHideFlags: 0
@@ -10889,6 +10917,7 @@ Transform:
   - {fileID: 814227629}
   - {fileID: 1852633697}
   - {fileID: 1055714233}
+  - {fileID: 515305194}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &592940956
@@ -11154,8 +11183,8 @@ GameObject:
   - 114: {fileID: 659532818}
   - 114: {fileID: 659532817}
   - 114: {fileID: 659532816}
-  - 114: {fileID: 659532815}
   - 82: {fileID: 659532814}
+  - 114: {fileID: 659532815}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -11248,12 +11277,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 1556669631}
-  period: .280000001
-  probability: .100000001
-  angleRandomness: 10
+  period: 1
+  probability: 1
+  angleRandomness: 0
   projectileID: 8
   autoFire: 1
-  randomizeAim: 1
+  randomizeAim: 0
   direction: 1
   mainWeapon: {fileID: 659532814}
 --- !u!114 &659532816
@@ -13613,8 +13642,8 @@ GameObject:
   - 114: {fileID: 917201909}
   - 114: {fileID: 917201908}
   - 114: {fileID: 917201907}
-  - 114: {fileID: 917201910}
   - 82: {fileID: 917201917}
+  - 114: {fileID: 917201910}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -13706,12 +13735,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 729914228}
-  period: .280000001
-  probability: .100000001
-  angleRandomness: 10
+  period: 1
+  probability: 1
+  angleRandomness: 0
   projectileID: 8
   autoFire: 1
-  randomizeAim: 1
+  randomizeAim: 0
   direction: 1
   mainWeapon: {fileID: 917201917}
 --- !u!33 &917201911
@@ -15522,7 +15551,7 @@ Transform:
   m_PrefabInternal: {fileID: 232879947}
   m_GameObject: {fileID: 1003429944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 5.07569981, y: 0, z: 0}
   m_LocalScale: {x: .75, y: .75, z: .75}
   m_Children:
   - {fileID: 183979753}
@@ -15907,95 +15936,6 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
---- !u!1 &1068622916
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100002, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-  m_PrefabInternal: {fileID: 1432128543}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1068622917}
-  - 114: {fileID: 1068622921}
-  - 114: {fileID: 1068622920}
-  - 54: {fileID: 1068622919}
-  - 65: {fileID: 1068622918}
-  m_Layer: 0
-  m_Name: MissileShot
-  m_TagString: Projectile
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1068622917
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400002, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-  m_PrefabInternal: {fileID: 1432128543}
-  m_GameObject: {fileID: 1068622916}
-  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: 3.05999994}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 19068389}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
---- !u!65 &1068622918
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6500000, guid: 09e6b60e77a404681b29181255b95455,
-    type: 2}
-  m_PrefabInternal: {fileID: 1432128543}
-  m_GameObject: {fileID: 1068622916}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: .230000004, y: .170000002, z: .75999999}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1068622919
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5400000, guid: 09e6b60e77a404681b29181255b95455,
-    type: 2}
-  m_PrefabInternal: {fileID: 1432128543}
-  m_GameObject: {fileID: 1068622916}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!114 &1068622920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 09e6b60e77a404681b29181255b95455,
-    type: 2}
-  m_PrefabInternal: {fileID: 1432128543}
-  m_GameObject: {fileID: 1068622916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd8cae20c77f432bbbc8c2ed5db6720, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 15
-  owner: 1
---- !u!114 &1068622921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: 09e6b60e77a404681b29181255b95455,
-    type: 2}
-  m_PrefabInternal: {fileID: 1432128543}
-  m_GameObject: {fileID: 1068622916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 393c0622695d648ea8811f358725b1cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
-  duration: -1
 --- !u!1 &1086058443
 GameObject:
   m_ObjectHideFlags: 0
@@ -16407,7 +16347,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 55.7210007
+      value: 49.5400009
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
       propertyPath: m_LocalRotation.x
@@ -17105,8 +17045,8 @@ GameObject:
   - 114: {fileID: 1208540063}
   - 114: {fileID: 1208540062}
   - 114: {fileID: 1208540061}
-  - 114: {fileID: 1208540060}
   - 82: {fileID: 1208540059}
+  - 114: {fileID: 1208540060}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -17199,12 +17139,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 946732260}
-  period: .280000001
-  probability: .100000001
-  angleRandomness: 10
+  period: 1
+  probability: 1
+  angleRandomness: 0
   projectileID: 8
   autoFire: 1
-  randomizeAim: 1
+  randomizeAim: 0
   direction: 1
   mainWeapon: {fileID: 1208540059}
 --- !u!114 &1208540061
@@ -18774,50 +18714,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1430286403}
---- !u!1001 &1432128543
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400002, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 3.05999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -.707106829
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: .707106709
-      objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 09e6b60e77a404681b29181255b95455, type: 2}
-  m_RootGameObject: {fileID: 1068622916}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1001 &1439137698
 Prefab:
   m_ObjectHideFlags: 0
@@ -19042,7 +18938,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1464660172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .0180769991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1411648712}
@@ -20761,8 +20657,8 @@ GameObject:
   - 114: {fileID: 1566239062}
   - 114: {fileID: 1566239061}
   - 114: {fileID: 1566239060}
-  - 114: {fileID: 1566239059}
   - 82: {fileID: 1566239058}
+  - 114: {fileID: 1566239059}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -20855,12 +20751,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 1112012158}
-  period: .280000001
-  probability: .100000001
-  angleRandomness: 10
+  period: 1
+  probability: 1
+  angleRandomness: 0
   projectileID: 8
   autoFire: 1
-  randomizeAim: 1
+  randomizeAim: 0
   direction: 1
   mainWeapon: {fileID: 1566239058}
 --- !u!114 &1566239060
@@ -21212,8 +21108,8 @@ GameObject:
   - 114: {fileID: 1603858148}
   - 114: {fileID: 1603858147}
   - 114: {fileID: 1603858146}
-  - 114: {fileID: 1603858145}
   - 82: {fileID: 1603858144}
+  - 114: {fileID: 1603858145}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -21228,7 +21124,7 @@ Transform:
   m_PrefabInternal: {fileID: 1105240275}
   m_GameObject: {fileID: 1603858142}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 2.28439999, y: 0, z: 55.7210007}
+  m_LocalPosition: {x: 2.28439999, y: 0, z: 49.5400009}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 1856889752}
@@ -21306,12 +21202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 1856889752}
-  period: .280000001
-  probability: .100000001
-  angleRandomness: 10
+  period: 1
+  probability: 1
+  angleRandomness: 0
   projectileID: 8
   autoFire: 1
-  randomizeAim: 1
+  randomizeAim: 0
   direction: 1
   mainWeapon: {fileID: 1603858144}
 --- !u!114 &1603858146
@@ -26812,8 +26708,8 @@ GameObject:
   - 114: {fileID: 2129850490}
   - 114: {fileID: 2129850489}
   - 114: {fileID: 2129850488}
-  - 114: {fileID: 2129850487}
   - 82: {fileID: 2129850486}
+  - 114: {fileID: 2129850487}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -26906,12 +26802,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shotSpawn: {fileID: 716828220}
-  period: .280000001
-  probability: .100000001
-  angleRandomness: 10
+  period: 1
+  probability: 1
+  angleRandomness: 0
   projectileID: 8
   autoFire: 1
-  randomizeAim: 1
+  randomizeAim: 0
   direction: 1
   mainWeapon: {fileID: 2129850486}
 --- !u!114 &2129850488

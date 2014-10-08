@@ -12,7 +12,6 @@ GameObject:
   - 54: {fileID: 5400000}
   - 33: {fileID: 3300000}
   - 65: {fileID: 6500000}
-  - 23: {fileID: 2300000}
   - 114: {fileID: 11400002}
   m_Layer: 2
   m_Name: PrimaryWeapon
@@ -63,26 +62,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400000}
   m_RootOrder: 0
---- !u!23 &2300000
-Renderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 6873266bd578c40ffb2f2b0affec64f2, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!23 &2300002
 Renderer:
   m_ObjectHideFlags: 1
