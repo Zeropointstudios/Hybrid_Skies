@@ -2108,6 +2108,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 145407225}
+  m_HideIfInvisible: 0
 --- !u!114 &170751243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4103,6 +4104,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 244233305}
+  m_HideIfInvisible: 0
 --- !u!1 &244451048
 GameObject:
   m_ObjectHideFlags: 0
@@ -5553,7 +5555,7 @@ MonoBehaviour:
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
   livesDisplay: {fileID: 0}
-  modifierType: 3
+  modifierType: 2
   raceType: 1
   hasShields: 0
   isPlayer: 0
@@ -6609,7 +6611,7 @@ MonoBehaviour:
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
   livesDisplay: {fileID: 0}
-  modifierType: 3
+  modifierType: 2
   raceType: 1
   hasShields: 0
   isPlayer: 0
@@ -14074,7 +14076,7 @@ MonoBehaviour:
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
   livesDisplay: {fileID: 0}
-  modifierType: 3
+  modifierType: 2
   raceType: 1
   hasShields: 0
   isPlayer: 0
@@ -14703,6 +14705,10 @@ Prefab:
     - target: {fileID: 11400002, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
       propertyPath: energyBonusID
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
+      propertyPath: modifierType
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
@@ -15640,6 +15646,10 @@ Prefab:
       propertyPath: energyBonusID
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
+      propertyPath: modifierType
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
   m_RootGameObject: {fileID: 659532812}
@@ -16083,7 +16093,7 @@ MonoBehaviour:
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
   livesDisplay: {fileID: 0}
-  modifierType: 3
+  modifierType: 2
   raceType: 1
   hasShields: 0
   isPlayer: 0
@@ -17687,6 +17697,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 818200537}
+  m_HideIfInvisible: 0
 --- !u!1001 &836295040
 Prefab:
   m_ObjectHideFlags: 0
@@ -21303,6 +21314,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 978230325}
+  m_HideIfInvisible: 0
 --- !u!1 &982485011
 GameObject:
   m_ObjectHideFlags: 0
@@ -21369,6 +21381,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 982485011}
+  m_HideIfInvisible: 0
 --- !u!1 &990516471
 GameObject:
   m_ObjectHideFlags: 0
@@ -22730,6 +22743,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1089419077}
+  m_HideIfInvisible: 0
 --- !u!115 &1090880301
 MonoScript:
   m_ObjectHideFlags: 0
@@ -23027,6 +23041,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1112560831}
+  m_HideIfInvisible: 0
 --- !u!224 &1112560834
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23189,6 +23204,7 @@ Canvas:
   m_PlaneDistance: 0
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
+  m_OverrideSorting: 0
   m_SortingLayerID: 0
   m_SortingOrder: 1
 --- !u!1 &1119116981
@@ -24605,6 +24621,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1301712180}
+  m_HideIfInvisible: 0
 --- !u!1 &1303648137
 GameObject:
   m_ObjectHideFlags: 0
@@ -25581,6 +25598,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1376540016}
+  m_HideIfInvisible: 0
 --- !u!1 &1380612968
 GameObject:
   m_ObjectHideFlags: 0
@@ -26056,6 +26074,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1430286403}
+  m_HideIfInvisible: 0
 --- !u!1001 &1439137698
 Prefab:
   m_ObjectHideFlags: 0
@@ -26170,6 +26189,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1442276016}
+  m_HideIfInvisible: 0
 --- !u!1 &1452947469
 GameObject:
   m_ObjectHideFlags: 0
@@ -28654,7 +28674,7 @@ MonoBehaviour:
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
   livesDisplay: {fileID: 0}
-  modifierType: 2
+  modifierType: 4
   raceType: 1
   hasShields: 0
   isPlayer: 0
@@ -31282,7 +31302,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
       propertyPath: modifierType
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
@@ -33256,6 +33276,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1813718377}
+  m_HideIfInvisible: 0
 --- !u!1 &1814253326
 GameObject:
   m_ObjectHideFlags: 0
@@ -33683,6 +33704,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1871556105}
+  m_HideIfInvisible: 0
 --- !u!224 &1871556108
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37030,7 +37052,7 @@ MonoBehaviour:
   shieldDisplay: {fileID: 0}
   healthDisplay: {fileID: 0}
   livesDisplay: {fileID: 0}
-  modifierType: 3
+  modifierType: 2
   raceType: 1
   hasShields: 0
   isPlayer: 0
