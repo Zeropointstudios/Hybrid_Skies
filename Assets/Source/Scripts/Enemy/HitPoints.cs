@@ -22,15 +22,17 @@ public class HitPoints : MonoBehaviour {
 	public int armorFXID;
 	public int shieldFXID;
 	public float hitPoints;
+	public float lives;
 	public float initialHitPoints;
 	public float defense;   // damage done = damage - defense
 	public float maxShields;
 	public float shields;
-	public Text shieldDisplay, healthDisplay;
+	public Text shieldDisplay, healthDisplay, livesDisplay;
 	public ModifierType modifierType = ModifierType.None;
 	public RaceType raceType = RaceType.None;
 	public bool hasShields;
 	public bool isPlayer;
+	private bool isInvulnerable = false;
 	public ObjectPool returnSquibPool(){return squibPool;}
 	public int returnSquibID(){return squibID;}
 	public ModifierType returnModifierType() {return modifierType;} 
@@ -52,6 +54,7 @@ public class HitPoints : MonoBehaviour {
 		if (isPlayer){
 			shieldDisplay.text = shields.ToString ();
 			healthDisplay.text = hitPoints.ToString ();
+			livesDisplay.text = lives.ToString ();
 		}
 
 		if (hasShields) {
@@ -73,6 +76,8 @@ public class HitPoints : MonoBehaviour {
 
 	public void Update () 
 	{
+		if(isPlayer)
+			shieldDisplay.text = shields.ToString ();
 		// Move the enemy ship down a little bit from offscreen (above the screen) toward the screen, until it is on-screen.
 		if (!onScreen)
 		{
@@ -83,74 +88,73 @@ public class HitPoints : MonoBehaviour {
 	IEnumerator ShieldRegeneration() {
 		while (hasShields)
 		{
-			yield return new WaitForSeconds(1);	//regenerates shields every second
+			yield return new WaitForSeconds(0.4f);	//regenerates shields every second
 				if (shields < maxShields)
-					shields +=2;
+					shields +=1;
 		}
 	}
 
 	public void DrainLife(float amount) {
-		hitPoints -= amount;
+		if (!isInvulnerable)
+			hitPoints -= amount;
 	}
 
 	public void DoDamage(float damage, Vector3 projectilePosition)
 	{
-		//if there are shields take away from them first
-		if (hasShields) {
+		if (!isInvulnerable) {
+			//if there are shields take away from them first
+			if (hasShields) {
 
-			if (shields >= damage) {
-				shields -= damage;
-				squibPool.Activate(shieldFXID, transform.position, Quaternion.identity);
-				if (isPlayer)
-					shieldDisplay.text = shields.ToString ();
-				if (SFXshieldDamage != null)
-					SFXshieldDamage.Play(); //sound FX
-				return;
-			}
-			else {
-				damage -= shields;
-				shields = 0;
-				if (isPlayer)
-					shieldDisplay.text = shields.ToString ();
-				hasShields = false;
-				Instantiate(shieldExplodeVFX, projectilePosition, Quaternion.identity);
-				SFXshieldDestroy.Play(); //sound FX
-			}
-		}
-
-		if (defense > 0) {
-			float effectiveDamage = Mathf.Max(damage - defense, 0);
-
-			if (defense > .5 * damage ) {	//shows armor hits if the weapon is doing less than half its original damage
-				squibPool.Activate(armorFXID, projectilePosition, Quaternion.identity); //shows armor vfx hit
-
+				if (shields >= damage) {
+					shields -= damage;
+					squibPool.Activate (shieldFXID, transform.position, Quaternion.identity);
+					if (isPlayer)
+						shieldDisplay.text = shields.ToString ();
+					if (SFXshieldDamage != null)
+						SFXshieldDamage.Play (); //sound FX
+					return;
+				} else {
+					damage -= shields;
+					shields = 0;
+					if (isPlayer)
+						shieldDisplay.text = shields.ToString ();
+					//hasShields = false;
+					Instantiate (shieldExplodeVFX, projectilePosition, Quaternion.identity);
+					SFXshieldDestroy.Play (); //sound FX
+				}
 			}
 
-			else {
-				squibPool.Activate(squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
+			if (defense > 0) {
+				float effectiveDamage = Mathf.Max (damage - defense, 0);
+
+				if (defense > .5 * damage) {	//shows armor hits if the weapon is doing less than half its original damage
+					squibPool.Activate (armorFXID, projectilePosition, Quaternion.identity); //shows armor vfx hit
+
+				} else {
+					squibPool.Activate (squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
+				}
+				hitPoints -= effectiveDamage;
+
+			} else { //if there is no armor or shields, do what is left of damage (including reduction from shield)
+				squibPool.Activate (squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
+				hitPoints -= damage;
+				if (SFXunArmoredDamage != null) {
+					SFXunArmoredDamage.Play (); //Sound FX
+				}
 			}
-			hitPoints -= effectiveDamage;
 
-		}
 
-		else { //if there is no armor or shields, do what is left of damage (including reduction from shield)
-			squibPool.Activate(squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
-			hitPoints -= damage;
-			if (SFXunArmoredDamage != null) {
-				SFXunArmoredDamage.Play(); //Sound FX
+
+			if (hitPoints < 1 && gameObject.activeSelf == true) {
+				Kill ();
 			}
-		}
 
 
-
-		if (hitPoints < 1 && gameObject.activeSelf == true) {
-			Kill ();
-		}
-
-
-		if (isPlayer) {
-			shieldDisplay.text = shields.ToString ();
-			healthDisplay.text = hitPoints.ToString ();
+			if (isPlayer) {
+				shieldDisplay.text = shields.ToString ();
+				healthDisplay.text = hitPoints.ToString ();
+				livesDisplay.text = lives.ToString ();	
+			}
 		}
 	}
 	
@@ -161,15 +165,32 @@ public class HitPoints : MonoBehaviour {
 
 	public void Kill()
 	{
-		Instantiate(deathVFX, transform.position, Quaternion.identity);
+		if (!isInvulnerable){
+			Instantiate(deathVFX, transform.position, Quaternion.identity);
 
-		if (!isPlayer)
-			Finder.GetObjectPool().Activate(energyBonusID, transform.position, Quaternion.identity);
-			
-		if (SFXDestroy != null)
-			SFXDestroy.Play(); //Sound FX
-	
-		gameObject.SetActive(false);
+			if (!isPlayer)
+				Finder.GetObjectPool().Activate(energyBonusID, transform.position, Quaternion.identity);
+			if (isPlayer) {
+				if (lives > 0) {
+					lives -= 1;		
+					//isInvulnerable = true;
+					//yield WaitForSeconds(3);
+					//isInvulnerable = false;
+					hitPoints = 60;
+					shields = 50;
+				} else {
+					gameObject.SetActive(false);
+					//yield return new WaitForSeconds(3);
+					Application.LoadLevel ("MainMenu"); 
+				}
+			}
+				
+			if (SFXDestroy != null)
+				SFXDestroy.Play(); //Sound FX
+
+			if (!isPlayer)
+				gameObject.SetActive(false);
+		}
 	}
 
 }
