@@ -4352,7 +4352,7 @@ MonoBehaviour:
   period: .0500000007
   probability: .5
   angleRandomness: 180
-  projectileID: 4
+  projectileID: 9
   autoFire: 1
   randomizeAim: 1
   direction: 1
@@ -5057,7 +5057,7 @@ MonoBehaviour:
   period: .0500000007
   probability: .5
   angleRandomness: 180
-  projectileID: 4
+  projectileID: 9
   autoFire: 1
   randomizeAim: 1
   direction: 1
@@ -15603,7 +15603,7 @@ MonoBehaviour:
   period: .0500000007
   probability: .5
   angleRandomness: 180
-  projectileID: 4
+  projectileID: 9
   autoFire: 1
   randomizeAim: 1
   direction: 1
@@ -23647,7 +23647,7 @@ MonoBehaviour:
   period: .0500000007
   probability: .5
   angleRandomness: 180
-  projectileID: 4
+  projectileID: 9
   autoFire: 1
   randomizeAim: 1
   direction: 1
@@ -25548,7 +25548,7 @@ MonoBehaviour:
   period: .0500000007
   probability: .5
   angleRandomness: 180
-  projectileID: 4
+  projectileID: 9
   autoFire: 1
   randomizeAim: 1
   direction: 1
