@@ -1,14 +1,18 @@
 using UnityEngine;
+#if unity_editor
 using UnityEditor;
+#endif
 using System.Collections;
 
 public class FlightPathMover : Mover {
 	public string pathName = "flightPath";
 	public int pathTime;
 	public float lookAheadTime;
-
+	
 	void Start () {
+		#if unity_editor
 		EditorUtility.SetDirty( gameObject );
+		#endif
 		StartCoroutine("ExecuteFlightPath");
 	}
 

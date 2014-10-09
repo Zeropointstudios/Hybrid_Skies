@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+#if unity_editor
 using UnityEditor;
+#endif
 using UnityEngine;
 
 public class BarbarianMover : Mover {

@@ -90,7 +90,6 @@ GameObject:
   - 23: {fileID: 24441427}
   - 65: {fileID: 24441426}
   - 114: {fileID: 24441425}
-  - 82: {fileID: 24441424}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -111,65 +110,6 @@ Transform:
   - {fileID: 2066756549}
   m_Father: {fileID: 209368321}
   m_RootOrder: 10
---- !u!82 &24441424
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 922218799}
-  m_GameObject: {fileID: 24441422}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &24441425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +130,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 24441424}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &24441426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -465,7 +405,6 @@ GameObject:
   - 23: {fileID: 49175014}
   - 65: {fileID: 49175013}
   - 114: {fileID: 49175012}
-  - 82: {fileID: 49175011}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -486,65 +425,6 @@ Transform:
   - {fileID: 1410701119}
   m_Father: {fileID: 209368321}
   m_RootOrder: 22
---- !u!82 &49175011
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1236174248}
-  m_GameObject: {fileID: 49175009}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &49175012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -565,7 +445,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 49175011}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &49175013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -773,7 +653,16 @@ Prefab:
       propertyPath: defense
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 444601792}
   m_IsPrefabParent: 0
@@ -1148,7 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -1266,6 +1155,92 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &197013745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 197013746}
+  - 82: {fileID: 197013747}
+  m_Layer: 0
+  m_Name: EnemyGun3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &197013746
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197013745}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 574437807}
+  m_RootOrder: 13
+--- !u!82 &197013747
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197013745}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 6efea53e9c1544e8c8d31f168b9917d7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .837000012
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &202553088
 Prefab:
   m_ObjectHideFlags: 0
@@ -1333,7 +1308,16 @@ Prefab:
       propertyPath: defense
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 239102020}
   m_IsPrefabParent: 0
@@ -2626,7 +2610,6 @@ GameObject:
   - 23: {fileID: 239102025}
   - 65: {fileID: 239102024}
   - 114: {fileID: 239102023}
-  - 82: {fileID: 239102022}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -2647,65 +2630,6 @@ Transform:
   - {fileID: 1520487625}
   m_Father: {fileID: 209368321}
   m_RootOrder: 12
---- !u!82 &239102022
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 202553088}
-  m_GameObject: {fileID: 239102020}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &239102023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2726,7 +2650,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 239102022}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &239102024
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2905,7 +2829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -4148,7 +4072,7 @@ AudioSource:
   m_GameObject: {fileID: 266355701}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 88bb953adaf834e9181c8ebdb1a180bb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ccf7bda64244b4149a7a24daa27da7fd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .363000005
   m_Pitch: 1
@@ -4328,8 +4252,8 @@ MonoBehaviour:
   onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 0}
-  SFXDestroy: {fileID: 0}
+  SFXunArmoredDamage: {fileID: 1523701482}
+  SFXDestroy: {fileID: 816487188}
 --- !u!114 &266355711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4359,7 +4283,6 @@ GameObject:
   - 23: {fileID: 280821853}
   - 65: {fileID: 280821852}
   - 114: {fileID: 280821851}
-  - 82: {fileID: 280821850}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -4380,65 +4303,6 @@ Transform:
   - {fileID: 1001111229}
   m_Father: {fileID: 209368321}
   m_RootOrder: 3
---- !u!82 &280821850
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 784322107}
-  m_GameObject: {fileID: 280821848}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &280821851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4459,7 +4323,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 280821850}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &280821852
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4608,7 +4472,6 @@ GameObject:
   - 23: {fileID: 297185072}
   - 65: {fileID: 297185071}
   - 114: {fileID: 297185070}
-  - 82: {fileID: 297185069}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -4629,65 +4492,6 @@ Transform:
   - {fileID: 1663967082}
   m_Father: {fileID: 209368321}
   m_RootOrder: 7
---- !u!82 &297185069
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 458054677}
-  m_GameObject: {fileID: 297185067}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &297185070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4708,7 +4512,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 297185069}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &297185071
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4973,7 +4777,7 @@ AudioSource:
   m_GameObject: {fileID: 301979699}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 88bb953adaf834e9181c8ebdb1a180bb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ccf7bda64244b4149a7a24daa27da7fd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .363000005
   m_Pitch: 1
@@ -5153,8 +4957,8 @@ MonoBehaviour:
   onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 0}
-  SFXDestroy: {fileID: 0}
+  SFXunArmoredDamage: {fileID: 1523701482}
+  SFXDestroy: {fileID: 816487188}
 --- !u!114 &301979709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6300,7 +6104,6 @@ GameObject:
   - 23: {fileID: 324620686}
   - 65: {fileID: 324620685}
   - 114: {fileID: 324620684}
-  - 82: {fileID: 324620683}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -6321,65 +6124,6 @@ Transform:
   - {fileID: 1127406650}
   m_Father: {fileID: 209368321}
   m_RootOrder: 5
---- !u!82 &324620683
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1624167693}
-  m_GameObject: {fileID: 324620681}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &324620684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6400,7 +6144,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 324620683}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &324620685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6579,7 +6323,6 @@ GameObject:
   - 23: {fileID: 376679802}
   - 65: {fileID: 376679801}
   - 114: {fileID: 376679800}
-  - 82: {fileID: 376679799}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -6600,65 +6343,6 @@ Transform:
   - {fileID: 2110161685}
   m_Father: {fileID: 209368321}
   m_RootOrder: 6
---- !u!82 &376679799
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1590403264}
-  m_GameObject: {fileID: 376679797}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &376679800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6679,7 +6363,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 376679799}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &376679801
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9387,7 +9071,6 @@ GameObject:
   - 23: {fileID: 430131642}
   - 65: {fileID: 430131641}
   - 114: {fileID: 430131640}
-  - 82: {fileID: 430131639}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -9408,65 +9091,6 @@ Transform:
   - {fileID: 2116993075}
   m_Father: {fileID: 209368321}
   m_RootOrder: 8
---- !u!82 &430131639
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 2087584211}
-  m_GameObject: {fileID: 430131637}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &430131640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9487,7 +9111,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 430131639}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &430131641
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9687,7 +9311,16 @@ Prefab:
       propertyPath: defense
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 1984400040}
   m_IsPrefabParent: 0
@@ -9708,7 +9341,6 @@ GameObject:
   - 23: {fileID: 444601797}
   - 65: {fileID: 444601796}
   - 114: {fileID: 444601795}
-  - 82: {fileID: 444601794}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -9729,65 +9361,6 @@ Transform:
   - {fileID: 1289600398}
   m_Father: {fileID: 209368321}
   m_RootOrder: 14
---- !u!82 &444601794
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 69525440}
-  m_GameObject: {fileID: 444601792}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &444601795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9808,7 +9381,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 444601794}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &444601796
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9957,7 +9530,6 @@ GameObject:
   - 23: {fileID: 445550161}
   - 65: {fileID: 445550160}
   - 114: {fileID: 445550159}
-  - 82: {fileID: 445550158}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -9978,65 +9550,6 @@ Transform:
   - {fileID: 1624402735}
   m_Father: {fileID: 209368321}
   m_RootOrder: 13
---- !u!82 &445550158
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 637428926}
-  m_GameObject: {fileID: 445550156}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &445550159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10057,7 +9570,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 445550158}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &445550160
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10253,7 +9766,16 @@ Prefab:
       propertyPath: hitPoints
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 297185067}
   m_IsPrefabParent: 0
@@ -10628,7 +10150,16 @@ Prefab:
       propertyPath: hitPoints
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 857749343}
   m_IsPrefabParent: 0
@@ -10649,7 +10180,6 @@ GameObject:
   - 23: {fileID: 556241224}
   - 65: {fileID: 556241223}
   - 114: {fileID: 556241222}
-  - 82: {fileID: 556241221}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -10670,65 +10200,6 @@ Transform:
   - {fileID: 592940957}
   m_Father: {fileID: 209368321}
   m_RootOrder: 17
---- !u!82 &556241221
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 2076918666}
-  m_GameObject: {fileID: 556241219}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &556241222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10749,7 +10220,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 556241221}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &556241223
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10918,6 +10389,10 @@ Transform:
   - {fileID: 1852633697}
   - {fileID: 1055714233}
   - {fileID: 515305194}
+  - {fileID: 1218982088}
+  - {fileID: 697977238}
+  - {fileID: 197013746}
+  - {fileID: 1099489569}
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!1 &592940956
@@ -11081,7 +10556,16 @@ Prefab:
       propertyPath: defense
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 445550156}
   m_IsPrefabParent: 0
@@ -11517,7 +11001,16 @@ Prefab:
       propertyPath: defense
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 2143123447}
   m_IsPrefabParent: 0
@@ -11609,7 +11102,6 @@ GameObject:
   - 23: {fileID: 677383425}
   - 65: {fileID: 677383424}
   - 114: {fileID: 677383423}
-  - 82: {fileID: 677383422}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -11630,65 +11122,6 @@ Transform:
   - {fileID: 1198396323}
   m_Father: {fileID: 209368321}
   m_RootOrder: 23
---- !u!82 &677383422
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 2004650579}
-  m_GameObject: {fileID: 677383420}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &677383423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11709,7 +11142,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 677383422}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &677383424
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11922,6 +11355,92 @@ Prefab:
   m_RootGameObject: {fileID: 659532812}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &697977237
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 697977238}
+  - 82: {fileID: 697977239}
+  m_Layer: 0
+  m_Name: EnemyGun2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &697977238
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 697977237}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 574437807}
+  m_RootOrder: 12
+--- !u!82 &697977239
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 697977237}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: ccf7bda64244b4149a7a24daa27da7fd, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .837000012
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &716828219
 GameObject:
   m_ObjectHideFlags: 0
@@ -12054,7 +11573,16 @@ Prefab:
       propertyPath: SFXDestroy
       value: 
       objectReference: {fileID: 816487188}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 280821848}
   m_IsPrefabParent: 0
@@ -12126,7 +11654,16 @@ Prefab:
       propertyPath: defense
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 1813096474}
   m_IsPrefabParent: 0
@@ -12147,7 +11684,6 @@ GameObject:
   - 23: {fileID: 806103310}
   - 65: {fileID: 806103309}
   - 114: {fileID: 806103308}
-  - 82: {fileID: 806103307}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -12168,65 +11704,6 @@ Transform:
   - {fileID: 880805295}
   m_Father: {fileID: 209368321}
   m_RootOrder: 16
---- !u!82 &806103307
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1569652110}
-  m_GameObject: {fileID: 806103305}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &806103308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12247,7 +11724,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 806103307}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &806103309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12502,7 +11979,7 @@ AudioSource:
   m_GameObject: {fileID: 816487186}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 5dab7e07847eb40fbbab441ca4476dd8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 89e74f92da91b4e5f824778295dc9b51, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -12598,7 +12075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -12720,7 +12197,6 @@ GameObject:
   - 23: {fileID: 857749348}
   - 65: {fileID: 857749347}
   - 114: {fileID: 857749346}
-  - 82: {fileID: 857749345}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -12741,65 +12217,6 @@ Transform:
   - {fileID: 1119116982}
   m_Father: {fileID: 209368321}
   m_RootOrder: 21
---- !u!82 &857749345
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 537887359}
-  m_GameObject: {fileID: 857749343}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &857749346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12820,7 +12237,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 857749345}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &857749347
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13016,7 +12433,16 @@ Prefab:
       propertyPath: hitPoints
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 1992737641}
   m_IsPrefabParent: 0
@@ -13188,8 +12614,8 @@ MonoBehaviour:
   onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 0}
-  SFXDestroy: {fileID: 0}
+  SFXunArmoredDamage: {fileID: 1523701482}
+  SFXDestroy: {fileID: 816487188}
 --- !u!114 &859551393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13212,7 +12638,7 @@ AudioSource:
   m_GameObject: {fileID: 859551384}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 88bb953adaf834e9181c8ebdb1a180bb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ccf7bda64244b4149a7a24daa27da7fd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .363000005
   m_Pitch: 1
@@ -13344,7 +12770,16 @@ Prefab:
       propertyPath: speed
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 1426234388}
   m_IsPrefabParent: 0
@@ -13392,7 +12827,6 @@ GameObject:
   - 23: {fileID: 896271049}
   - 65: {fileID: 896271048}
   - 114: {fileID: 896271047}
-  - 82: {fileID: 896271046}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -13413,65 +12847,6 @@ Transform:
   - {fileID: 1019241053}
   m_Father: {fileID: 209368321}
   m_RootOrder: 11
---- !u!82 &896271046
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1627042330}
-  m_GameObject: {fileID: 896271044}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &896271047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13492,7 +12867,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 896271046}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &896271048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15099,7 +14474,16 @@ Prefab:
       propertyPath: defense
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 24441422}
   m_IsPrefabParent: 0
@@ -15355,7 +14739,7 @@ MonoBehaviour:
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
-  m_FillCenter: 1
+  m_FillCenter: 0
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
@@ -15412,7 +14796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -15597,7 +14981,7 @@ MonoBehaviour:
   energyDisplay: {fileID: 1301712182}
   baseEnergyCost: 2
   modEnergyCost: 2
-  secondWeapon01: {fileID: 1003429957}
+  secondWeapon01: {fileID: 1003429958}
 --- !u!114 &1003429952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15630,7 +15014,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 1
   direction: 0
-  mainWeapon: {fileID: 1003429958}
+  mainWeapon: {fileID: 1665033192}
 --- !u!114 &1003429954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15696,7 +15080,7 @@ AudioSource:
   m_GameObject: {fileID: 1003429944}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 3f07c8b222d08467ba119c9d554afc1e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2ba2860f17df849a6b37326978044a84, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .129999995
   m_Pitch: 1
@@ -15754,7 +15138,7 @@ AudioSource:
   m_GameObject: {fileID: 1003429944}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ad98c6db1e1c14c3ca13a20d50261403, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b4f95b94649b04069abb061cfaba1c9c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .0839999989
   m_Pitch: 1
@@ -16053,7 +15437,7 @@ AudioSource:
   m_GameObject: {fileID: 1088249784}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 88bb953adaf834e9181c8ebdb1a180bb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ccf7bda64244b4149a7a24daa27da7fd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .363000005
   m_Pitch: 1
@@ -16233,8 +15617,8 @@ MonoBehaviour:
   onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 0}
-  SFXDestroy: {fileID: 0}
+  SFXunArmoredDamage: {fileID: 1523701482}
+  SFXDestroy: {fileID: 816487188}
 --- !u!114 &1088249794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16294,7 +15678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -16330,6 +15714,92 @@ MonoScript:
   m_Namespace: UnityEngine.UI
   m_AssemblyName: UnityEngine.UI.dll
   m_IsEditorScript: 0
+--- !u!1 &1099489568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1099489569}
+  - 82: {fileID: 1099489570}
+  m_Layer: 0
+  m_Name: EnemyGun4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1099489569
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099489568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 574437807}
+  m_RootOrder: 14
+--- !u!82 &1099489570
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1099489568}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: c72836c5b46eb44eea519dd78b7059c8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: .239999995
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1001 &1105240275
 Prefab:
   m_ObjectHideFlags: 0
@@ -16996,7 +16466,16 @@ Prefab:
       propertyPath: SFXDestroy
       value: 
       objectReference: {fileID: 816487188}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 1696240781}
   m_IsPrefabParent: 0
@@ -17312,55 +16791,45 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1, z: 4}
   m_Center: {x: 0, y: 0, z: -.75}
---- !u!1 &1221716165
+--- !u!1 &1218982087
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
-  m_PrefabInternal: {fileID: 1806155174}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1221716166}
-  - 114: {fileID: 1221716175}
-  - 114: {fileID: 1221716174}
-  - 54: {fileID: 1221716173}
-  - 114: {fileID: 1221716172}
-  - 33: {fileID: 1221716171}
-  - 23: {fileID: 1221716170}
-  - 65: {fileID: 1221716169}
-  - 114: {fileID: 1221716168}
-  - 82: {fileID: 1221716167}
+  - 4: {fileID: 1218982088}
+  - 82: {fileID: 1218982089}
   m_Layer: 0
-  m_Name: Barbarian
-  m_TagString: Enemy
+  m_Name: EnemyGun1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1221716166
+--- !u!4 &1218982088
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 6912698c82c223b449048980504f40d7, type: 2}
-  m_PrefabInternal: {fileID: 1806155174}
-  m_GameObject: {fileID: 1221716165}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1218982087}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.60410023, y: 0, z: 62.1150017}
-  m_LocalScale: {x: .75, y: .75, z: .75}
-  m_Children:
-  - {fileID: 1864445303}
-  m_Father: {fileID: 209368321}
-  m_RootOrder: 4
---- !u!82 &1221716167
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 574437807}
+  m_RootOrder: 11
+--- !u!82 &1218982089
 AudioSource:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1806155174}
-  m_GameObject: {fileID: 1221716165}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1218982087}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7abcc427673254f808f3e3918ebc305a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .236000001
+  m_Volume: .837000012
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -17408,6 +16877,42 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!1 &1221716165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+  m_PrefabInternal: {fileID: 1806155174}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1221716166}
+  - 114: {fileID: 1221716175}
+  - 114: {fileID: 1221716174}
+  - 54: {fileID: 1221716173}
+  - 114: {fileID: 1221716172}
+  - 33: {fileID: 1221716171}
+  - 23: {fileID: 1221716170}
+  - 65: {fileID: 1221716169}
+  - 114: {fileID: 1221716168}
+  m_Layer: 0
+  m_Name: Barbarian
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1221716166
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+  m_PrefabInternal: {fileID: 1806155174}
+  m_GameObject: {fileID: 1221716165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.60410023, y: 0, z: 62.1150017}
+  m_LocalScale: {x: .75, y: .75, z: .75}
+  m_Children:
+  - {fileID: 1864445303}
+  m_Father: {fileID: 209368321}
+  m_RootOrder: 4
 --- !u!114 &1221716168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17428,7 +16933,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 1221716167}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &1221716169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17695,7 +17200,16 @@ Prefab:
       propertyPath: hitPoints
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 49175009}
   m_IsPrefabParent: 0
@@ -17898,7 +17412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -17934,7 +17448,6 @@ GameObject:
   - 23: {fileID: 1303648141}
   - 65: {fileID: 1303648140}
   - 114: {fileID: 1303648139}
-  - 82: {fileID: 1303648138}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -17942,65 +17455,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &1303648138
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 2020282620}
-  m_GameObject: {fileID: 1303648137}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &1303648139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18021,7 +17475,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 1303648138}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &1303648140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18336,6 +17790,10 @@ Prefab:
       propertyPath: SFXshieldDamage
       value: 
       objectReference: {fileID: 2104973334}
+    - target: {fileID: 11400002, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
+      propertyPath: defense
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 921fbab2a4a1a704787897f01e7b143f, type: 2}
   m_RootGameObject: {fileID: 2129850484}
@@ -18416,7 +17874,6 @@ GameObject:
   - 23: {fileID: 1426234393}
   - 65: {fileID: 1426234392}
   - 114: {fileID: 1426234391}
-  - 82: {fileID: 1426234390}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -18437,65 +17894,6 @@ Transform:
   - {fileID: 1552911574}
   m_Father: {fileID: 209368321}
   m_RootOrder: 2
---- !u!82 &1426234390
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 886970213}
-  m_GameObject: {fileID: 1426234388}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &1426234391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18516,7 +17914,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 1426234390}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &1426234392
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18695,7 +18093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -18809,7 +18207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -18865,7 +18263,7 @@ AudioSource:
   m_GameObject: {fileID: 1452947469}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: eb95a1fb38346440fbbd0dbf604c809b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 62b13000bc78c41e8a579ef54f2200cf, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -19030,7 +18428,6 @@ GameObject:
   - 23: {fileID: 1476559381}
   - 65: {fileID: 1476559380}
   - 114: {fileID: 1476559379}
-  - 82: {fileID: 1476559378}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -19051,65 +18448,6 @@ Transform:
   - {fileID: 1490674025}
   m_Father: {fileID: 209368321}
   m_RootOrder: 0
---- !u!82 &1476559378
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1804022978}
-  m_GameObject: {fileID: 1476559376}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &1476559379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19130,7 +18468,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 1476559378}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &1476559380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19353,7 +18691,7 @@ AudioSource:
   m_GameObject: {fileID: 1523701480}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ec6b94079e9af454ebe9a7ec748b00a3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7df881040c9114ca38c98e8780a44853, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .393000007
   m_Pitch: 1
@@ -20587,50 +19925,6 @@ Prefab:
   m_RootGameObject: {fileID: 917201905}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1001 &1550971674
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 1.44000006
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-  m_RootGameObject: {fileID: 1690826938}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1 &1552911573
 GameObject:
   m_ObjectHideFlags: 0
@@ -21106,7 +20400,16 @@ Prefab:
       propertyPath: defense
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 806103305}
   m_IsPrefabParent: 0
@@ -21201,7 +20504,16 @@ Prefab:
       propertyPath: hitPoints
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 376679797}
   m_IsPrefabParent: 0
@@ -22653,7 +21965,16 @@ Prefab:
       propertyPath: speed
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 324620681}
   m_IsPrefabParent: 0
@@ -22779,7 +22100,16 @@ Prefab:
       propertyPath: defense
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 896271044}
   m_IsPrefabParent: 0
@@ -22894,7 +22224,7 @@ AudioSource:
   m_GameObject: {fileID: 1665033191}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ad98c6db1e1c14c3ca13a20d50261403, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2ba2860f17df849a6b37326978044a84, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -22956,95 +22286,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 574437807}
   m_RootOrder: 4
---- !u!1 &1690826938
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-  m_PrefabInternal: {fileID: 1550971674}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1690826943}
-  - 135: {fileID: 1690826942}
-  - 54: {fileID: 1690826941}
-  - 114: {fileID: 1690826940}
-  - 114: {fileID: 1690826939}
-  m_Layer: 0
-  m_Name: SecondaryWeapon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1690826939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1550971674}
-  m_GameObject: {fileID: 1690826938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd8cae20c77f432bbbc8c2ed5db6720, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 3
-  owner: 0
---- !u!114 &1690826940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1550971674}
-  m_GameObject: {fileID: 1690826938}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 393c0622695d648ea8811f358725b1cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  duration: -1
---- !u!54 &1690826941
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 5400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1550971674}
-  m_GameObject: {fileID: 1690826938}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!135 &1690826942
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13500000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1550971674}
-  m_GameObject: {fileID: 1690826938}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &1690826943
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-  m_PrefabInternal: {fileID: 1550971674}
-  m_GameObject: {fileID: 1690826938}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.44000006}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2077127236}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
 --- !u!1001 &1693172390
 Prefab:
   m_ObjectHideFlags: 0
@@ -23137,7 +22378,6 @@ GameObject:
   - 23: {fileID: 1696240786}
   - 65: {fileID: 1696240785}
   - 114: {fileID: 1696240784}
-  - 82: {fileID: 1696240783}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -23158,65 +22398,6 @@ Transform:
   - {fileID: 257818014}
   m_Father: {fileID: 209368321}
   m_RootOrder: 1
---- !u!82 &1696240783
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 1182784569}
-  m_GameObject: {fileID: 1696240781}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &1696240784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23237,7 +22418,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 1696240783}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &1696240785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23564,7 +22745,20 @@ Prefab:
       propertyPath: isPlayer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_Volume
+      value: .890999973
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 1476559376}
   m_IsPrefabParent: 0
@@ -23620,7 +22814,16 @@ Prefab:
       propertyPath: SFXDestroy
       value: 
       objectReference: {fileID: 816487188}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 1221716165}
   m_IsPrefabParent: 0
@@ -23668,7 +22871,6 @@ GameObject:
   - 23: {fileID: 1813096479}
   - 65: {fileID: 1813096478}
   - 114: {fileID: 1813096477}
-  - 82: {fileID: 1813096476}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -23689,65 +22891,6 @@ Transform:
   - {fileID: 889916683}
   m_Father: {fileID: 209368321}
   m_RootOrder: 9
---- !u!82 &1813096476
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 793049670}
-  m_GameObject: {fileID: 1813096474}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &1813096477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23768,7 +22911,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 1813096476}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &1813096478
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23947,7 +23090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -24181,7 +23324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .1953125, g: .1953125, b: .1953125, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
@@ -24337,7 +23480,7 @@ AudioSource:
   m_GameObject: {fileID: 1949185302}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 88bb953adaf834e9181c8ebdb1a180bb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ccf7bda64244b4149a7a24daa27da7fd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .363000005
   m_Pitch: 1
@@ -24517,8 +23660,8 @@ MonoBehaviour:
   onScreen: 0
   SFXshieldDamage: {fileID: 0}
   SFXshieldDestroy: {fileID: 0}
-  SFXunArmoredDamage: {fileID: 0}
-  SFXDestroy: {fileID: 0}
+  SFXunArmoredDamage: {fileID: 1523701482}
+  SFXDestroy: {fileID: 816487188}
 --- !u!114 &1949185312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24548,7 +23691,6 @@ GameObject:
   - 23: {fileID: 1984400045}
   - 65: {fileID: 1984400044}
   - 114: {fileID: 1984400043}
-  - 82: {fileID: 1984400042}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -24569,65 +23711,6 @@ Transform:
   - {fileID: 2067103871}
   m_Father: {fileID: 209368321}
   m_RootOrder: 19
---- !u!82 &1984400042
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 439706709}
-  m_GameObject: {fileID: 1984400040}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &1984400043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24648,7 +23731,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 1984400042}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &1984400044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25920,7 +25003,6 @@ GameObject:
   - 23: {fileID: 1992737646}
   - 65: {fileID: 1992737645}
   - 114: {fileID: 1992737644}
-  - 82: {fileID: 1992737643}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -25941,65 +25023,6 @@ Transform:
   - {fileID: 1282310323}
   m_Father: {fileID: 209368321}
   m_RootOrder: 20
---- !u!82 &1992737643
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 858962495}
-  m_GameObject: {fileID: 1992737641}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &1992737644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26020,7 +25043,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 1992737643}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &1992737645
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26208,7 +25231,20 @@ Prefab:
       propertyPath: speed
       value: 9
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_Volume
+      value: .402999997
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 677383420}
   m_IsPrefabParent: 0
@@ -26259,7 +25295,7 @@ AudioSource:
   m_GameObject: {fileID: 2018201832}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 88bb953adaf834e9181c8ebdb1a180bb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ccf7bda64244b4149a7a24daa27da7fd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: .363000005
   m_Pitch: 1
@@ -26529,7 +25565,16 @@ Prefab:
       propertyPath: defense
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 1303648137}
   m_IsPrefabParent: 0
@@ -26655,69 +25700,20 @@ Prefab:
       propertyPath: defense
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 556241219}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1 &2077127235
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100002, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-  m_PrefabInternal: {fileID: 1550971674}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2077127236}
-  - 33: {fileID: 2077127238}
-  - 23: {fileID: 2077127237}
-  m_Layer: 0
-  m_Name: Quad
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2077127236
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400002, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb, type: 2}
-  m_PrefabInternal: {fileID: 1550971674}
-  m_GameObject: {fileID: 2077127235}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1690826943}
-  m_RootOrder: 0
---- !u!23 &2077127237
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1550971674}
-  m_GameObject: {fileID: 2077127235}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: c4ab21b42c1304d6e986527b8fc6daba, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!33 &2077127238
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: f3b9ba4c9c4bd4d45a973b83c7bb0dfb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1550971674}
-  m_GameObject: {fileID: 2077127235}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &2087584211
 Prefab:
   m_ObjectHideFlags: 0
@@ -26781,7 +25777,16 @@ Prefab:
       propertyPath: hitPoints
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400002, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: mainWeapon
+      value: 
+      objectReference: {fileID: 1218982089}
+    - target: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6912698c82c223b449048980504f40d7, type: 2}
   m_RootGameObject: {fileID: 430131637}
   m_IsPrefabParent: 0
@@ -26849,7 +25854,7 @@ AudioSource:
   m_GameObject: {fileID: 2104973332}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 53b4c82dff53d449db9d91ad9707e6c9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6556daa2f92994a18a2dd51561d094a9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -27209,7 +26214,7 @@ MonoBehaviour:
   shieldFXID: 1
   hitPoints: 60
   initialHitPoints: 0
-  defense: 0
+  defense: 2
   maxShields: 20
   shields: 0
   shieldDisplay: {fileID: 0}
@@ -27324,7 +26329,6 @@ GameObject:
   - 23: {fileID: 2143123452}
   - 65: {fileID: 2143123451}
   - 114: {fileID: 2143123450}
-  - 82: {fileID: 2143123449}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Enemy
@@ -27345,65 +26349,6 @@ Transform:
   - {fileID: 1811891295}
   m_Father: {fileID: 209368321}
   m_RootOrder: 18
---- !u!82 &2143123449
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 6912698c82c223b449048980504f40d7,
-    type: 2}
-  m_PrefabInternal: {fileID: 663433598}
-  m_GameObject: {fileID: 2143123447}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: ebad7172beea744ac894e001c0225421, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: .236000001
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!114 &2143123450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27424,7 +26369,7 @@ MonoBehaviour:
   autoFire: 1
   randomizeAim: 0
   direction: 1
-  mainWeapon: {fileID: 2143123449}
+  mainWeapon: {fileID: 1218982089}
 --- !u!65 &2143123451
 BoxCollider:
   m_ObjectHideFlags: 0
