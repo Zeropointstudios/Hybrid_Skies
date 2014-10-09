@@ -88,9 +88,11 @@ public class HitPoints : MonoBehaviour {
 	IEnumerator ShieldRegeneration() {
 		while (hasShields)
 		{
-			yield return new WaitForSeconds(0.4f);	//regenerates shields every second
-				if (shields < maxShields)
-					shields +=1;
+			yield return new WaitForSeconds(4);	//regenerates shields every second
+				if (shields < maxShields - 10)
+					shields +=10;
+				else if (shields < maxShields)
+					shields += maxShields - shields;
 		}
 	}
 
@@ -103,7 +105,7 @@ public class HitPoints : MonoBehaviour {
 	{
 		if (!isInvulnerable) {
 			//if there are shields take away from them first
-			if (hasShields) {
+			if (hasShields && shields > 0) {
 
 				if (shields >= damage) {
 					shields -= damage;
@@ -118,7 +120,7 @@ public class HitPoints : MonoBehaviour {
 					shields = 0;
 					if (isPlayer)
 						shieldDisplay.text = shields.ToString ();
-					//hasShields = false;
+//					hasShields = false;
 					Instantiate (shieldExplodeVFX, projectilePosition, Quaternion.identity);
 					SFXshieldDestroy.Play (); //sound FX
 				}
@@ -136,7 +138,7 @@ public class HitPoints : MonoBehaviour {
 				hitPoints -= effectiveDamage;
 
 			} else { //if there is no armor or shields, do what is left of damage (including reduction from shield)
-				squibPool.Activate (squibID, projectilePosition, Quaternion.identity); //shows normal vfx hit
+				squibPool.Activate (armorFXID, projectilePosition, Quaternion.identity); //shows normal vfx hit
 				hitPoints -= damage;
 				if (SFXunArmoredDamage != null) {
 					SFXunArmoredDamage.Play (); //Sound FX

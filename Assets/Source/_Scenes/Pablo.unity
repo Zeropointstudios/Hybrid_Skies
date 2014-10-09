@@ -1929,7 +1929,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -3876,7 +3876,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -17195,7 +17195,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -20648,7 +20648,7 @@ MonoBehaviour:
   m_Script: {fileID: 951160979}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: .39199999}
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
@@ -20709,7 +20709,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -20990,7 +20990,7 @@ MonoBehaviour:
   SFXshieldDamage: {fileID: 2104973334}
   SFXshieldDestroy: {fileID: 839665495}
   SFXunArmoredDamage: {fileID: 1452947471}
-  SFXDestroy: {fileID: 0}
+  SFXDestroy: {fileID: 300576052}
 --- !u!114 &1003429955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22045,7 +22045,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -22147,7 +22147,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: c72836c5b46eb44eea519dd78b7059c8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .101000004
+  m_Volume: .224999994
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -22342,7 +22342,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -23868,7 +23868,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -24844,7 +24844,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -25319,7 +25319,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -25433,7 +25433,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -25591,7 +25591,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 9a9e1e55446404930ba9e708cb20f2dd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .25999999
+  m_Volume: .181999996
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -30285,7 +30285,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 2ba2860f17df849a6b37326978044a84, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .328000009
+  m_Volume: .550000012
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -32223,7 +32223,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -32648,7 +32648,7 @@ MonoBehaviour:
   m_Script: {fileID: 1090880301}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Mat: {fileID: 0}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: .725490212}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
