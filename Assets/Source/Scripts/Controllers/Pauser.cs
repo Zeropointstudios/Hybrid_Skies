@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class Pauser : MonoBehaviour {
 
+	public GameObject Menu;
+
 #if UNITY_EDITOR			
-	public Canvas Menu;
+
 	bool isMenu = true;
 	
 	void Update() {
@@ -40,14 +42,14 @@ public class Pauser : MonoBehaviour {
 	void PauseGame() {
 		Time.timeScale = 0.0f;
 		isPaused = true;
-		pauseMenu.gameObject.setActive(true);
+		Menu.setActive(true);
 
 	}
 
 	void UnpauseGame() {
 		Time.timeScale = 1.0f;
 		isPaused = false;
-		pauseMenu.gameObject.setActive(false);
+		Menu.setActive(false);
 
 	}
 

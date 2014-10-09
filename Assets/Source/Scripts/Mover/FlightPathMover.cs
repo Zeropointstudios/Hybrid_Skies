@@ -6,7 +6,7 @@ public class FlightPathMover : Mover {
 	public string pathName = "flightPath";
 	public int pathTime;
 	public float lookAheadTime;
-	
+
 	void Start () {
 		EditorUtility.SetDirty( gameObject );
 		StartCoroutine("ExecuteFlightPath");

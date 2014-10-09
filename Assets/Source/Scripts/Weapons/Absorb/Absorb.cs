@@ -45,7 +45,7 @@ public class Absorb : MonoBehaviour {
 			absorbFieldTarget.BroadcastMessage("Toggle");
 			wasAbsorbEnabled = true;
 			absorbEnableSound.Play();
-			StartCoroutine(DrainEnergy);
+			StartCoroutine(DrainEnergy());
 
 		}
 	}

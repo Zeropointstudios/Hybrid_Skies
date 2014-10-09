@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd8cae20c77f432bbbc8c2ed5db6720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 5
   owner: 0
 --- !u!1001 &100100000
 Prefab:
