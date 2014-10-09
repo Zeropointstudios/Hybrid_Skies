@@ -10,7 +10,7 @@ public class Absorb : MonoBehaviour {
 	public GameObject absorbField, absorbFieldTarget;
 	public float timeMultiplier;
 	bool wasAbsorbEnabled = false;
-	public AudioSource absorbEnableSound, absorbDisableSound, absorbDisableSound2, absorbLoop;
+	public AudioSource absorbEnableSound, absorbEnableSound2, absorbDisableSound, absorbDisableSound2, absorbLoop;
 
 
 
@@ -29,6 +29,8 @@ public class Absorb : MonoBehaviour {
 			absorbFieldTarget.BroadcastMessage("Toggle");
 			wasAbsorbEnabled = true;
 			absorbEnableSound.Play();
+			absorbEnableSound2.Play();
+			absorbLoop.Play();
 			StartCoroutine(DrainEnergy());
 		}
 	}
@@ -45,6 +47,8 @@ public class Absorb : MonoBehaviour {
 			absorbFieldTarget.BroadcastMessage("Toggle");
 			wasAbsorbEnabled = true;
 			absorbEnableSound.Play();
+			absorbEnableSound2.Play();
+			absorbLoop.Play();
 			StartCoroutine(DrainEnergy());
 
 		}
@@ -60,6 +64,7 @@ public class Absorb : MonoBehaviour {
 			absorbFieldTarget.BroadcastMessage("Toggle");
 			absorbDisableSound.Play();
 			absorbDisableSound2.Play();
+			absorbLoop.Stop();
 			wasAbsorbEnabled = false;
 		}
 	}
@@ -74,6 +79,7 @@ public class Absorb : MonoBehaviour {
 			}
 			else {
 				DisableAbsorb();
+				absorbLoop.Stop();
 				absorbDisableSound.Play();
 				absorbDisableSound2.Play();
 			}
