@@ -46,7 +46,7 @@ public class Targeter : MonoBehaviour {
 
 		RaycastHit hit;
 		Ray ray = Camera.main.ScreenPointToRay(
-			new Vector3(Input.GetTouch(1).position.x, Input.GetTouch(1).position.y + 150.0f, PlayerController.cameraDistance)); //ray where second finger is placed
+			new Vector3(Input.GetTouch(1).position.x, Input.GetTouch(1).position.y, PlayerController.cameraDistance)); //ray where second finger is placed
 		if (collider.Raycast(ray, out hit, PlayerController.cameraDistance)) {  ///if this ship is getting hit by the above ray
 			isHitting = true;
 		}
