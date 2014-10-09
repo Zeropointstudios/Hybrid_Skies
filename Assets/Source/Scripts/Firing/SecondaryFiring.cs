@@ -75,8 +75,6 @@ public class SecondaryFiring : Firing { //handles player energy and secondary we
 				Finder.GetObjectPool().Activate (projectileID, shotSpawn.transform.position, Quaternion.Euler(0, shotAngle/2 - 9, 0));
 			}
 
-			AudioSource[] audios = GetComponents<AudioSource> ();
-			secondWeapon01 = audios [1];
 			secondWeapon01.Play();
 		}
 	}
