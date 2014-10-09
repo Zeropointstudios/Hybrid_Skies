@@ -10,7 +10,7 @@ public class SecondaryFiring : Firing { //handles player energy and secondary we
 	int currentEnergyCost;
 
 	//AudioSource mainGun01;
-	public AudioSource secondWeapon01;
+	public AudioSource secondWeaponSFX, powerupSFX;
 
 	void Awake() {
 		autoFire = false;
@@ -28,6 +28,7 @@ public class SecondaryFiring : Firing { //handles player energy and secondary we
 	public void AddEnergy (float energyx) {
 		energy += energyx;
 		energyDisplay.text = energy.ToString();
+		powerupSFX.Play ();
 	}
 
 	public void SubtractAbsorbEnergy (float enemyHP) {
@@ -75,7 +76,7 @@ public class SecondaryFiring : Firing { //handles player energy and secondary we
 				Finder.GetObjectPool().Activate (projectileID, shotSpawn.transform.position, Quaternion.Euler(0, shotAngle/2 - 9, 0));
 			}
 
-			secondWeapon01.Play();
+			secondWeaponSFX.Play();
 		}
 	}
 

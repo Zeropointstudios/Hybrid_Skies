@@ -15,7 +15,6 @@ public class EnergyPowerUp : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.tag == "Player") {
 			player.GetComponent<SecondaryFiring> ().AddEnergy (energy);
-			print ("add energy");
 			gameObject.SetActive (false);
 		}
 	}	

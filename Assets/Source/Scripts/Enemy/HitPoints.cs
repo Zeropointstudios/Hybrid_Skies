@@ -32,7 +32,6 @@ public class HitPoints : MonoBehaviour {
 	public RaceType raceType = RaceType.None;
 	public bool hasShields;
 	public bool isPlayer;
-	private bool isInvulnerable = false;
 	public ObjectPool returnSquibPool(){return squibPool;}
 	public int returnSquibID(){return squibID;}
 	public ModifierType returnModifierType() {return modifierType;} 
@@ -97,16 +96,13 @@ public class HitPoints : MonoBehaviour {
 	}
 
 	public void DrainLife(float amount) {
-		if (!isInvulnerable)
-			hitPoints -= amount;
+		hitPoints -= amount;
 	}
 
 	public void DoDamage(float damage, Vector3 projectilePosition)
 	{
-		if (!isInvulnerable) {
 			//if there are shields take away from them first
 			if (hasShields && shields > 0) {
-
 				if (shields >= damage) {
 					shields -= damage;
 					squibPool.Activate (shieldFXID, transform.position, Quaternion.identity);
@@ -114,13 +110,15 @@ public class HitPoints : MonoBehaviour {
 						shieldDisplay.text = shields.ToString ();
 					if (SFXshieldDamage != null)
 						SFXshieldDamage.Play (); //sound FX
-					return;
-				} else {
+					if (shields == 0)
+						Instantiate (shieldExplodeVFX, projectilePosition, Quaternion.identity);
+				return;
+				} 
+			else {
 					damage -= shields;
 					shields = 0;
 					if (isPlayer)
 						shieldDisplay.text = shields.ToString ();
-//					hasShields = false;
 					Instantiate (shieldExplodeVFX, projectilePosition, Quaternion.identity);
 					SFXshieldDestroy.Play (); //sound FX
 				}
@@ -145,8 +143,6 @@ public class HitPoints : MonoBehaviour {
 				}
 			}
 
-
-
 			if (hitPoints < 1 && gameObject.activeSelf == true) {
 				Kill ();
 			}
@@ -157,7 +153,6 @@ public class HitPoints : MonoBehaviour {
 				healthDisplay.text = hitPoints.ToString ();
 				livesDisplay.text = lives.ToString ();	
 			}
-		}
 	}
 	
 	public void Heal(float healing)
@@ -167,7 +162,6 @@ public class HitPoints : MonoBehaviour {
 
 	public void Kill()
 	{
-		if (!isInvulnerable){
 			Instantiate(deathVFX, transform.position, Quaternion.identity);
 
 			if (!isPlayer)
@@ -193,7 +187,6 @@ public class HitPoints : MonoBehaviour {
 			if (!isPlayer)
 				gameObject.SetActive(false);
 		}
-	}
 
 }
  
