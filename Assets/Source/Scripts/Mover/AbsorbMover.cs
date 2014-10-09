@@ -17,7 +17,7 @@ public class AbsorbMover : MonoBehaviour {
 #elif UNITY_IPHONE
 	{
 		Vector3 target = Camera.main.ScreenToWorldPoint (
-			new Vector3(Input.GetTouch(1).position.x, Input.GetTouch(1).position.y + 150.0f, PlayerController.cameraDistance));
+			new Vector3(Input.GetTouch(1).position.x, Input.GetTouch(1).position.y, PlayerController.cameraDistance));
 		transform.position = Vector3.MoveTowards(transform.position, target, 0.9f);
 
 	}
