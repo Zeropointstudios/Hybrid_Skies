@@ -10,7 +10,7 @@ public class Absorb : MonoBehaviour {
 	public GameObject absorbField, absorbFieldTarget;
 	public float timeMultiplier;
 	bool wasAbsorbEnabled = false;
-	public AudioSource absorbEnableSound, absorbDisableSound, absorbDisableSound2;
+	public AudioSource absorbEnableSound, absorbDisableSound, absorbDisableSound2, absorbLoop;
 
 
 
